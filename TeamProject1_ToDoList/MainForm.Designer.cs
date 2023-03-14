@@ -235,7 +235,7 @@
             PersonGroups_list.Font = new Font("XO Courser", 10.875F, FontStyle.Regular, GraphicsUnit.Point);
             PersonGroups_list.FormattingEnabled = true;
             PersonGroups_list.ItemHeight = 32;
-            PersonGroups_list.Items.AddRange(new object[] { "Туц ", "щка", "щкаы", "ЗШтроу", "Programmers", "Алгем", "Матан ", "Теория вероятности" });
+            PersonGroups_list.Items.AddRange(new object[] { "Programmers" });
             PersonGroups_list.Location = new Point(15, 324);
             PersonGroups_list.Name = "PersonGroups_list";
             PersonGroups_list.Size = new Size(336, 132);

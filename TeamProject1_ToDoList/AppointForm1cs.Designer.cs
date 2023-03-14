@@ -54,7 +54,7 @@
             MyGroups_list.Font = new Font("XO Courser", 9F, FontStyle.Regular, GraphicsUnit.Point);
             MyGroups_list.FormattingEnabled = true;
             MyGroups_list.ItemHeight = 27;
-            MyGroups_list.Items.AddRange(new object[] { "Создание проекта", "Разработка приложений" });
+            MyGroups_list.Items.AddRange(new object[] { "Группа 1", "Группа 2" });
             MyGroups_list.Location = new Point(12, 151);
             MyGroups_list.Name = "MyGroups_list";
             MyGroups_list.Size = new Size(318, 247);
