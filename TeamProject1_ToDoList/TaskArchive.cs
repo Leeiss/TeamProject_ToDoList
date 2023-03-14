@@ -17,6 +17,9 @@ namespace TeamProject1_ToDoList
             InitializeComponent();
         }
 
+        private void PersonalTasks_radio_btn_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
