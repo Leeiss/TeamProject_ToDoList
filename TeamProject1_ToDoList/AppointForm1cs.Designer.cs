@@ -36,6 +36,12 @@
             lbl_task = new Label();
             Entered_Text = new TextBox();
             Appoint_btn = new Button();
+            label1 = new Label();
+            listBox1 = new ListBox();
+            label3 = new Label();
+            group_tasks_lbl = new Label();
+            tasks_collection = new ListBox();
+            delete_btn = new Button();
             SuspendLayout();
             // 
             // AppointTask_lbl
@@ -119,19 +125,91 @@
             // 
             Appoint_btn.Font = new Font("Sylfaen", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
             Appoint_btn.ForeColor = Color.FromArgb(159, 108, 80);
-            Appoint_btn.Location = new Point(835, 429);
+            Appoint_btn.Location = new Point(825, 354);
             Appoint_btn.Name = "Appoint_btn";
             Appoint_btn.Size = new Size(173, 44);
             Appoint_btn.TabIndex = 63;
             Appoint_btn.Text = "Назначить";
             Appoint_btn.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Sitka Banner", 16.125F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(159, 108, 80);
+            label1.Location = new Point(26, 415);
+            label1.Name = "label1";
+            label1.Size = new Size(317, 62);
+            label1.TabIndex = 64;
+            label1.Text = "Удалить задачу";
+            // 
+            // listBox1
+            // 
+            listBox1.Font = new Font("XO Courser", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 27;
+            listBox1.Items.AddRange(new object[] { "Группа 1", "Группа 2" });
+            listBox1.Location = new Point(12, 532);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(318, 166);
+            listBox1.TabIndex = 65;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Sylfaen", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.Gray;
+            label3.Location = new Point(12, 487);
+            label3.Name = "label3";
+            label3.Size = new Size(147, 31);
+            label3.TabIndex = 66;
+            label3.Text = "Мои группы";
+            // 
+            // group_tasks_lbl
+            // 
+            group_tasks_lbl.AutoSize = true;
+            group_tasks_lbl.Font = new Font("Sylfaen", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            group_tasks_lbl.ForeColor = Color.Gray;
+            group_tasks_lbl.Location = new Point(378, 487);
+            group_tasks_lbl.Name = "group_tasks_lbl";
+            group_tasks_lbl.Size = new Size(147, 31);
+            group_tasks_lbl.TabIndex = 68;
+            group_tasks_lbl.Text = "Мои группы";
+            // 
+            // tasks_collection
+            // 
+            tasks_collection.Font = new Font("XO Courser", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tasks_collection.FormattingEnabled = true;
+            tasks_collection.ItemHeight = 27;
+            tasks_collection.Items.AddRange(new object[] { "Задача 1", "Задача 2" });
+            tasks_collection.Location = new Point(378, 532);
+            tasks_collection.Name = "tasks_collection";
+            tasks_collection.Size = new Size(318, 166);
+            tasks_collection.TabIndex = 67;
+            // 
+            // delete_btn
+            // 
+            delete_btn.Font = new Font("Sylfaen", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            delete_btn.ForeColor = Color.FromArgb(159, 108, 80);
+            delete_btn.Location = new Point(825, 654);
+            delete_btn.Name = "delete_btn";
+            delete_btn.Size = new Size(173, 44);
+            delete_btn.TabIndex = 69;
+            delete_btn.Text = "Удалить";
+            delete_btn.UseVisualStyleBackColor = true;
+            // 
             // AppointForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1020, 485);
+            ClientSize = new Size(1020, 736);
+            Controls.Add(delete_btn);
+            Controls.Add(group_tasks_lbl);
+            Controls.Add(tasks_collection);
+            Controls.Add(label3);
+            Controls.Add(listBox1);
+            Controls.Add(label1);
             Controls.Add(Appoint_btn);
             Controls.Add(Entered_Text);
             Controls.Add(lbl_task);
@@ -156,5 +234,11 @@
         private Label lbl_task;
         private TextBox Entered_Text;
         private Button Appoint_btn;
+        private Label label1;
+        private ListBox listBox1;
+        private Label label3;
+        private Label group_tasks_lbl;
+        private ListBox tasks_collection;
+        private Button delete_btn;
     }
 }

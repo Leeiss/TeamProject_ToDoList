@@ -193,7 +193,7 @@
             AppointTask_lbl.Name = "AppointTask_lbl";
             AppointTask_lbl.Size = new Size(154, 80);
             AppointTask_lbl.TabIndex = 61;
-            AppointTask_lbl.Text = "Назначить задачи";
+            AppointTask_lbl.Text = "Управление группами";
             AppointTask_lbl.TextAlign = ContentAlignment.MiddleLeft;
             AppointTask_lbl.UseVisualStyleBackColor = true;
             AppointTask_lbl.Click += AppointTask_lbl_Click;
