@@ -16,5 +16,10 @@ namespace TeamProject1_ToDoList
         {
             InitializeComponent();
         }
+
+        private void Entered_Text_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
