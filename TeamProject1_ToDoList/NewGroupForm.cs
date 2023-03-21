@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic.Logging;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,75 @@ namespace TeamProject1_ToDoList
                 
             }
 
+
+        }
+
+        private void Create_btn_Click(object sender, EventArgs e)
+        {
+            DataBase db = new DataBase();
+
+            String groupname = entered_name.Text;
+
+            MySqlCommand command = new MySqlCommand("INSERT INTO `groups` (`namegroup`) VALUES (@gn)", db.GetConnection());
+
+            command.Parameters.Add("@gn", MySqlDbType.VarChar).Value = groupname;
+
+            db.OpenConnection();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show("Группа успешно создана");
+                
+
+
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Ошибка!Попробуйте позже!");
+            }
+
+
+            db.CloseConnection();
+
+        }
+
+        private void add_button_Click(object sender, EventArgs e)
+        {
+            DataBase db = new DataBase();
+
+            String groupname = entered_name.Text;
+            String userlog = Members_list.SelectedItem.ToString();
+
+            MySqlCommand command = new MySqlCommand("INSERT INTO `groups` (`namegroup`, `userlogin`) VALUES (@gn, @ulog)", db.GetConnection());
+
+            command.Parameters.Add("@gn", MySqlDbType.VarChar).Value = groupname;
+            command.Parameters.Add("@ulog", MySqlDbType.VarChar).Value = userlog;
+
+            db.OpenConnection();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                //MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  userlogin = @L ", db.GetConnection());
+                //command1.Parameters.Add("@L", MySqlDbType.VarChar).Value = userlog;
+                //MainForm mainForm= new MainForm();
+                //mainForm.PersonGroups_list.Items.Add(groupname);
+
+                MessageBox.Show("Пользователь добавлен");
+
+
+
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Ошибка!Попробуйте позже!");
+            }
+
+
+            db.CloseConnection();
 
         }
     }

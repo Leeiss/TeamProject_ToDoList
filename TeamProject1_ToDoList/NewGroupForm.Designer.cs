@@ -118,6 +118,7 @@
             this.Create_btn.TabIndex = 54;
             this.Create_btn.Text = "Создать";
             this.Create_btn.UseVisualStyleBackColor = true;
+            this.Create_btn.Click += new System.EventHandler(this.Create_btn_Click);
             // 
             // NewGroup_lbl
             // 
@@ -154,6 +155,7 @@
             this.add_button.TabIndex = 61;
             this.add_button.Text = "Добавить";
             this.add_button.UseVisualStyleBackColor = true;
+            this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
             // NewGroupForm
             // 

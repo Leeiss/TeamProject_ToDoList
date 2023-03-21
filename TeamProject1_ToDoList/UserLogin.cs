@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.Common;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,8 @@ namespace TeamProject1_ToDoList
 {
     public partial class UserLogin : Form
     {
+
+        
         public UserLogin()
         {
             InitializeComponent();
@@ -29,10 +32,10 @@ namespace TeamProject1_ToDoList
             registration.ShowDialog();
         }
 
+        
 
 
-
-        private void to_come_in_button_Click(object sender, EventArgs e)
+        public void to_come_in_button_Click(object sender, EventArgs e)
         {
             String loginUser = entered_login.Text;// помещаем данные введеные пользователем в переменную
             String passUser = entered_password.Text;
@@ -57,10 +60,18 @@ namespace TeamProject1_ToDoList
             adapter.Fill(table);// записываем данные в объект класса DataTable
 
 
+
             if (table.Rows.Count > 0)
             {
 
                 MainForm mainForm = new MainForm();
+
+                mainForm.GetLogin = loginUser;
+
+
+                
+
+
                 mainForm.ShowDialog();
                 
 
