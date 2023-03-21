@@ -35,13 +35,13 @@
             this.Entered_Text = new System.Windows.Forms.TextBox();
             this.Appoint_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.group_tasks_lbl = new System.Windows.Forms.Label();
-            this.tasks_collection = new System.Windows.Forms.ListBox();
+            this.MyGroups_list2 = new System.Windows.Forms.ListBox();
+            this.Members_list2 = new System.Windows.Forms.ListBox();
             this.delete_btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.show_listGroup_button = new System.Windows.Forms.Button();
+            this.show_listGroup_button2 = new System.Windows.Forms.Button();
+            this.show_listMembers_button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AppointTask_lbl
@@ -114,6 +114,7 @@
             this.Appoint_btn.TabIndex = 63;
             this.Appoint_btn.Text = "Назначить";
             this.Appoint_btn.UseVisualStyleBackColor = true;
+            this.Appoint_btn.Click += new System.EventHandler(this.Appoint_btn_Click);
             // 
             // label1
             // 
@@ -127,57 +128,27 @@
             this.label1.TabIndex = 64;
             this.label1.Text = "Удалить задачу";
             // 
-            // listBox1
+            // MyGroups_list2
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 22;
-            this.listBox1.Items.AddRange(new object[] {
-            "Группа 1",
-            "Группа 2"});
-            this.listBox1.Location = new System.Drawing.Point(9, 416);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(246, 114);
-            this.listBox1.TabIndex = 65;
+            this.MyGroups_list2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MyGroups_list2.FormattingEnabled = true;
+            this.MyGroups_list2.ItemHeight = 22;
+            this.MyGroups_list2.Location = new System.Drawing.Point(9, 416);
+            this.MyGroups_list2.Margin = new System.Windows.Forms.Padding(2);
+            this.MyGroups_list2.Name = "MyGroups_list2";
+            this.MyGroups_list2.Size = new System.Drawing.Size(246, 114);
+            this.MyGroups_list2.TabIndex = 65;
             // 
-            // label3
+            // Members_list2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(9, 380);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 23);
-            this.label3.TabIndex = 66;
-            this.label3.Text = "Мои группы";
-            // 
-            // group_tasks_lbl
-            // 
-            this.group_tasks_lbl.AutoSize = true;
-            this.group_tasks_lbl.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.group_tasks_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.group_tasks_lbl.Location = new System.Drawing.Point(291, 380);
-            this.group_tasks_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.group_tasks_lbl.Name = "group_tasks_lbl";
-            this.group_tasks_lbl.Size = new System.Drawing.Size(153, 23);
-            this.group_tasks_lbl.TabIndex = 68;
-            this.group_tasks_lbl.Text = "Участники группы";
-            // 
-            // tasks_collection
-            // 
-            this.tasks_collection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tasks_collection.FormattingEnabled = true;
-            this.tasks_collection.ItemHeight = 22;
-            this.tasks_collection.Items.AddRange(new object[] {
-            "Задача 1",
-            "Задача 2"});
-            this.tasks_collection.Location = new System.Drawing.Point(291, 416);
-            this.tasks_collection.Margin = new System.Windows.Forms.Padding(2);
-            this.tasks_collection.Name = "tasks_collection";
-            this.tasks_collection.Size = new System.Drawing.Size(246, 114);
-            this.tasks_collection.TabIndex = 67;
+            this.Members_list2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Members_list2.FormattingEnabled = true;
+            this.Members_list2.ItemHeight = 22;
+            this.Members_list2.Location = new System.Drawing.Point(291, 416);
+            this.Members_list2.Margin = new System.Windows.Forms.Padding(2);
+            this.Members_list2.Name = "Members_list2";
+            this.Members_list2.Size = new System.Drawing.Size(246, 114);
+            this.Members_list2.TabIndex = 67;
             // 
             // delete_btn
             // 
@@ -190,6 +161,7 @@
             this.delete_btn.TabIndex = 69;
             this.delete_btn.Text = "Удалить";
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // button2
             // 
@@ -211,19 +183,39 @@
             this.show_listGroup_button.UseVisualStyleBackColor = true;
             this.show_listGroup_button.Click += new System.EventHandler(this.show_listGroup_button_Click);
             // 
+            // show_listGroup_button2
+            // 
+            this.show_listGroup_button2.Location = new System.Drawing.Point(9, 375);
+            this.show_listGroup_button2.Name = "show_listGroup_button2";
+            this.show_listGroup_button2.Size = new System.Drawing.Size(112, 34);
+            this.show_listGroup_button2.TabIndex = 73;
+            this.show_listGroup_button2.Text = "Группы";
+            this.show_listGroup_button2.UseVisualStyleBackColor = true;
+            this.show_listGroup_button2.Click += new System.EventHandler(this.show_listGroup_button2_Click);
+            // 
+            // show_listMembers_button2
+            // 
+            this.show_listMembers_button2.Location = new System.Drawing.Point(291, 375);
+            this.show_listMembers_button2.Name = "show_listMembers_button2";
+            this.show_listMembers_button2.Size = new System.Drawing.Size(112, 34);
+            this.show_listMembers_button2.TabIndex = 74;
+            this.show_listMembers_button2.Text = "Участники";
+            this.show_listMembers_button2.UseVisualStyleBackColor = true;
+            this.show_listMembers_button2.Click += new System.EventHandler(this.show_listMembers_button2_Click);
+            // 
             // AppointForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(785, 575);
+            this.Controls.Add(this.show_listMembers_button2);
+            this.Controls.Add(this.show_listGroup_button2);
             this.Controls.Add(this.show_listGroup_button);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.delete_btn);
-            this.Controls.Add(this.group_tasks_lbl);
-            this.Controls.Add(this.tasks_collection);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.Members_list2);
+            this.Controls.Add(this.MyGroups_list2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Appoint_btn);
             this.Controls.Add(this.Entered_Text);
@@ -248,12 +240,12 @@
         private TextBox Entered_Text;
         private Button Appoint_btn;
         private Label label1;
-        private ListBox listBox1;
-        private Label label3;
-        private Label group_tasks_lbl;
-        private ListBox tasks_collection;
+        private ListBox MyGroups_list2;
+        private ListBox Members_list2;
         private Button delete_btn;
         private Button button2;
         private Button show_listGroup_button;
+        private Button show_listGroup_button2;
+        private Button show_listMembers_button2;
     }
 }

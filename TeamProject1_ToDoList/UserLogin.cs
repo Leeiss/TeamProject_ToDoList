@@ -87,7 +87,7 @@ namespace TeamProject1_ToDoList
         private void register_button_Click_1(object sender, EventArgs e)
             
         {
-            NewGroupForm newGroupForm = new NewGroupForm();
+           // NewGroupForm newGroupForm = new NewGroupForm();
 
             DataBase db = new DataBase();
             MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `password`) VALUES(@login, @password)",db.GetConnection());

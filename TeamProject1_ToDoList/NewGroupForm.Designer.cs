@@ -34,7 +34,6 @@
             this.entered_name = new System.Windows.Forms.TextBox();
             this.lbl_members = new System.Windows.Forms.Panel();
             this.lbl_meembers = new System.Windows.Forms.Label();
-            this.Create_btn = new System.Windows.Forms.Button();
             this.NewGroup_lbl = new System.Windows.Forms.Label();
             this.Members_list = new System.Windows.Forms.ListBox();
             this.add_button = new System.Windows.Forms.Button();
@@ -107,19 +106,6 @@
             this.lbl_meembers.Text = "Выбрать участника";
             this.lbl_meembers.Click += new System.EventHandler(this.lbl_meembers_Click);
             // 
-            // Create_btn
-            // 
-            this.Create_btn.Font = new System.Drawing.Font("Sylfaen", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Create_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.Create_btn.Location = new System.Drawing.Point(492, 534);
-            this.Create_btn.Margin = new System.Windows.Forms.Padding(2);
-            this.Create_btn.Name = "Create_btn";
-            this.Create_btn.Size = new System.Drawing.Size(106, 40);
-            this.Create_btn.TabIndex = 54;
-            this.Create_btn.Text = "Создать";
-            this.Create_btn.UseVisualStyleBackColor = true;
-            this.Create_btn.Click += new System.EventHandler(this.Create_btn_Click);
-            // 
             // NewGroup_lbl
             // 
             this.NewGroup_lbl.AutoSize = true;
@@ -166,7 +152,6 @@
             this.Controls.Add(this.add_button);
             this.Controls.Add(this.Members_list);
             this.Controls.Add(this.NewGroup_lbl);
-            this.Controls.Add(this.Create_btn);
             this.Controls.Add(this.lbl_members);
             this.Controls.Add(this.entered_name);
             this.Controls.Add(this.frame);
@@ -191,7 +176,6 @@
         private TextBox entered_name;
         private Panel lbl_members;
         private Label lbl_meembers;
-        private Button Create_btn;
         private Label NewGroup_lbl;
         public ListBox Members_list;
         private Button add_button;
