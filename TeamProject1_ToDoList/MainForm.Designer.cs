@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.upper_panel = new System.Windows.Forms.Panel();
             this.search_btn = new System.Windows.Forms.Button();
@@ -57,7 +56,6 @@
             this.TypeOfTask_lbl = new System.Windows.Forms.Label();
             this.InfoTabel = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.right_panel = new System.Windows.Forms.Panel();
@@ -68,15 +66,13 @@
             this.task_group = new System.Windows.Forms.Label();
             this.frame4 = new System.Windows.Forms.Panel();
             this.task_date = new System.Windows.Forms.Label();
-            this.frame3 = new System.Windows.Forms.Panel();
-            this.task_parameter = new System.Windows.Forms.Label();
             this.frame1 = new System.Windows.Forms.Panel();
-            this.task_discription = new System.Windows.Forms.Label();
             this.lbl_date = new System.Windows.Forms.Label();
             this.lbl_group = new System.Windows.Forms.Label();
-            this.lbl_parameter = new System.Windows.Forms.Label();
             this.lbl_discription = new System.Windows.Forms.Label();
             this.lbl_information = new System.Windows.Forms.Label();
+            this.ShowTask = new System.Windows.Forms.Button();
+            this.textbox_group = new System.Windows.Forms.TextBox();
             this.upper_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainPicture)).BeginInit();
             this.left_panel.SuspendLayout();
@@ -85,9 +81,6 @@
             this.frame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InfoTabel)).BeginInit();
             this.frame5.SuspendLayout();
-            this.frame4.SuspendLayout();
-            this.frame3.SuspendLayout();
-            this.frame1.SuspendLayout();
             this.SuspendLayout();
             // 
             // upper_panel
@@ -350,18 +343,17 @@
             this.InfoTabel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.InfoTabel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
             this.Date,
             this.Group});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sitka Small", 9.124999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.InfoTabel.DefaultCellStyle = dataGridViewCellStyle5;
-            this.InfoTabel.Location = new System.Drawing.Point(312, 175);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sitka Small", 9.124999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.InfoTabel.DefaultCellStyle = dataGridViewCellStyle4;
+            this.InfoTabel.Location = new System.Drawing.Point(309, 163);
             this.InfoTabel.Margin = new System.Windows.Forms.Padding(2);
             this.InfoTabel.Name = "InfoTabel";
             this.InfoTabel.RowHeadersWidth = 82;
@@ -371,31 +363,20 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Sitka Heading", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Описание ";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Группа ";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 133;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Параметр";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 130;
             // 
             // Date
             // 
             this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Date.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Date.DefaultCellStyle = dataGridViewCellStyle2;
             this.Date.HeaderText = "Дата ";
             this.Date.MinimumWidth = 10;
             this.Date.Name = "Date";
@@ -404,12 +385,12 @@
             // Group
             // 
             this.Group.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Group.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Group.HeaderText = "Группа";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Group.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Group.HeaderText = "Описание";
             this.Group.MinimumWidth = 10;
             this.Group.Name = "Group";
-            this.Group.Width = 105;
+            this.Group.Width = 128;
             // 
             // right_panel
             // 
@@ -460,7 +441,7 @@
             // 
             this.frame5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.frame5.Controls.Add(this.task_group);
-            this.frame5.Location = new System.Drawing.Point(1062, 600);
+            this.frame5.Location = new System.Drawing.Point(1058, 452);
             this.frame5.Margin = new System.Windows.Forms.Padding(2);
             this.frame5.Name = "frame5";
             this.frame5.Size = new System.Drawing.Size(194, 66);
@@ -471,7 +452,7 @@
             this.task_group.AutoSize = true;
             this.task_group.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.task_group.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.task_group.Location = new System.Drawing.Point(0, 9);
+            this.task_group.Location = new System.Drawing.Point(2, 13);
             this.task_group.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.task_group.Name = "task_group";
             this.task_group.Size = new System.Drawing.Size(152, 35);
@@ -481,8 +462,7 @@
             // frame4
             // 
             this.frame4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.frame4.Controls.Add(this.task_date);
-            this.frame4.Location = new System.Drawing.Point(1061, 467);
+            this.frame4.Location = new System.Drawing.Point(1059, 323);
             this.frame4.Margin = new System.Windows.Forms.Padding(2);
             this.frame4.Name = "frame4";
             this.frame4.Size = new System.Drawing.Size(194, 66);
@@ -494,63 +474,28 @@
             this.task_date.AutoSize = true;
             this.task_date.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.task_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.task_date.Location = new System.Drawing.Point(0, 9);
+            this.task_date.Location = new System.Drawing.Point(1061, 334);
             this.task_date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.task_date.Name = "task_date";
             this.task_date.Size = new System.Drawing.Size(122, 35);
             this.task_date.TabIndex = 3;
             this.task_date.Text = "13.03.2023";
             // 
-            // frame3
-            // 
-            this.frame3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.frame3.Controls.Add(this.task_parameter);
-            this.frame3.Location = new System.Drawing.Point(1058, 339);
-            this.frame3.Margin = new System.Windows.Forms.Padding(2);
-            this.frame3.Name = "frame3";
-            this.frame3.Size = new System.Drawing.Size(194, 66);
-            this.frame3.TabIndex = 57;
-            // 
-            // task_parameter
-            // 
-            this.task_parameter.AutoSize = true;
-            this.task_parameter.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.task_parameter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.task_parameter.Location = new System.Drawing.Point(0, 9);
-            this.task_parameter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.task_parameter.Name = "task_parameter";
-            this.task_parameter.Size = new System.Drawing.Size(84, 35);
-            this.task_parameter.TabIndex = 3;
-            this.task_parameter.Text = "Общая";
-            // 
             // frame1
             // 
             this.frame1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.frame1.Controls.Add(this.task_discription);
             this.frame1.Location = new System.Drawing.Point(1058, 196);
             this.frame1.Margin = new System.Windows.Forms.Padding(2);
             this.frame1.Name = "frame1";
             this.frame1.Size = new System.Drawing.Size(194, 66);
             this.frame1.TabIndex = 56;
             // 
-            // task_discription
-            // 
-            this.task_discription.AutoSize = true;
-            this.task_discription.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.task_discription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.task_discription.Location = new System.Drawing.Point(0, 9);
-            this.task_discription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.task_discription.Name = "task_discription";
-            this.task_discription.Size = new System.Drawing.Size(175, 35);
-            this.task_discription.TabIndex = 3;
-            this.task_discription.Text = "Сделать проект";
-            // 
             // lbl_date
             // 
             this.lbl_date.AutoSize = true;
             this.lbl_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_date.Location = new System.Drawing.Point(882, 477);
+            this.lbl_date.Location = new System.Drawing.Point(882, 334);
             this.lbl_date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_date.Name = "lbl_date";
             this.lbl_date.Size = new System.Drawing.Size(63, 26);
@@ -562,36 +507,24 @@
             this.lbl_group.AutoSize = true;
             this.lbl_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_group.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_group.Location = new System.Drawing.Point(882, 620);
+            this.lbl_group.Location = new System.Drawing.Point(882, 473);
             this.lbl_group.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_group.Name = "lbl_group";
-            this.lbl_group.Size = new System.Drawing.Size(83, 26);
+            this.lbl_group.Size = new System.Drawing.Size(112, 26);
             this.lbl_group.TabIndex = 54;
-            this.lbl_group.Text = "Группа";
-            // 
-            // lbl_parameter
-            // 
-            this.lbl_parameter.AutoSize = true;
-            this.lbl_parameter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_parameter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_parameter.Location = new System.Drawing.Point(882, 349);
-            this.lbl_parameter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_parameter.Name = "lbl_parameter";
-            this.lbl_parameter.Size = new System.Drawing.Size(114, 26);
-            this.lbl_parameter.TabIndex = 53;
-            this.lbl_parameter.Text = "Параметр";
+            this.lbl_group.Text = "Описание";
             // 
             // lbl_discription
             // 
             this.lbl_discription.AutoSize = true;
             this.lbl_discription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_discription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_discription.Location = new System.Drawing.Point(882, 218);
+            this.lbl_discription.Location = new System.Drawing.Point(882, 215);
             this.lbl_discription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_discription.Name = "lbl_discription";
-            this.lbl_discription.Size = new System.Drawing.Size(112, 26);
+            this.lbl_discription.Size = new System.Drawing.Size(83, 26);
             this.lbl_discription.TabIndex = 52;
-            this.lbl_discription.Text = "Описание";
+            this.lbl_discription.Text = "Группа";
             // 
             // lbl_information
             // 
@@ -605,22 +538,40 @@
             this.lbl_information.TabIndex = 19;
             this.lbl_information.Text = "Информация о деле";
             // 
+            // ShowTask
+            // 
+            this.ShowTask.Location = new System.Drawing.Point(681, 115);
+            this.ShowTask.Name = "ShowTask";
+            this.ShowTask.Size = new System.Drawing.Size(157, 34);
+            this.ShowTask.TabIndex = 60;
+            this.ShowTask.Text = "Показать задачи";
+            this.ShowTask.UseVisualStyleBackColor = true;
+            this.ShowTask.Click += new System.EventHandler(this.ShowTask_Click);
+            // 
+            // textbox_group
+            // 
+            this.textbox_group.Location = new System.Drawing.Point(1059, 163);
+            this.textbox_group.Name = "textbox_group";
+            this.textbox_group.Size = new System.Drawing.Size(194, 31);
+            this.textbox_group.TabIndex = 61;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(1290, 820);
+            this.Controls.Add(this.textbox_group);
+            this.Controls.Add(this.task_date);
+            this.Controls.Add(this.ShowTask);
             this.Controls.Add(this.lbl_information);
             this.Controls.Add(this.TypeOfTask_lbl);
             this.Controls.Add(this.frame5);
             this.Controls.Add(this.frame4);
-            this.Controls.Add(this.frame3);
             this.Controls.Add(this.frame1);
             this.Controls.Add(this.ArchiveShow_btn);
             this.Controls.Add(this.lbl_date);
             this.Controls.Add(this.lbl_group);
-            this.Controls.Add(this.lbl_parameter);
             this.Controls.Add(this.lbl_discription);
             this.Controls.Add(this.upper_panel);
             this.Controls.Add(this.TaskDone_btn);
@@ -647,12 +598,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.InfoTabel)).EndInit();
             this.frame5.ResumeLayout(false);
             this.frame5.PerformLayout();
-            this.frame4.ResumeLayout(false);
-            this.frame4.PerformLayout();
-            this.frame3.ResumeLayout(false);
-            this.frame3.PerformLayout();
-            this.frame1.ResumeLayout(false);
-            this.frame1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -671,15 +616,11 @@
         private Label lbl_name;
         private Panel frame2;
         private Label Calendar_lbl;
-        private DataGridView InfoTabel;
+        public DataGridView InfoTabel;
         private Panel right_panel;
         private Button TaskAdd_btn;
         private Button TaskDelete_btn;
         private Button TaskDone_btn;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn Date;
-        private DataGridViewTextBoxColumn Group;
         private Label lbl_mygroups;
         public ListBox PersonGroups_list;
         private Panel substrate;
@@ -689,13 +630,9 @@
         private Label task_group;
         private Panel frame4;
         private Label task_date;
-        private Panel frame3;
-        private Label task_parameter;
         private Panel frame1;
-        private Label task_discription;
         private Label lbl_date;
         private Label lbl_group;
-        private Label lbl_parameter;
         private Label lbl_discription;
         private Label lbl_information;
         private Button search_btn;
@@ -703,5 +640,10 @@
         private Button MyGroups_btn;
         private Button AppointTask_lbl;
         private Button show_group_button;
+        private Button ShowTask;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn Group;
+        private TextBox textbox_group;
     }
 }

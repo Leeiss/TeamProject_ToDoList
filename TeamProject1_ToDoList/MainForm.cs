@@ -119,8 +119,39 @@ namespace TeamProject1_ToDoList
                 PersonGroups_list.Items.Add((string)reader[0]);
 
             }
+
+
+            
         }
 
-       
+
+        private void ShowTask_Click(object sender, EventArgs e)
+        {
+            DataBase db = new DataBase();
+
+            MySqlCommand command1 = new MySqlCommand("SELECT * FROM tasks", db.GetConnection());
+
+            db.OpenConnection();
+            DbDataReader reader = command1.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[3]);
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+
+            }
+            reader.Close();
+            db.CloseConnection();
+
+            InfoTabel.Rows.Clear();
+
+            foreach (string[] s in data)
+            {
+                InfoTabel.Rows.Add(s);
+            }
+        }
     }
 }

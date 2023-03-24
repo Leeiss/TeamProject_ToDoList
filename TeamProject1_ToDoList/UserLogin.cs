@@ -68,12 +68,8 @@ namespace TeamProject1_ToDoList
 
                 mainForm.GetLogin = loginUser;
 
-
-                
-
-
                 mainForm.ShowDialog();
-                
+
 
             }
 

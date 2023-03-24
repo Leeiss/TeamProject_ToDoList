@@ -100,13 +100,17 @@ namespace TeamProject1_ToDoList
             String namegroup = MyGroups_list.SelectedItem.ToString();
             String login = Members_list.SelectedItem.ToString();
             String task = Entered_Text.Text;
+            string date = DateTime.UtcNow.ToString("yyyy-dd-");
+
 
 
             DataBase db = new DataBase();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `tasks` (`namegroup`, `userlogin`,`task`) VALUES(@name, @log, @tsk)", db.GetConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO `tasks` (`namegroup`,`date`, `userlogin`,`task`) VALUES(@name,@date, @log, @tsk)", db.GetConnection());
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = namegroup;
+            command.Parameters.Add("@date", MySqlDbType.VarChar).Value = date;
             command.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
             command.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = task;
+
 
             db.OpenConnection();
             if (command.ExecuteNonQuery() == 1)
