@@ -92,6 +92,8 @@ namespace TeamProject1_ToDoList
 
             }
 
+            db.CloseConnection();
+
 
         }
 
@@ -100,7 +102,7 @@ namespace TeamProject1_ToDoList
             String namegroup = MyGroups_list.SelectedItem.ToString();
             String login = Members_list.SelectedItem.ToString();
             String task = Entered_Text.Text;
-            string date = DateTime.UtcNow.ToString("yyyy-dd-");
+            string date = DateTime.UtcNow.ToString("yyyy-dd-MM");
 
 
 

@@ -62,17 +62,14 @@
             this.TaskAdd_btn = new System.Windows.Forms.Button();
             this.TaskDelete_btn = new System.Windows.Forms.Button();
             this.TaskDone_btn = new System.Windows.Forms.Button();
-            this.frame5 = new System.Windows.Forms.Panel();
-            this.task_group = new System.Windows.Forms.Label();
-            this.frame4 = new System.Windows.Forms.Panel();
-            this.task_date = new System.Windows.Forms.Label();
-            this.frame1 = new System.Windows.Forms.Panel();
             this.lbl_date = new System.Windows.Forms.Label();
             this.lbl_group = new System.Windows.Forms.Label();
             this.lbl_discription = new System.Windows.Forms.Label();
-            this.lbl_information = new System.Windows.Forms.Label();
             this.ShowTask = new System.Windows.Forms.Button();
             this.textbox_group = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox_date = new System.Windows.Forms.TextBox();
+            this.textbox_description = new System.Windows.Forms.TextBox();
             this.upper_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainPicture)).BeginInit();
             this.left_panel.SuspendLayout();
@@ -80,7 +77,6 @@
             this.frame2.SuspendLayout();
             this.frame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InfoTabel)).BeginInit();
-            this.frame5.SuspendLayout();
             this.SuspendLayout();
             // 
             // upper_panel
@@ -424,6 +420,7 @@
             this.TaskDelete_btn.TabIndex = 49;
             this.TaskDelete_btn.Text = "Удалить\r\nзадачу";
             this.TaskDelete_btn.UseVisualStyleBackColor = true;
+            this.TaskDelete_btn.Click += new System.EventHandler(this.TaskDelete_btn_Click_1);
             // 
             // TaskDone_btn
             // 
@@ -437,65 +434,12 @@
             this.TaskDone_btn.Text = "Выполнить\r\nзадачу";
             this.TaskDone_btn.UseVisualStyleBackColor = true;
             // 
-            // frame5
-            // 
-            this.frame5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.frame5.Controls.Add(this.task_group);
-            this.frame5.Location = new System.Drawing.Point(1058, 452);
-            this.frame5.Margin = new System.Windows.Forms.Padding(2);
-            this.frame5.Name = "frame5";
-            this.frame5.Size = new System.Drawing.Size(194, 66);
-            this.frame5.TabIndex = 59;
-            // 
-            // task_group
-            // 
-            this.task_group.AutoSize = true;
-            this.task_group.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.task_group.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.task_group.Location = new System.Drawing.Point(2, 13);
-            this.task_group.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.task_group.Name = "task_group";
-            this.task_group.Size = new System.Drawing.Size(152, 35);
-            this.task_group.TabIndex = 3;
-            this.task_group.Text = "Programmers";
-            // 
-            // frame4
-            // 
-            this.frame4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.frame4.Location = new System.Drawing.Point(1059, 323);
-            this.frame4.Margin = new System.Windows.Forms.Padding(2);
-            this.frame4.Name = "frame4";
-            this.frame4.Size = new System.Drawing.Size(194, 66);
-            this.frame4.TabIndex = 58;
-            this.frame4.TabStop = true;
-            // 
-            // task_date
-            // 
-            this.task_date.AutoSize = true;
-            this.task_date.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.task_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.task_date.Location = new System.Drawing.Point(1061, 334);
-            this.task_date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.task_date.Name = "task_date";
-            this.task_date.Size = new System.Drawing.Size(122, 35);
-            this.task_date.TabIndex = 3;
-            this.task_date.Text = "13.03.2023";
-            // 
-            // frame1
-            // 
-            this.frame1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.frame1.Location = new System.Drawing.Point(1058, 196);
-            this.frame1.Margin = new System.Windows.Forms.Padding(2);
-            this.frame1.Name = "frame1";
-            this.frame1.Size = new System.Drawing.Size(194, 66);
-            this.frame1.TabIndex = 56;
-            // 
             // lbl_date
             // 
             this.lbl_date.AutoSize = true;
             this.lbl_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_date.Location = new System.Drawing.Point(882, 334);
+            this.lbl_date.Location = new System.Drawing.Point(882, 405);
             this.lbl_date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_date.Name = "lbl_date";
             this.lbl_date.Size = new System.Drawing.Size(63, 26);
@@ -507,7 +451,7 @@
             this.lbl_group.AutoSize = true;
             this.lbl_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_group.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_group.Location = new System.Drawing.Point(882, 473);
+            this.lbl_group.Location = new System.Drawing.Point(882, 578);
             this.lbl_group.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_group.Name = "lbl_group";
             this.lbl_group.Size = new System.Drawing.Size(112, 26);
@@ -519,24 +463,12 @@
             this.lbl_discription.AutoSize = true;
             this.lbl_discription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_discription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_discription.Location = new System.Drawing.Point(882, 215);
+            this.lbl_discription.Location = new System.Drawing.Point(882, 234);
             this.lbl_discription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_discription.Name = "lbl_discription";
             this.lbl_discription.Size = new System.Drawing.Size(83, 26);
             this.lbl_discription.TabIndex = 52;
             this.lbl_discription.Text = "Группа";
-            // 
-            // lbl_information
-            // 
-            this.lbl_information.AutoSize = true;
-            this.lbl_information.Font = new System.Drawing.Font("Sitka Banner", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_information.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.lbl_information.Location = new System.Drawing.Point(868, 101);
-            this.lbl_information.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_information.Name = "lbl_information";
-            this.lbl_information.Size = new System.Drawing.Size(305, 48);
-            this.lbl_information.TabIndex = 19;
-            this.lbl_information.Text = "Информация о деле";
             // 
             // ShowTask
             // 
@@ -550,10 +482,39 @@
             // 
             // textbox_group
             // 
-            this.textbox_group.Location = new System.Drawing.Point(1059, 163);
+            this.textbox_group.Location = new System.Drawing.Point(1058, 214);
+            this.textbox_group.Multiline = true;
             this.textbox_group.Name = "textbox_group";
-            this.textbox_group.Size = new System.Drawing.Size(194, 31);
+            this.textbox_group.Size = new System.Drawing.Size(194, 65);
             this.textbox_group.TabIndex = 61;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(882, 83);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(298, 54);
+            this.button1.TabIndex = 62;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox_date
+            // 
+            this.textBox_date.Location = new System.Drawing.Point(1061, 382);
+            this.textBox_date.Multiline = true;
+            this.textBox_date.Name = "textBox_date";
+            this.textBox_date.Size = new System.Drawing.Size(191, 65);
+            this.textBox_date.TabIndex = 63;
+            // 
+            // textbox_description
+            // 
+            this.textbox_description.Location = new System.Drawing.Point(1061, 560);
+            this.textbox_description.Multiline = true;
+            this.textbox_description.Name = "textbox_description";
+            this.textbox_description.Size = new System.Drawing.Size(191, 65);
+            this.textbox_description.TabIndex = 64;
             // 
             // MainForm
             // 
@@ -561,14 +522,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(1290, 820);
+            this.Controls.Add(this.textbox_description);
+            this.Controls.Add(this.textBox_date);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textbox_group);
-            this.Controls.Add(this.task_date);
             this.Controls.Add(this.ShowTask);
-            this.Controls.Add(this.lbl_information);
             this.Controls.Add(this.TypeOfTask_lbl);
-            this.Controls.Add(this.frame5);
-            this.Controls.Add(this.frame4);
-            this.Controls.Add(this.frame1);
             this.Controls.Add(this.ArchiveShow_btn);
             this.Controls.Add(this.lbl_date);
             this.Controls.Add(this.lbl_group);
@@ -596,8 +555,6 @@
             this.frame.ResumeLayout(false);
             this.frame.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InfoTabel)).EndInit();
-            this.frame5.ResumeLayout(false);
-            this.frame5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -626,15 +583,9 @@
         private Panel substrate;
         private Label group_tasks_lbl;
         private Button ArchiveShow_btn;
-        private Panel frame5;
-        private Label task_group;
-        private Panel frame4;
-        private Label task_date;
-        private Panel frame1;
         private Label lbl_date;
         private Label lbl_group;
         private Label lbl_discription;
-        private Label lbl_information;
         private Button search_btn;
         private TextBox Entered_Text;
         private Button MyGroups_btn;
@@ -645,5 +596,8 @@
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Group;
         private TextBox textbox_group;
+        private Button button1;
+        private TextBox textBox_date;
+        private TextBox textbox_description;
     }
 }

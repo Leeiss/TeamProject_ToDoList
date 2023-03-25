@@ -1,5 +1,6 @@
 using MySql.Data.MySqlClient;
 using System.Data.Common;
+using System.Windows.Forms;
 using TeamProject1_ToDoList.Classes;
 
 
@@ -103,6 +104,7 @@ namespace TeamProject1_ToDoList
             MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  userlogin = @L ", db.GetConnection());
             command1.Parameters.Add("@L", MySqlDbType.VarChar).Value = login;
 
+
             db.OpenConnection();
             DbDataReader reader = command1.ExecuteReader();
             string statement = "";
@@ -121,7 +123,7 @@ namespace TeamProject1_ToDoList
             }
 
 
-            
+
         }
 
 
@@ -129,7 +131,9 @@ namespace TeamProject1_ToDoList
         {
             DataBase db = new DataBase();
 
-            MySqlCommand command1 = new MySqlCommand("SELECT * FROM tasks", db.GetConnection());
+            MySqlCommand command1 = new MySqlCommand("SELECT * FROM tasks WHERE userlogin = @log", db.GetConnection());
+            command1.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
+
 
             db.OpenConnection();
             DbDataReader reader = command1.ExecuteReader();
@@ -152,6 +156,56 @@ namespace TeamProject1_ToDoList
             {
                 InfoTabel.Rows.Add(s);
             }
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int i = InfoTabel.CurrentCell.RowIndex;
+
+
+            textbox_group.Text = InfoTabel[0, i].Value.ToString();
+            textBox_date.Text = InfoTabel[1, i].Value.ToString();
+            textbox_description.Text = InfoTabel[2, i].Value.ToString();
+        }
+
+        private void TaskDelete_btn_Click_1(object sender, EventArgs e)
+        {
+
+            DataBase db = new DataBase();
+            db.OpenConnection();
+
+            MySqlCommand command2 = new MySqlCommand("DELETE  FROM tasks WHERE userlogin = @del AND task = @tsk ", db.GetConnection());
+            command2.Parameters.Add("@del", MySqlDbType.VarChar).Value = login;
+            command2.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = textbox_description.Text;
+
+
+            command2.ExecuteNonQuery();
+
+
+            DbDataReader reader = command2.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[3]);
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+
+            }
+            reader.Close();
+            db.CloseConnection();
+
+            InfoTabel.Rows.Clear();
+
+            foreach (string[] s in data)
+            {
+                InfoTabel.Rows.Add(s);
+            }
+
+
         }
     }
 }
