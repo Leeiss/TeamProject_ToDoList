@@ -28,139 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Create_lbl = new Label();
-            lbl_instruction = new Label();
-            lbl_date = new Label();
-            lbl_discription = new Label();
-            entered_describtion = new TextBox();
-            selected_date = new MonthCalendar();
-            Create_btn = new Button();
-            lbl_repeat = new Label();
-            entered_date_interval = new TextBox();
-            lbl_days = new Label();
-            SuspendLayout();
+            this.Create_lbl = new System.Windows.Forms.Label();
+            this.lbl_instruction = new System.Windows.Forms.Label();
+            this.lbl_date = new System.Windows.Forms.Label();
+            this.lbl_discription = new System.Windows.Forms.Label();
+            this.entered_describtion = new System.Windows.Forms.TextBox();
+            this.selected_date = new System.Windows.Forms.MonthCalendar();
+            this.Create_btn = new System.Windows.Forms.Button();
+            this.lbl_repeat = new System.Windows.Forms.Label();
+            this.entered_date_interval = new System.Windows.Forms.TextBox();
+            this.lbl_days = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // Create_lbl
             // 
-            Create_lbl.AutoSize = true;
-            Create_lbl.Font = new Font("Sitka Banner", 16.125F, FontStyle.Bold, GraphicsUnit.Point);
-            Create_lbl.ForeColor = Color.FromArgb(159, 108, 80);
-            Create_lbl.Location = new Point(12, 28);
-            Create_lbl.Name = "Create_lbl";
-            Create_lbl.Size = new Size(464, 62);
-            Create_lbl.TabIndex = 4;
-            Create_lbl.Text = "Создание новой задачи";
+            this.Create_lbl.AutoSize = true;
+            this.Create_lbl.Font = new System.Drawing.Font("Sitka Banner", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Create_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
+            this.Create_lbl.Location = new System.Drawing.Point(9, 22);
+            this.Create_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Create_lbl.Name = "Create_lbl";
+            this.Create_lbl.Size = new System.Drawing.Size(355, 48);
+            this.Create_lbl.TabIndex = 4;
+            this.Create_lbl.Text = "Создание новой задачи";
             // 
             // lbl_instruction
             // 
-            lbl_instruction.AutoSize = true;
-            lbl_instruction.Font = new Font("Sylfaen", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_instruction.ForeColor = Color.Gray;
-            lbl_instruction.Location = new Point(12, 814);
-            lbl_instruction.Name = "lbl_instruction";
-            lbl_instruction.Size = new Size(420, 62);
-            lbl_instruction.TabIndex = 58;
-            lbl_instruction.Text = "*Для создания новой задачи в группе, \r\nвы должны создать свою группу";
+            this.lbl_instruction.AutoSize = true;
+            this.lbl_instruction.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_instruction.ForeColor = System.Drawing.Color.Gray;
+            this.lbl_instruction.Location = new System.Drawing.Point(9, 636);
+            this.lbl_instruction.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_instruction.Name = "lbl_instruction";
+            this.lbl_instruction.Size = new System.Drawing.Size(306, 46);
+            this.lbl_instruction.TabIndex = 58;
+            this.lbl_instruction.Text = "*Для создания новой задачи в группе, \r\nвы должны создать свою группу";
             // 
             // lbl_date
             // 
-            lbl_date.AutoSize = true;
-            lbl_date.Font = new Font("XO Courser", 10.875F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_date.ForeColor = Color.FromArgb(64, 64, 64);
-            lbl_date.Location = new Point(27, 302);
-            lbl_date.Name = "lbl_date";
-            lbl_date.Size = new Size(82, 32);
-            lbl_date.TabIndex = 61;
-            lbl_date.Text = "Дата";
+            this.lbl_date.AutoSize = true;
+            this.lbl_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_date.Location = new System.Drawing.Point(21, 158);
+            this.lbl_date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_date.Name = "lbl_date";
+            this.lbl_date.Size = new System.Drawing.Size(63, 26);
+            this.lbl_date.TabIndex = 61;
+            this.lbl_date.Text = "Дата";
             // 
             // lbl_discription
             // 
-            lbl_discription.AutoSize = true;
-            lbl_discription.Font = new Font("XO Courser", 10.875F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_discription.ForeColor = Color.FromArgb(64, 64, 64);
-            lbl_discription.Location = new Point(27, 184);
-            lbl_discription.Name = "lbl_discription";
-            lbl_discription.Size = new Size(150, 32);
-            lbl_discription.TabIndex = 59;
-            lbl_discription.Text = "Описание";
+            this.lbl_discription.AutoSize = true;
+            this.lbl_discription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_discription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_discription.Location = new System.Drawing.Point(21, 87);
+            this.lbl_discription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_discription.Name = "lbl_discription";
+            this.lbl_discription.Size = new System.Drawing.Size(112, 26);
+            this.lbl_discription.TabIndex = 59;
+            this.lbl_discription.Text = "Описание";
             // 
             // entered_describtion
             // 
-            entered_describtion.BorderStyle = BorderStyle.FixedSingle;
-            entered_describtion.Font = new Font("XO Courser", 10.875F, FontStyle.Regular, GraphicsUnit.Point);
-            entered_describtion.Location = new Point(344, 184);
-            entered_describtion.Name = "entered_describtion";
-            entered_describtion.Size = new Size(285, 40);
-            entered_describtion.TabIndex = 65;
+            this.entered_describtion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.entered_describtion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.entered_describtion.Location = new System.Drawing.Point(273, 87);
+            this.entered_describtion.Margin = new System.Windows.Forms.Padding(2);
+            this.entered_describtion.Name = "entered_describtion";
+            this.entered_describtion.Size = new System.Drawing.Size(228, 32);
+            this.entered_describtion.TabIndex = 65;
             // 
             // selected_date
             // 
-            selected_date.Location = new Point(344, 288);
-            selected_date.Name = "selected_date";
-            selected_date.TabIndex = 67;
+            this.selected_date.Location = new System.Drawing.Point(273, 158);
+            this.selected_date.Margin = new System.Windows.Forms.Padding(7);
+            this.selected_date.Name = "selected_date";
+            this.selected_date.TabIndex = 67;
             // 
             // Create_btn
             // 
-            Create_btn.Font = new Font("Sylfaen", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            Create_btn.ForeColor = Color.FromArgb(159, 108, 80);
-            Create_btn.Location = new Point(522, 825);
-            Create_btn.Name = "Create_btn";
-            Create_btn.Size = new Size(138, 51);
-            Create_btn.TabIndex = 68;
-            Create_btn.Text = "Создать";
-            Create_btn.UseVisualStyleBackColor = true;
+            this.Create_btn.Font = new System.Drawing.Font("Sylfaen", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Create_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
+            this.Create_btn.Location = new System.Drawing.Point(402, 645);
+            this.Create_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.Create_btn.Name = "Create_btn";
+            this.Create_btn.Size = new System.Drawing.Size(106, 40);
+            this.Create_btn.TabIndex = 68;
+            this.Create_btn.Text = "Создать";
+            this.Create_btn.UseVisualStyleBackColor = true;
+            this.Create_btn.Click += new System.EventHandler(this.Create_btn_Click);
             // 
             // lbl_repeat
             // 
-            lbl_repeat.AutoSize = true;
-            lbl_repeat.Font = new Font("XO Courser", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_repeat.ForeColor = Color.FromArgb(64, 64, 64);
-            lbl_repeat.Location = new Point(27, 697);
-            lbl_repeat.Name = "lbl_repeat";
-            lbl_repeat.Size = new Size(349, 60);
-            lbl_repeat.TabIndex = 69;
-            lbl_repeat.Text = "Сделать повторяющейся\r\n каждые";
+            this.lbl_repeat.AutoSize = true;
+            this.lbl_repeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_repeat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_repeat.Location = new System.Drawing.Point(21, 545);
+            this.lbl_repeat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_repeat.Name = "lbl_repeat";
+            this.lbl_repeat.Size = new System.Drawing.Size(261, 50);
+            this.lbl_repeat.TabIndex = 69;
+            this.lbl_repeat.Text = "Сделать повторяющейся\r\n каждые";
             // 
             // entered_date_interval
             // 
-            entered_date_interval.BorderStyle = BorderStyle.FixedSingle;
-            entered_date_interval.Font = new Font("XO Courser", 10.875F, FontStyle.Regular, GraphicsUnit.Point);
-            entered_date_interval.Location = new Point(419, 701);
-            entered_date_interval.Name = "entered_date_interval";
-            entered_date_interval.Size = new Size(107, 40);
-            entered_date_interval.TabIndex = 70;
+            this.entered_date_interval.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.entered_date_interval.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.entered_date_interval.Location = new System.Drawing.Point(322, 548);
+            this.entered_date_interval.Margin = new System.Windows.Forms.Padding(2);
+            this.entered_date_interval.Name = "entered_date_interval";
+            this.entered_date_interval.Size = new System.Drawing.Size(83, 32);
+            this.entered_date_interval.TabIndex = 70;
             // 
             // lbl_days
             // 
-            lbl_days.AutoSize = true;
-            lbl_days.Font = new Font("XO Courser", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_days.ForeColor = Color.FromArgb(64, 64, 64);
-            lbl_days.Location = new Point(542, 704);
-            lbl_days.Name = "lbl_days";
-            lbl_days.Size = new Size(77, 30);
-            lbl_days.TabIndex = 71;
-            lbl_days.Text = "дней";
+            this.lbl_days.AutoSize = true;
+            this.lbl_days.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_days.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_days.Location = new System.Drawing.Point(417, 550);
+            this.lbl_days.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_days.Name = "lbl_days";
+            this.lbl_days.Size = new System.Drawing.Size(60, 25);
+            this.lbl_days.TabIndex = 71;
+            this.lbl_days.Text = "дней";
             // 
             // NewTaskForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(672, 888);
-            Controls.Add(lbl_days);
-            Controls.Add(entered_date_interval);
-            Controls.Add(lbl_repeat);
-            Controls.Add(Create_btn);
-            Controls.Add(selected_date);
-            Controls.Add(entered_describtion);
-            Controls.Add(lbl_date);
-            Controls.Add(lbl_discription);
-            Controls.Add(lbl_instruction);
-            Controls.Add(Create_lbl);
-            Name = "NewTaskForm";
-            Text = "Новое задание";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(517, 694);
+            this.Controls.Add(this.lbl_days);
+            this.Controls.Add(this.entered_date_interval);
+            this.Controls.Add(this.lbl_repeat);
+            this.Controls.Add(this.Create_btn);
+            this.Controls.Add(this.selected_date);
+            this.Controls.Add(this.entered_describtion);
+            this.Controls.Add(this.lbl_date);
+            this.Controls.Add(this.lbl_discription);
+            this.Controls.Add(this.lbl_instruction);
+            this.Controls.Add(this.Create_lbl);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "NewTaskForm";
+            this.Text = "Новое задание";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

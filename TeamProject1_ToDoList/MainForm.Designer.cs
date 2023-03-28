@@ -41,15 +41,12 @@
             this.lbl_account = new System.Windows.Forms.Label();
             this.ArchiveShow_btn = new System.Windows.Forms.Button();
             this.left_panel = new System.Windows.Forms.Panel();
+            this.common_afairs_btn = new System.Windows.Forms.Button();
             this.show_group_button = new System.Windows.Forms.Button();
             this.AppointTask_lbl = new System.Windows.Forms.Button();
             this.MyGroups_btn = new System.Windows.Forms.Button();
-            this.substrate = new System.Windows.Forms.Panel();
-            this.group_tasks_lbl = new System.Windows.Forms.Label();
             this.PersonGroups_list = new System.Windows.Forms.ListBox();
             this.lbl_mygroups = new System.Windows.Forms.Label();
-            this.frame2 = new System.Windows.Forms.Panel();
-            this.Calendar_lbl = new System.Windows.Forms.Label();
             this.personal_affairs_btn = new System.Windows.Forms.Button();
             this.frame = new System.Windows.Forms.Panel();
             this.my_tasks_lbl = new System.Windows.Forms.Label();
@@ -58,6 +55,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Parametr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.right_panel = new System.Windows.Forms.Panel();
             this.TaskAdd_btn = new System.Windows.Forms.Button();
             this.TaskDelete_btn = new System.Windows.Forms.Button();
@@ -65,16 +63,16 @@
             this.lbl_date = new System.Windows.Forms.Label();
             this.lbl_group = new System.Windows.Forms.Label();
             this.lbl_discription = new System.Windows.Forms.Label();
-            this.ShowTask = new System.Windows.Forms.Button();
             this.textbox_group = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_date = new System.Windows.Forms.TextBox();
             this.textbox_description = new System.Windows.Forms.TextBox();
+            this.parametr_lable = new System.Windows.Forms.Label();
+            this.textbox_parametr = new System.Windows.Forms.TextBox();
+            this.Open_calendar_btn = new System.Windows.Forms.Button();
             this.upper_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainPicture)).BeginInit();
             this.left_panel.SuspendLayout();
-            this.substrate.SuspendLayout();
-            this.frame2.SuspendLayout();
             this.frame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InfoTabel)).BeginInit();
             this.SuspendLayout();
@@ -166,13 +164,13 @@
             // left_panel
             // 
             this.left_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
+            this.left_panel.Controls.Add(this.Open_calendar_btn);
+            this.left_panel.Controls.Add(this.common_afairs_btn);
             this.left_panel.Controls.Add(this.show_group_button);
             this.left_panel.Controls.Add(this.AppointTask_lbl);
             this.left_panel.Controls.Add(this.MyGroups_btn);
-            this.left_panel.Controls.Add(this.substrate);
             this.left_panel.Controls.Add(this.PersonGroups_list);
             this.left_panel.Controls.Add(this.lbl_mygroups);
-            this.left_panel.Controls.Add(this.frame2);
             this.left_panel.Controls.Add(this.personal_affairs_btn);
             this.left_panel.Controls.Add(this.frame);
             this.left_panel.Location = new System.Drawing.Point(-2, 55);
@@ -180,6 +178,20 @@
             this.left_panel.Name = "left_panel";
             this.left_panel.Size = new System.Drawing.Size(300, 814);
             this.left_panel.TabIndex = 1;
+            // 
+            // common_afairs_btn
+            // 
+            this.common_afairs_btn.BackColor = System.Drawing.Color.White;
+            this.common_afairs_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.common_afairs_btn.Location = new System.Drawing.Point(13, 186);
+            this.common_afairs_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.common_afairs_btn.Name = "common_afairs_btn";
+            this.common_afairs_btn.Size = new System.Drawing.Size(258, 36);
+            this.common_afairs_btn.TabIndex = 62;
+            this.common_afairs_btn.Text = "Общие дела";
+            this.common_afairs_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.common_afairs_btn.UseVisualStyleBackColor = false;
+            this.common_afairs_btn.Click += new System.EventHandler(this.common_afairs_btn_Click);
             // 
             // show_group_button
             // 
@@ -219,27 +231,6 @@
             this.MyGroups_btn.UseVisualStyleBackColor = true;
             this.MyGroups_btn.Click += new System.EventHandler(this.MyGroups_btn_Click);
             // 
-            // substrate
-            // 
-            this.substrate.BackColor = System.Drawing.Color.White;
-            this.substrate.Controls.Add(this.group_tasks_lbl);
-            this.substrate.Location = new System.Drawing.Point(12, 188);
-            this.substrate.Margin = new System.Windows.Forms.Padding(2);
-            this.substrate.Name = "substrate";
-            this.substrate.Size = new System.Drawing.Size(258, 36);
-            this.substrate.TabIndex = 58;
-            // 
-            // group_tasks_lbl
-            // 
-            this.group_tasks_lbl.AutoSize = true;
-            this.group_tasks_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.group_tasks_lbl.Location = new System.Drawing.Point(6, 6);
-            this.group_tasks_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.group_tasks_lbl.Name = "group_tasks_lbl";
-            this.group_tasks_lbl.Size = new System.Drawing.Size(140, 26);
-            this.group_tasks_lbl.TabIndex = 0;
-            this.group_tasks_lbl.Text = "Общие дела";
-            // 
             // PersonGroups_list
             // 
             this.PersonGroups_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -263,28 +254,6 @@
             this.lbl_mygroups.TabIndex = 56;
             this.lbl_mygroups.Text = "Группы";
             // 
-            // frame2
-            // 
-            this.frame2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.frame2.Controls.Add(this.Calendar_lbl);
-            this.frame2.Location = new System.Drawing.Point(12, 445);
-            this.frame2.Margin = new System.Windows.Forms.Padding(2);
-            this.frame2.Name = "frame2";
-            this.frame2.Size = new System.Drawing.Size(259, 90);
-            this.frame2.TabIndex = 22;
-            // 
-            // Calendar_lbl
-            // 
-            this.Calendar_lbl.AutoSize = true;
-            this.Calendar_lbl.Font = new System.Drawing.Font("Sitka Banner", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Calendar_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.Calendar_lbl.Location = new System.Drawing.Point(-4, 16);
-            this.Calendar_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Calendar_lbl.Name = "Calendar_lbl";
-            this.Calendar_lbl.Size = new System.Drawing.Size(172, 48);
-            this.Calendar_lbl.TabIndex = 3;
-            this.Calendar_lbl.Text = "Календарь";
-            // 
             // personal_affairs_btn
             // 
             this.personal_affairs_btn.BackColor = System.Drawing.Color.White;
@@ -297,6 +266,7 @@
             this.personal_affairs_btn.Text = "Личные дела";
             this.personal_affairs_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.personal_affairs_btn.UseVisualStyleBackColor = false;
+            this.personal_affairs_btn.Click += new System.EventHandler(this.personal_affairs_btn_Click_1);
             // 
             // frame
             // 
@@ -325,12 +295,12 @@
             this.TypeOfTask_lbl.AutoSize = true;
             this.TypeOfTask_lbl.Font = new System.Drawing.Font("Sitka Banner", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TypeOfTask_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.TypeOfTask_lbl.Location = new System.Drawing.Point(321, 101);
+            this.TypeOfTask_lbl.Location = new System.Drawing.Point(309, 83);
             this.TypeOfTask_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TypeOfTask_lbl.Name = "TypeOfTask_lbl";
-            this.TypeOfTask_lbl.Size = new System.Drawing.Size(209, 48);
+            this.TypeOfTask_lbl.Size = new System.Drawing.Size(123, 48);
             this.TypeOfTask_lbl.TabIndex = 19;
-            this.TypeOfTask_lbl.Text = "Личные дела";
+            this.TypeOfTask_lbl.Text = "Задачи";
             // 
             // InfoTabel
             // 
@@ -340,7 +310,8 @@
             this.InfoTabel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.Date,
-            this.Group});
+            this.Group,
+            this.Parametr});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Sitka Small", 9.124999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -349,7 +320,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.InfoTabel.DefaultCellStyle = dataGridViewCellStyle4;
-            this.InfoTabel.Location = new System.Drawing.Point(309, 163);
+            this.InfoTabel.Location = new System.Drawing.Point(309, 151);
             this.InfoTabel.Margin = new System.Windows.Forms.Padding(2);
             this.InfoTabel.Name = "InfoTabel";
             this.InfoTabel.RowHeadersWidth = 82;
@@ -388,6 +359,13 @@
             this.Group.Name = "Group";
             this.Group.Width = 128;
             // 
+            // Parametr
+            // 
+            this.Parametr.HeaderText = "Параметр";
+            this.Parametr.MinimumWidth = 8;
+            this.Parametr.Name = "Parametr";
+            this.Parametr.Width = 150;
+            // 
             // right_panel
             // 
             this.right_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
@@ -408,6 +386,7 @@
             this.TaskAdd_btn.TabIndex = 48;
             this.TaskAdd_btn.Text = "Добавить\r\nзадачу";
             this.TaskAdd_btn.UseVisualStyleBackColor = true;
+            this.TaskAdd_btn.Click += new System.EventHandler(this.TaskAdd_btn_Click_1);
             // 
             // TaskDelete_btn
             // 
@@ -470,16 +449,6 @@
             this.lbl_discription.TabIndex = 52;
             this.lbl_discription.Text = "Группа";
             // 
-            // ShowTask
-            // 
-            this.ShowTask.Location = new System.Drawing.Point(681, 115);
-            this.ShowTask.Name = "ShowTask";
-            this.ShowTask.Size = new System.Drawing.Size(157, 34);
-            this.ShowTask.TabIndex = 60;
-            this.ShowTask.Text = "Показать задачи";
-            this.ShowTask.UseVisualStyleBackColor = true;
-            this.ShowTask.Click += new System.EventHandler(this.ShowTask_Click);
-            // 
             // textbox_group
             // 
             this.textbox_group.Location = new System.Drawing.Point(1058, 214);
@@ -510,11 +479,41 @@
             // 
             // textbox_description
             // 
-            this.textbox_description.Location = new System.Drawing.Point(1061, 560);
+            this.textbox_description.Location = new System.Drawing.Point(1061, 555);
             this.textbox_description.Multiline = true;
             this.textbox_description.Name = "textbox_description";
             this.textbox_description.Size = new System.Drawing.Size(191, 65);
             this.textbox_description.TabIndex = 64;
+            // 
+            // parametr_lable
+            // 
+            this.parametr_lable.AutoSize = true;
+            this.parametr_lable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.parametr_lable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.parametr_lable.Location = new System.Drawing.Point(882, 740);
+            this.parametr_lable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.parametr_lable.Name = "parametr_lable";
+            this.parametr_lable.Size = new System.Drawing.Size(114, 26);
+            this.parametr_lable.TabIndex = 66;
+            this.parametr_lable.Text = "Параметр";
+            // 
+            // textbox_parametr
+            // 
+            this.textbox_parametr.Location = new System.Drawing.Point(1061, 723);
+            this.textbox_parametr.Multiline = true;
+            this.textbox_parametr.Name = "textbox_parametr";
+            this.textbox_parametr.Size = new System.Drawing.Size(191, 65);
+            this.textbox_parametr.TabIndex = 67;
+            // 
+            // Open_calendar_btn
+            // 
+            this.Open_calendar_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Open_calendar_btn.BackgroundImage")));
+            this.Open_calendar_btn.Location = new System.Drawing.Point(8, 459);
+            this.Open_calendar_btn.Name = "Open_calendar_btn";
+            this.Open_calendar_btn.Size = new System.Drawing.Size(241, 52);
+            this.Open_calendar_btn.TabIndex = 63;
+            this.Open_calendar_btn.UseVisualStyleBackColor = true;
+            this.Open_calendar_btn.Click += new System.EventHandler(this.Open_calendar_btn_Click);
             // 
             // MainForm
             // 
@@ -522,11 +521,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(1290, 820);
+            this.Controls.Add(this.textbox_parametr);
+            this.Controls.Add(this.parametr_lable);
             this.Controls.Add(this.textbox_description);
             this.Controls.Add(this.textBox_date);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textbox_group);
-            this.Controls.Add(this.ShowTask);
             this.Controls.Add(this.TypeOfTask_lbl);
             this.Controls.Add(this.ArchiveShow_btn);
             this.Controls.Add(this.lbl_date);
@@ -548,10 +548,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MainPicture)).EndInit();
             this.left_panel.ResumeLayout(false);
             this.left_panel.PerformLayout();
-            this.substrate.ResumeLayout(false);
-            this.substrate.PerformLayout();
-            this.frame2.ResumeLayout(false);
-            this.frame2.PerformLayout();
             this.frame.ResumeLayout(false);
             this.frame.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InfoTabel)).EndInit();
@@ -571,8 +567,6 @@
         private Label my_tasks_lbl;
         private Label lbl_account;
         private Label lbl_name;
-        private Panel frame2;
-        private Label Calendar_lbl;
         public DataGridView InfoTabel;
         private Panel right_panel;
         private Button TaskAdd_btn;
@@ -580,8 +574,6 @@
         private Button TaskDone_btn;
         private Label lbl_mygroups;
         public ListBox PersonGroups_list;
-        private Panel substrate;
-        private Label group_tasks_lbl;
         private Button ArchiveShow_btn;
         private Label lbl_date;
         private Label lbl_group;
@@ -591,7 +583,6 @@
         private Button MyGroups_btn;
         private Button AppointTask_lbl;
         private Button show_group_button;
-        private Button ShowTask;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Group;
@@ -599,5 +590,10 @@
         private Button button1;
         private TextBox textBox_date;
         private TextBox textbox_description;
+        private Button common_afairs_btn;
+        private DataGridViewTextBoxColumn Parametr;
+        private Label parametr_lable;
+        private TextBox textbox_parametr;
+        private Button Open_calendar_btn;
     }
 }
