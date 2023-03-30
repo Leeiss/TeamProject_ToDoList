@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.upper_panel = new System.Windows.Forms.Panel();
             this.search_btn = new System.Windows.Forms.Button();
             this.MainPicture = new System.Windows.Forms.PictureBox();
@@ -41,6 +41,8 @@
             this.lbl_account = new System.Windows.Forms.Label();
             this.ArchiveShow_btn = new System.Windows.Forms.Button();
             this.left_panel = new System.Windows.Forms.Panel();
+            this.archive_task_btn = new System.Windows.Forms.Button();
+            this.Open_calendar_btn = new System.Windows.Forms.Button();
             this.common_afairs_btn = new System.Windows.Forms.Button();
             this.show_group_button = new System.Windows.Forms.Button();
             this.AppointTask_lbl = new System.Windows.Forms.Button();
@@ -69,7 +71,6 @@
             this.textbox_description = new System.Windows.Forms.TextBox();
             this.parametr_lable = new System.Windows.Forms.Label();
             this.textbox_parametr = new System.Windows.Forms.TextBox();
-            this.Open_calendar_btn = new System.Windows.Forms.Button();
             this.upper_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainPicture)).BeginInit();
             this.left_panel.SuspendLayout();
@@ -164,6 +165,7 @@
             // left_panel
             // 
             this.left_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
+            this.left_panel.Controls.Add(this.archive_task_btn);
             this.left_panel.Controls.Add(this.Open_calendar_btn);
             this.left_panel.Controls.Add(this.common_afairs_btn);
             this.left_panel.Controls.Add(this.show_group_button);
@@ -178,6 +180,26 @@
             this.left_panel.Name = "left_panel";
             this.left_panel.Size = new System.Drawing.Size(300, 814);
             this.left_panel.TabIndex = 1;
+            // 
+            // archive_task_btn
+            // 
+            this.archive_task_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("archive_task_btn.BackgroundImage")));
+            this.archive_task_btn.Location = new System.Drawing.Point(8, 696);
+            this.archive_task_btn.Name = "archive_task_btn";
+            this.archive_task_btn.Size = new System.Drawing.Size(240, 57);
+            this.archive_task_btn.TabIndex = 64;
+            this.archive_task_btn.UseVisualStyleBackColor = true;
+            this.archive_task_btn.Click += new System.EventHandler(this.archive_task_btn_Click);
+            // 
+            // Open_calendar_btn
+            // 
+            this.Open_calendar_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Open_calendar_btn.BackgroundImage")));
+            this.Open_calendar_btn.Location = new System.Drawing.Point(8, 459);
+            this.Open_calendar_btn.Name = "Open_calendar_btn";
+            this.Open_calendar_btn.Size = new System.Drawing.Size(241, 52);
+            this.Open_calendar_btn.TabIndex = 63;
+            this.Open_calendar_btn.UseVisualStyleBackColor = true;
+            this.Open_calendar_btn.Click += new System.EventHandler(this.Open_calendar_btn_Click);
             // 
             // common_afairs_btn
             // 
@@ -412,6 +434,7 @@
             this.TaskDone_btn.TabIndex = 50;
             this.TaskDone_btn.Text = "Выполнить\r\nзадачу";
             this.TaskDone_btn.UseVisualStyleBackColor = true;
+            this.TaskDone_btn.Click += new System.EventHandler(this.TaskDone_btn_Click_1);
             // 
             // lbl_date
             // 
@@ -505,16 +528,6 @@
             this.textbox_parametr.Size = new System.Drawing.Size(191, 65);
             this.textbox_parametr.TabIndex = 67;
             // 
-            // Open_calendar_btn
-            // 
-            this.Open_calendar_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Open_calendar_btn.BackgroundImage")));
-            this.Open_calendar_btn.Location = new System.Drawing.Point(8, 459);
-            this.Open_calendar_btn.Name = "Open_calendar_btn";
-            this.Open_calendar_btn.Size = new System.Drawing.Size(241, 52);
-            this.Open_calendar_btn.TabIndex = 63;
-            this.Open_calendar_btn.UseVisualStyleBackColor = true;
-            this.Open_calendar_btn.Click += new System.EventHandler(this.Open_calendar_btn_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -595,5 +608,6 @@
         private Label parametr_lable;
         private TextBox textbox_parametr;
         private Button Open_calendar_btn;
+        private Button archive_task_btn;
     }
 }

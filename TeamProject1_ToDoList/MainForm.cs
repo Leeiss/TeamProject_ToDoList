@@ -145,7 +145,7 @@ namespace TeamProject1_ToDoList
             textbox_parametr.Text = InfoTabel[3, i].Value.ToString();
         }
 
-        private void TaskDelete_btn_Click_1(object sender, EventArgs e)
+        public void TaskDelete_btn_Click_1(object sender, EventArgs e)
         {
 
             int i = InfoTabel.CurrentCell.RowIndex;
@@ -160,9 +160,6 @@ namespace TeamProject1_ToDoList
                 MySqlCommand command2 = new MySqlCommand("DELETE  FROM tasks WHERE userlogin = @del AND task = @tsk ", db.GetConnection());
                 command2.Parameters.Add("@del", MySqlDbType.VarChar).Value = login;
                 command2.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = InfoTabel[2, i].Value.ToString();
-
-
-                command2.ExecuteNonQuery();
 
 
                 DbDataReader reader = command2.ExecuteReader();
@@ -311,6 +308,27 @@ namespace TeamProject1_ToDoList
             calendar.Getlogin(login);
             calendar.ShowDialog();
 
+        }
+
+        private void archive_task_btn_Click(object sender, EventArgs e)
+        {
+            TaskArchive taskArchive = new TaskArchive();
+            taskArchive.GetInfo(login);
+            taskArchive.ShowDialog();
+        }
+
+        private void TaskDone_btn_Click_1(object sender, EventArgs e)
+        {
+            int i = InfoTabel.CurrentCell.RowIndex;
+            TaskDone taskDone = new TaskDone();
+            taskDone.GetInfo(login, InfoTabel[0, i].Value.ToString(), InfoTabel[1, i].Value.ToString(), InfoTabel[2, i].Value.ToString(), InfoTabel[3, i].Value.ToString());
+            taskDone.ShowDialog();
+
+        }
+
+        internal void TaskDelete_btn_Click_1()
+        {
+            throw new NotImplementedException();
         }
     }
 }

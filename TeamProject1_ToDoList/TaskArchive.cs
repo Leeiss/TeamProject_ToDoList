@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Logging;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TeamProject1_ToDoList.Classes;
 
 namespace TeamProject1_ToDoList
 {
@@ -21,5 +25,104 @@ namespace TeamProject1_ToDoList
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataBase db = new DataBase();
+
+            MySqlCommand command1 = new MySqlCommand("SELECT * FROM archivetasks WHERE userlogin = @log AND parametr = 'Общая' ", db.GetConnection());
+            command1.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
+
+
+            db.OpenConnection();
+            DbDataReader reader = command1.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+
+
+            }
+            reader.Close();
+            db.CloseConnection();
+
+            InfoTabel.Rows.Clear();
+
+            foreach (string[] s in data)
+            {
+                InfoTabel.Rows.Add(s);
+            }
+
+            int i = InfoTabel.CurrentCell.RowIndex;
+
+            textbox_description.Text = InfoTabel[0, i].Value.ToString();
+            textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
+            textbox_date.Text = InfoTabel[2, i].Value.ToString();
+            textbox_group.Text = InfoTabel[3, i].Value.ToString();
+
+            textbox_user.Text = login;
+
+        }
+
+        private string login;
+
+        public void GetInfo(string log)
+        {
+            login = log;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+           
+            DataBase db = new DataBase();
+
+            MySqlCommand command1 = new MySqlCommand("SELECT * FROM archivetasks WHERE userlogin = @log AND parametr = 'Личная' ", db.GetConnection());
+            command1.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
+
+
+            db.OpenConnection();
+            DbDataReader reader = command1.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+
+
+
+
+
+            }
+            reader.Close();
+            db.CloseConnection();
+
+            InfoTabel.Rows.Clear();
+
+            foreach (string[] s in data)
+            {
+                InfoTabel.Rows.Add(s);
+            }
+            int i = InfoTabel.CurrentCell.RowIndex;
+
+            textbox_description.Text = InfoTabel[0, i].Value.ToString();
+            textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
+            textbox_date.Text = InfoTabel[2, i].Value.ToString();
+            textbox_group.Text = InfoTabel[3, i].Value.ToString();
+            textbox_user.Text = login;
+
+        }
+
+        
     }
 }

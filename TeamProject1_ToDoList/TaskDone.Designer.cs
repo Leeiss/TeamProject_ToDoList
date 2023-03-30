@@ -28,71 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TaskDone_lbl = new Label();
-            lbl_comment = new Label();
-            Entered_Comment = new TextBox();
-            CloseTask_btn = new Button();
-            SuspendLayout();
+            this.TaskDone_lbl = new System.Windows.Forms.Label();
+            this.lbl_comment = new System.Windows.Forms.Label();
+            this.Entered_Comment = new System.Windows.Forms.TextBox();
+            this.CloseTask_btn = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // TaskDone_lbl
             // 
-            TaskDone_lbl.AutoSize = true;
-            TaskDone_lbl.Font = new Font("Sitka Banner", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
-            TaskDone_lbl.ForeColor = Color.FromArgb(159, 108, 80);
-            TaskDone_lbl.Location = new Point(12, 18);
-            TaskDone_lbl.Name = "TaskDone_lbl";
-            TaskDone_lbl.Size = new Size(332, 53);
-            TaskDone_lbl.TabIndex = 5;
-            TaskDone_lbl.Text = "Задача выполнена!\r\n";
+            this.TaskDone_lbl.AutoSize = true;
+            this.TaskDone_lbl.Font = new System.Drawing.Font("Sitka Banner", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TaskDone_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
+            this.TaskDone_lbl.Location = new System.Drawing.Point(9, 14);
+            this.TaskDone_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TaskDone_lbl.Name = "TaskDone_lbl";
+            this.TaskDone_lbl.Size = new System.Drawing.Size(252, 40);
+            this.TaskDone_lbl.TabIndex = 5;
+            this.TaskDone_lbl.Text = "Задача выполнена!\r\n";
             // 
             // lbl_comment
             // 
-            lbl_comment.AutoSize = true;
-            lbl_comment.Font = new Font("Sylfaen", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_comment.ForeColor = Color.Gray;
-            lbl_comment.Location = new Point(24, 104);
-            lbl_comment.Name = "lbl_comment";
-            lbl_comment.Size = new Size(186, 35);
-            lbl_comment.TabIndex = 58;
-            lbl_comment.Text = "Комментарий ";
-            lbl_comment.Click += lbl_mygroups_Click;
+            this.lbl_comment.AutoSize = true;
+            this.lbl_comment.Font = new System.Drawing.Font("Sylfaen", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_comment.ForeColor = System.Drawing.Color.Gray;
+            this.lbl_comment.Location = new System.Drawing.Point(18, 81);
+            this.lbl_comment.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_comment.Name = "lbl_comment";
+            this.lbl_comment.Size = new System.Drawing.Size(146, 27);
+            this.lbl_comment.TabIndex = 58;
+            this.lbl_comment.Text = "Комментарий ";
             // 
             // Entered_Comment
             // 
-            Entered_Comment.BorderStyle = BorderStyle.FixedSingle;
-            Entered_Comment.Font = new Font("XO Courser", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            Entered_Comment.ForeColor = SystemColors.ActiveCaptionText;
-            Entered_Comment.Location = new Point(34, 142);
-            Entered_Comment.Name = "Entered_Comment";
-            Entered_Comment.Size = new Size(500, 38);
-            Entered_Comment.TabIndex = 63;
-            Entered_Comment.TabStop = false;
+            this.Entered_Comment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Entered_Comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Entered_Comment.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Entered_Comment.Location = new System.Drawing.Point(26, 111);
+            this.Entered_Comment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Entered_Comment.Name = "Entered_Comment";
+            this.Entered_Comment.Size = new System.Drawing.Size(385, 30);
+            this.Entered_Comment.TabIndex = 63;
+            this.Entered_Comment.TabStop = false;
             // 
             // CloseTask_btn
             // 
-            CloseTask_btn.Font = new Font("Sylfaen", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            CloseTask_btn.ForeColor = Color.FromArgb(159, 108, 80);
-            CloseTask_btn.Location = new Point(380, 304);
-            CloseTask_btn.Name = "CloseTask_btn";
-            CloseTask_btn.Size = new Size(235, 44);
-            CloseTask_btn.TabIndex = 64;
-            CloseTask_btn.Text = "Закрыть задание";
-            CloseTask_btn.UseVisualStyleBackColor = true;
+            this.CloseTask_btn.Font = new System.Drawing.Font("Sylfaen", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CloseTask_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
+            this.CloseTask_btn.Location = new System.Drawing.Point(292, 238);
+            this.CloseTask_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CloseTask_btn.Name = "CloseTask_btn";
+            this.CloseTask_btn.Size = new System.Drawing.Size(181, 34);
+            this.CloseTask_btn.TabIndex = 64;
+            this.CloseTask_btn.Text = "Закрыть задание";
+            this.CloseTask_btn.UseVisualStyleBackColor = true;
+            this.CloseTask_btn.Click += new System.EventHandler(this.CloseTask_btn_Click);
             // 
             // TaskDone
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(627, 360);
-            Controls.Add(CloseTask_btn);
-            Controls.Add(Entered_Comment);
-            Controls.Add(lbl_comment);
-            Controls.Add(TaskDone_lbl);
-            Name = "TaskDone";
-            Text = "Архивация выполненой задачи";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(482, 281);
+            this.Controls.Add(this.CloseTask_btn);
+            this.Controls.Add(this.Entered_Comment);
+            this.Controls.Add(this.lbl_comment);
+            this.Controls.Add(this.TaskDone_lbl);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "TaskDone";
+            this.Text = "Архивация выполненой задачи";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
