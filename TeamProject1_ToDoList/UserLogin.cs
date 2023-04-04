@@ -34,6 +34,7 @@ namespace TeamProject1_ToDoList
         {
             Registration registration = new Registration();
             registration.ShowDialog();
+
         }
 
         
