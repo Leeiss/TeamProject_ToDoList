@@ -63,6 +63,7 @@ namespace TeamProject1_ToDoList
                 MyGroups_list.Items.Add((string)reader[0]);
 
             }
+            reader.Close();
 
         }
 
@@ -91,6 +92,7 @@ namespace TeamProject1_ToDoList
                 Members_list.Items.Add((string)reader[1]);
 
             }
+            reader.Close();
 
             db.CloseConnection();
 
@@ -100,34 +102,47 @@ namespace TeamProject1_ToDoList
         private void Appoint_btn_Click(object sender, EventArgs e)
         {
             String namegroup = MyGroups_list.SelectedItem.ToString();
-            String login = Members_list.SelectedItem.ToString();
+            //String login = Members_list.SelectedItem.ToString();
             String task = Entered_Text.Text;
             string date = DateTime.UtcNow.ToString("yyyy-dd-MM");
-
-
-
             DataBase db = new DataBase();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `tasks` (`namegroup`,`date`, `userlogin`,`task`) VALUES(@name,@date, @log, @tsk)", db.GetConnection());
-            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = namegroup;
-            command.Parameters.Add("@date", MySqlDbType.VarChar).Value = date;
-            command.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
-            command.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = task;
+
+            MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE namegroup = @group", db.GetConnection());
+            command1.Parameters.Add("@group", MySqlDbType.VarChar).Value = namegroup;
 
 
             db.OpenConnection();
-            if (command.ExecuteNonQuery() == 1)
+            DbDataReader reader1 = command1.ExecuteReader();
+            List<string> data = new List<string>();
+
+            while (reader1.Read())
             {
-                MessageBox.Show("Задача присвоена успешно!");
-
-
-
-
+                data.Add(reader1[1].ToString());
 
             }
-            else
+            reader1.Close();
+
+            int i = 0;
+
+            while(i < data.Count)
             {
-                MessageBox.Show("Ошибка!Попробуйте еще раз!");
+                MySqlCommand command = new MySqlCommand("INSERT INTO tasks (`namegroup`,`date`,`task`,`userlogin`) VALUES(@name, @date, @tsk, @log)", db.GetConnection());
+                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = namegroup;
+                command.Parameters.Add("@date", MySqlDbType.VarChar).Value = date;
+                command.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = task;
+                command.Parameters.Add("@log", MySqlDbType.VarChar).Value = data[i];
+                db.OpenConnection();
+
+                command.ExecuteNonQuery();
+               
+                i++;
             }
+
+            MessageBox.Show("Задача успешно присвоена!");
+
+
+
+
         }
 
         private void show_listGroup_button2_Click(object sender, EventArgs e)
@@ -182,6 +197,7 @@ namespace TeamProject1_ToDoList
                 Members_list2.Items.Add((string)reader[1]);
 
             }
+            reader.Close();
 
         }
 

@@ -28,101 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btn_registration = new Button();
-            lbl_password = new Label();
-            lbl_login = new Label();
-            invented_password = new TextBox();
-            invented_login = new TextBox();
-            Greetings_lbl = new Label();
-            upper_panel = new Panel();
-            SuspendLayout();
+            this.btn_registration = new System.Windows.Forms.Button();
+            this.lbl_password = new System.Windows.Forms.Label();
+            this.lbl_login = new System.Windows.Forms.Label();
+            this.invented_password = new System.Windows.Forms.TextBox();
+            this.invented_login = new System.Windows.Forms.TextBox();
+            this.Greetings_lbl = new System.Windows.Forms.Label();
+            this.upper_panel = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
             // 
             // btn_registration
             // 
-            btn_registration.Font = new Font("Sylfaen", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_registration.ForeColor = SystemColors.ControlDarkDark;
-            btn_registration.Location = new Point(360, 552);
-            btn_registration.Name = "btn_registration";
-            btn_registration.Size = new Size(272, 46);
-            btn_registration.TabIndex = 32;
-            btn_registration.Text = "Зарегистрироваться";
-            btn_registration.UseVisualStyleBackColor = true;
-            btn_registration.Click += btn_registration_Click;
+            this.btn_registration.Font = new System.Drawing.Font("Sylfaen", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_registration.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_registration.Location = new System.Drawing.Point(277, 431);
+            this.btn_registration.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_registration.Name = "btn_registration";
+            this.btn_registration.Size = new System.Drawing.Size(209, 36);
+            this.btn_registration.TabIndex = 32;
+            this.btn_registration.Text = "Зарегистрироваться";
+            this.btn_registration.UseVisualStyleBackColor = true;
+            this.btn_registration.Click += new System.EventHandler(this.btn_registration_Click_1);
             // 
             // lbl_password
             // 
-            lbl_password.AutoSize = true;
-            lbl_password.Font = new Font("Sylfaen", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_password.ForeColor = Color.Gray;
-            lbl_password.Location = new Point(83, 372);
-            lbl_password.Name = "lbl_password";
-            lbl_password.Size = new Size(92, 31);
-            lbl_password.TabIndex = 31;
-            lbl_password.Text = "Пароль";
+            this.lbl_password.AutoSize = true;
+            this.lbl_password.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_password.ForeColor = System.Drawing.Color.Gray;
+            this.lbl_password.Location = new System.Drawing.Point(64, 291);
+            this.lbl_password.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_password.Name = "lbl_password";
+            this.lbl_password.Size = new System.Drawing.Size(67, 23);
+            this.lbl_password.TabIndex = 31;
+            this.lbl_password.Text = "Пароль";
             // 
             // lbl_login
             // 
-            lbl_login.AutoSize = true;
-            lbl_login.Font = new Font("Sylfaen", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_login.ForeColor = Color.Gray;
-            lbl_login.Location = new Point(83, 247);
-            lbl_login.Name = "lbl_login";
-            lbl_login.Size = new Size(81, 31);
-            lbl_login.TabIndex = 30;
-            lbl_login.Text = "Логин";
+            this.lbl_login.AutoSize = true;
+            this.lbl_login.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_login.ForeColor = System.Drawing.Color.Gray;
+            this.lbl_login.Location = new System.Drawing.Point(64, 193);
+            this.lbl_login.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_login.Name = "lbl_login";
+            this.lbl_login.Size = new System.Drawing.Size(57, 23);
+            this.lbl_login.TabIndex = 30;
+            this.lbl_login.Text = "Логин";
             // 
             // invented_password
             // 
-            invented_password.Font = new Font("XO Courser", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            invented_password.Location = new Point(83, 317);
-            invented_password.Name = "invented_password";
-            invented_password.Size = new Size(458, 38);
-            invented_password.TabIndex = 29;
+            this.invented_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.invented_password.Location = new System.Drawing.Point(64, 248);
+            this.invented_password.Margin = new System.Windows.Forms.Padding(2);
+            this.invented_password.Name = "invented_password";
+            this.invented_password.Size = new System.Drawing.Size(353, 30);
+            this.invented_password.TabIndex = 29;
             // 
             // invented_login
             // 
-            invented_login.Font = new Font("XO Courser", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            invented_login.Location = new Point(83, 206);
-            invented_login.Name = "invented_login";
-            invented_login.Size = new Size(458, 38);
-            invented_login.TabIndex = 28;
+            this.invented_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.invented_login.Location = new System.Drawing.Point(64, 161);
+            this.invented_login.Margin = new System.Windows.Forms.Padding(2);
+            this.invented_login.Name = "invented_login";
+            this.invented_login.Size = new System.Drawing.Size(353, 30);
+            this.invented_login.TabIndex = 28;
             // 
             // Greetings_lbl
             // 
-            Greetings_lbl.AutoSize = true;
-            Greetings_lbl.Font = new Font("Sitka Banner", 16.125F, FontStyle.Bold, GraphicsUnit.Point);
-            Greetings_lbl.ForeColor = SystemColors.ActiveCaptionText;
-            Greetings_lbl.Location = new Point(12, 76);
-            Greetings_lbl.Name = "Greetings_lbl";
-            Greetings_lbl.Size = new Size(529, 62);
-            Greetings_lbl.TabIndex = 33;
-            Greetings_lbl.Text = "Регистриция пользователя";
+            this.Greetings_lbl.AutoSize = true;
+            this.Greetings_lbl.Font = new System.Drawing.Font("Sitka Banner", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Greetings_lbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Greetings_lbl.Location = new System.Drawing.Point(9, 59);
+            this.Greetings_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Greetings_lbl.Name = "Greetings_lbl";
+            this.Greetings_lbl.Size = new System.Drawing.Size(403, 48);
+            this.Greetings_lbl.TabIndex = 33;
+            this.Greetings_lbl.Text = "Регистриция пользователя";
             // 
             // upper_panel
             // 
-            upper_panel.BackColor = SystemColors.ActiveCaption;
-            upper_panel.Location = new Point(-39, 31);
-            upper_panel.Name = "upper_panel";
-            upper_panel.Size = new Size(726, 23);
-            upper_panel.TabIndex = 35;
+            this.upper_panel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.upper_panel.Location = new System.Drawing.Point(-30, 24);
+            this.upper_panel.Margin = new System.Windows.Forms.Padding(2);
+            this.upper_panel.Name = "upper_panel";
+            this.upper_panel.Size = new System.Drawing.Size(558, 18);
+            this.upper_panel.TabIndex = 35;
             // 
             // Registration
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(644, 610);
-            Controls.Add(upper_panel);
-            Controls.Add(Greetings_lbl);
-            Controls.Add(btn_registration);
-            Controls.Add(lbl_password);
-            Controls.Add(lbl_login);
-            Controls.Add(invented_password);
-            Controls.Add(invented_login);
-            Name = "Registration";
-            Text = "Регистрация";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(495, 477);
+            this.Controls.Add(this.upper_panel);
+            this.Controls.Add(this.Greetings_lbl);
+            this.Controls.Add(this.btn_registration);
+            this.Controls.Add(this.lbl_password);
+            this.Controls.Add(this.lbl_login);
+            this.Controls.Add(this.invented_password);
+            this.Controls.Add(this.invented_login);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Registration";
+            this.Text = "Регистрация";
+            this.Load += new System.EventHandler(this.Registration_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

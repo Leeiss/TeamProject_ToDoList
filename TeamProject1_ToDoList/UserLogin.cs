@@ -25,6 +25,10 @@ namespace TeamProject1_ToDoList
         {
             InitializeComponent();
         }
+        private void UserLogin_Load(object sender, EventArgs e)
+        {
+            entered_password.PasswordChar = '*';
+        }
 
         private void register_button_Click(object sender, EventArgs e)
         {
@@ -85,30 +89,12 @@ namespace TeamProject1_ToDoList
             
         {
 
-
-            DataBase db = new DataBase();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `password`) VALUES(@login, @password)",db.GetConnection());
-            command.Parameters.Add("@login", MySqlDbType.VarChar).Value = entered_login.Text;
-            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = entered_password.Text;
-
-            db.OpenConnection();
-            if(command.ExecuteNonQuery() == 1)
-            {
-                MessageBox.Show("Аккаунт успешно создан!");
-                
-                
-                
-                
-                
-            }
-            else
-            {
-                MessageBox.Show("Ошибка!Попробуйте позже!");
-            }
-
-
-            db.CloseConnection();
+            Registration registration = new Registration();
+            registration.ShowDialog();
+           
         }
+
+
     }
     
 }

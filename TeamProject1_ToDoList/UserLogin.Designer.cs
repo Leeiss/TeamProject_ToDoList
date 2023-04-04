@@ -169,6 +169,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserLogin";
             this.Text = "Авторизация";
+            this.Load += new System.EventHandler(this.UserLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
