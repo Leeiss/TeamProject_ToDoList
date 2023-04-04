@@ -136,6 +136,7 @@ namespace TeamProject1_ToDoList
                 command.ExecuteNonQuery();
                
                 i++;
+
             }
 
             MessageBox.Show("Задача успешно присвоена!");
