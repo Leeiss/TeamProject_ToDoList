@@ -353,7 +353,6 @@ namespace TeamProject1_ToDoList
                 data[data.Count - 1][2] = reader[2].ToString();
                 data[data.Count - 1][3] = reader[3].ToString();
 
-
             }
             reader.Close();
             db.CloseConnection();
