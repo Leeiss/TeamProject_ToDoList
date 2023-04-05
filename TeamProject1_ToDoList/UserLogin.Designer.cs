@@ -42,6 +42,7 @@
             // 
             // Greetings
             // 
+            this.Greetings.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Greetings.AutoSize = true;
             this.Greetings.Font = new System.Drawing.Font("Sitka Banner", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Greetings.ForeColor = System.Drawing.Color.Black;
@@ -51,9 +52,11 @@
             this.Greetings.Size = new System.Drawing.Size(514, 48);
             this.Greetings.TabIndex = 20;
             this.Greetings.Text = "Добро пожаловать в \"Список дел\"!\r\n";
+            this.Greetings.Click += new System.EventHandler(this.Greetings_Click);
             // 
             // lbl_instruction
             // 
+            this.lbl_instruction.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_instruction.AutoSize = true;
             this.lbl_instruction.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_instruction.ForeColor = System.Drawing.Color.Black;
@@ -66,6 +69,7 @@
             // 
             // entered_login
             // 
+            this.entered_login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.entered_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.entered_login.Location = new System.Drawing.Point(158, 211);
             this.entered_login.Margin = new System.Windows.Forms.Padding(2);
@@ -75,6 +79,7 @@
             // 
             // entered_password
             // 
+            this.entered_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.entered_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.entered_password.Location = new System.Drawing.Point(158, 298);
             this.entered_password.Margin = new System.Windows.Forms.Padding(2);
@@ -84,6 +89,7 @@
             // 
             // lbl_login
             // 
+            this.lbl_login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_login.AutoSize = true;
             this.lbl_login.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_login.ForeColor = System.Drawing.Color.Gray;
@@ -96,6 +102,7 @@
             // 
             // lbl_password
             // 
+            this.lbl_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_password.AutoSize = true;
             this.lbl_password.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_password.ForeColor = System.Drawing.Color.Gray;
@@ -108,6 +115,7 @@
             // 
             // to_come_in_button
             // 
+            this.to_come_in_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.to_come_in_button.Font = new System.Drawing.Font("Sylfaen", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.to_come_in_button.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.to_come_in_button.Location = new System.Drawing.Point(553, 408);
@@ -121,6 +129,7 @@
             // 
             // register_button
             // 
+            this.register_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.register_button.Font = new System.Drawing.Font("Sylfaen", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.register_button.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.register_button.Location = new System.Drawing.Point(323, 408);
@@ -134,6 +143,8 @@
             // 
             // upper_panel2
             // 
+            this.upper_panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.upper_panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.upper_panel2.Location = new System.Drawing.Point(-10, 91);
             this.upper_panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -143,6 +154,8 @@
             // 
             // upper_panel1
             // 
+            this.upper_panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.upper_panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.upper_panel1.Location = new System.Drawing.Point(-28, 1);
             this.upper_panel1.Margin = new System.Windows.Forms.Padding(2);

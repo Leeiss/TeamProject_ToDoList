@@ -108,7 +108,6 @@ namespace TeamProject1_ToDoList
 
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM groups WHERE adminstatus = @Admstat AND namegroup = @ng ", db.GetConnection()); // создаем объект и передаем команду для вытягивания из бд логина и пароля из бд
-            //command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = login;
             command.Parameters.Add("@Admstat", MySqlDbType.VarChar).Value = 1;
             command.Parameters.Add("@ng", MySqlDbType.VarChar).Value = groupname;
 
@@ -132,8 +131,6 @@ namespace TeamProject1_ToDoList
                 command1.Parameters.Add("@ulog", MySqlDbType.VarChar).Value = login;
 
                 command1.ExecuteNonQuery();
-                
-
 
             }
 

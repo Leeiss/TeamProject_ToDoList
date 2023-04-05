@@ -95,7 +95,10 @@ namespace TeamProject1_ToDoList
            
         }
 
+        private void Greetings_Click(object sender, EventArgs e)
+        {
 
+        }
     }
     
 }

@@ -32,29 +32,57 @@ namespace TeamProject1_ToDoList
 
         private void btn_registration_Click_1(object sender, EventArgs e)
         {
-            DataBase db = new DataBase();
-            MySqlCommand command = new MySqlCommand("INSERT INTO users (`login`, `password`) VALUES(@login, @password)", db.GetConnection());
-            command.Parameters.Add("@login", MySqlDbType.VarChar).Value = invented_login.Text;
-            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = invented_password.Text;
-
-            db.OpenConnection();
-            if (command.ExecuteNonQuery() == 1)
+            if (invented_login.Text != "" & invented_password.Text != "")
             {
-                MessageBox.Show("Аккаунт успешно создан!");
+                DataBase db = new DataBase();
+                db.OpenConnection();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM users WHERE login = @Ul ", db.GetConnection()); // создаем объект и передаем команду для вытягивания из бд логина и пароля из бд
+                command.Parameters.Add("@Ul", MySqlDbType.VarChar).Value = invented_login.Text;
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                adapter.SelectCommand = command; // выполняем команду
+
+
+                DataTable table = new DataTable();
+
+                adapter.Fill(table);// записываем данные в объект класса DataTable
+
+
+                if (table.Rows.Count == 0)
+                {
+                    
+                    MySqlCommand command1 = new MySqlCommand("INSERT INTO users (`login`, `password`) VALUES(@login, @password)", db.GetConnection());
+                    command1.Parameters.Add("@login", MySqlDbType.VarChar).Value = invented_login.Text;
+                    command1.Parameters.Add("@password", MySqlDbType.VarChar).Value = invented_password.Text;
+
+                    if (command1.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Аккаунт успешно создан!");
 
 
 
 
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ошибка!Попробуйте позже!");
+                    }
+
+
+                    db.CloseConnection();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь с таким логином уже существует!");
+                }
             }
             else
             {
-                MessageBox.Show("Ошибка!Попробуйте позже!");
+                MessageBox.Show("Некорректно введен логин или пароль!");
             }
-
-
-            db.CloseConnection();
-            Close();
 
         }
 

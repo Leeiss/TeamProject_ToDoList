@@ -21,6 +21,11 @@ namespace TeamProject1_ToDoList
 
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            lbl_name.Text = login;
+        }
+
         private void CalendarMove(object sender, MouseEventArgs e)
         {
             //Calendar_lbl.Font = new Font("Sitka Banner", 16.125F, FontStyle.Underline, GraphicsUnit.Point);
@@ -28,7 +33,7 @@ namespace TeamProject1_ToDoList
 
         private void CalendarLeave(object sender, EventArgs e)
         {
-           // Calendar_lbl.Font = new Font("Sitka Banner", 16.125F, FontStyle.Bold, GraphicsUnit.Point);
+           //Calendar_lbl.Font = new Font("Sitka Banner", 16.125F, FontStyle.Bold, GraphicsUnit.Point);
         }
 
         private void personal_affairs_btn_Click(object sender, EventArgs e)
@@ -136,16 +141,7 @@ namespace TeamProject1_ToDoList
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int i = InfoTabel.CurrentCell.RowIndex;
 
-
-            textbox_group.Text = InfoTabel[0, i].Value.ToString();
-            textBox_date.Text = InfoTabel[1, i].Value.ToString();
-            textbox_description.Text = InfoTabel[2, i].Value.ToString();
-            textbox_parametr.Text = InfoTabel[3, i].Value.ToString();
-        }
 
         public void TaskDelete_btn_Click_1(object sender, EventArgs e)
         {
@@ -363,6 +359,41 @@ namespace TeamProject1_ToDoList
             {
                 InfoTabel.Rows.Add(s);
             }
+        }
+
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+            {
+                for (int i = 0; i < InfoTabel.RowCount; i++)
+                {
+                    InfoTabel.Rows[i].Selected = false;
+                    for (int j = 0; j < InfoTabel.ColumnCount; j++)
+                        if (InfoTabel.Rows[i].Cells[j].Value != null)
+                            if (InfoTabel.Rows[i].Cells[j].Value.ToString().Contains(Entered_Text.Text))
+
+                            {
+                                InfoTabel.Rows[i].Selected = true;
+
+                                break;
+                            }
+                }
+            }
+        }
+
+        private void InfoTabel_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = InfoTabel.CurrentCell.RowIndex;
+
+
+            label_group.Text = InfoTabel[0, i].Value.ToString();
+            label_date.Text = InfoTabel[1, i].Value.ToString();
+            label_description.Text = InfoTabel[2, i].Value.ToString();
+            label_parametr.Text = InfoTabel[3, i].Value.ToString();
+        }
+
+        private void label_date_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -61,7 +61,7 @@
   <data name="archive_task_btn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAO4AAAA9CAIAAAAlJsL0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAABYlJREFUeF7tnD2u6jwQhr8l3nWguwgk1kCHdFpEi0RDRXso6OjPTu6Mx39jTxLn
+        vAAADrwBlbxySQAABYlJREFUeF7tnD2u6jwQhr8l3nWguwgk1kCHdFpEi0RDRXso6OjPTu6Mx39jTxLn
         YPgk633kJomd2JMnjo1w/vsBYAigMhgEqAwGASqDQYDKYBCgMhgEqAwGASqDQYDKYBDeofL3bbu5PfwG
         AJ/hDSpfd19//5yO334TgI/QX+X7/g+p/PV3d/c7APgEvVV+HE7bw83ZfLn6fQB8gM4q3/cbNpiEpo55
         f/Z7AXg/fVU+X/y4gmZ+1DHXk7/v5/VwoUPbw/26O3EeTqf9+emOulIhbQ+083ncpE03Co+JhuPpqEv8
@@ -91,7 +91,7 @@
   <data name="Open_calendar_btn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOwAAAA1CAIAAADNgJCkAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAABM9JREFUeF7tmzuOpDAQhveIe5DhFgR9B4IJ+gCIHJESERJxA6QJJttw/eBRZbuM
+        vAAADrwBlbxySQAABM9JREFUeF7tmzuOpDAQhveIe5DhFgR9B4IJ+gCIHJESERJxA6QJJttw/eBRZbuM
         6WmhsfilLwLbUPZHYZvuP/++vwDIGkgMsgcSg+yBxCB7IDHIHkgMsgcSg+yBxCB7IDHIHkgMsgcSg+yB
         xCB7IDHIHkgMsgcSg+zREs9N8fnxN0z5nHmFuXnU69m6cs8CcD1bJh6n5rG7qyif0zRu5Syu7lXrFADg
         euh0YhzKXdCu346vTM8tB1vqxrUcgOs5IfFU2VPF0LdD8+iqxzC5ZQC4nnSJ284aDHHBLyNVYjsbxvwB
@@ -124,7 +124,7 @@
   <metadata name="Parametr.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="label1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASQAAAA8CAIAAABAaVD5AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAER9JREFUeF7tnPdbU0nbgL8/kRVEWXUVfC27QuiIIFJUVvFlF1REEUlIIAQkIYRe

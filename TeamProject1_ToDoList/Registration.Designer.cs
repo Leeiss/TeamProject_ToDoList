@@ -39,6 +39,7 @@
             // 
             // btn_registration
             // 
+            this.btn_registration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_registration.Font = new System.Drawing.Font("Sylfaen", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_registration.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_registration.Location = new System.Drawing.Point(277, 431);
@@ -52,6 +53,7 @@
             // 
             // lbl_password
             // 
+            this.lbl_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_password.AutoSize = true;
             this.lbl_password.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_password.ForeColor = System.Drawing.Color.Gray;
@@ -64,6 +66,7 @@
             // 
             // lbl_login
             // 
+            this.lbl_login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_login.AutoSize = true;
             this.lbl_login.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_login.ForeColor = System.Drawing.Color.Gray;
@@ -76,6 +79,7 @@
             // 
             // invented_password
             // 
+            this.invented_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.invented_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.invented_password.Location = new System.Drawing.Point(64, 248);
             this.invented_password.Margin = new System.Windows.Forms.Padding(2);
@@ -85,6 +89,7 @@
             // 
             // invented_login
             // 
+            this.invented_login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.invented_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.invented_login.Location = new System.Drawing.Point(64, 161);
             this.invented_login.Margin = new System.Windows.Forms.Padding(2);
@@ -94,10 +99,11 @@
             // 
             // Greetings_lbl
             // 
+            this.Greetings_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Greetings_lbl.AutoSize = true;
             this.Greetings_lbl.Font = new System.Drawing.Font("Sitka Banner", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Greetings_lbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Greetings_lbl.Location = new System.Drawing.Point(9, 59);
+            this.Greetings_lbl.Location = new System.Drawing.Point(48, 60);
             this.Greetings_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Greetings_lbl.Name = "Greetings_lbl";
             this.Greetings_lbl.Size = new System.Drawing.Size(403, 48);
@@ -106,6 +112,8 @@
             // 
             // upper_panel
             // 
+            this.upper_panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.upper_panel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.upper_panel.Location = new System.Drawing.Point(-30, 24);
             this.upper_panel.Margin = new System.Windows.Forms.Padding(2);

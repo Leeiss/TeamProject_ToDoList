@@ -39,7 +39,6 @@
             this.Entered_Text = new System.Windows.Forms.TextBox();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_account = new System.Windows.Forms.Label();
-            this.ArchiveShow_btn = new System.Windows.Forms.Button();
             this.left_panel = new System.Windows.Forms.Panel();
             this.archive_task_btn = new System.Windows.Forms.Button();
             this.Open_calendar_btn = new System.Windows.Forms.Button();
@@ -48,7 +47,6 @@
             this.AppointTask_lbl = new System.Windows.Forms.Button();
             this.MyGroups_btn = new System.Windows.Forms.Button();
             this.PersonGroups_list = new System.Windows.Forms.ListBox();
-            this.lbl_mygroups = new System.Windows.Forms.Label();
             this.personal_affairs_btn = new System.Windows.Forms.Button();
             this.frame = new System.Windows.Forms.Panel();
             this.my_tasks_lbl = new System.Windows.Forms.Label();
@@ -65,12 +63,12 @@
             this.lbl_date = new System.Windows.Forms.Label();
             this.lbl_group = new System.Windows.Forms.Label();
             this.lbl_discription = new System.Windows.Forms.Label();
-            this.textbox_group = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox_date = new System.Windows.Forms.TextBox();
-            this.textbox_description = new System.Windows.Forms.TextBox();
             this.parametr_lable = new System.Windows.Forms.Label();
-            this.textbox_parametr = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_group = new System.Windows.Forms.Label();
+            this.label_date = new System.Windows.Forms.Label();
+            this.label_description = new System.Windows.Forms.Label();
+            this.label_parametr = new System.Windows.Forms.Label();
             this.upper_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainPicture)).BeginInit();
             this.left_panel.SuspendLayout();
@@ -80,6 +78,8 @@
             // 
             // upper_panel
             // 
+            this.upper_panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.upper_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
             this.upper_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.upper_panel.Controls.Add(this.search_btn);
@@ -95,13 +95,15 @@
             // 
             // search_btn
             // 
+            this.search_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.search_btn.BackgroundImage = global::TeamProject1_ToDoList.Properties.Resources.SearchPicture1;
             this.search_btn.Location = new System.Drawing.Point(1252, 22);
             this.search_btn.Margin = new System.Windows.Forms.Padding(2);
             this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(29, 27);
+            this.search_btn.Size = new System.Drawing.Size(45, 31);
             this.search_btn.TabIndex = 62;
             this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // MainPicture
             // 
@@ -115,13 +117,15 @@
             // 
             // Entered_Text
             // 
+            this.Entered_Text.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Entered_Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Entered_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Entered_Text.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Entered_Text.Location = new System.Drawing.Point(1014, 22);
             this.Entered_Text.Margin = new System.Windows.Forms.Padding(2);
+            this.Entered_Text.Multiline = true;
             this.Entered_Text.Name = "Entered_Text";
-            this.Entered_Text.Size = new System.Drawing.Size(247, 28);
+            this.Entered_Text.Size = new System.Drawing.Size(247, 31);
             this.Entered_Text.TabIndex = 61;
             this.Entered_Text.TabStop = false;
             this.Entered_Text.Text = "Поиск по таблице..";
@@ -150,20 +154,10 @@
             this.lbl_account.TabIndex = 17;
             this.lbl_account.Text = "Учетная запись";
             // 
-            // ArchiveShow_btn
-            // 
-            this.ArchiveShow_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ArchiveShow_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.ArchiveShow_btn.Location = new System.Drawing.Point(996, 830);
-            this.ArchiveShow_btn.Margin = new System.Windows.Forms.Padding(2);
-            this.ArchiveShow_btn.Name = "ArchiveShow_btn";
-            this.ArchiveShow_btn.Size = new System.Drawing.Size(285, 27);
-            this.ArchiveShow_btn.TabIndex = 51;
-            this.ArchiveShow_btn.Text = "Архив выполненных задач";
-            this.ArchiveShow_btn.UseVisualStyleBackColor = true;
-            // 
             // left_panel
             // 
+            this.left_panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.left_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
             this.left_panel.Controls.Add(this.archive_task_btn);
             this.left_panel.Controls.Add(this.Open_calendar_btn);
@@ -172,19 +166,19 @@
             this.left_panel.Controls.Add(this.AppointTask_lbl);
             this.left_panel.Controls.Add(this.MyGroups_btn);
             this.left_panel.Controls.Add(this.PersonGroups_list);
-            this.left_panel.Controls.Add(this.lbl_mygroups);
             this.left_panel.Controls.Add(this.personal_affairs_btn);
             this.left_panel.Controls.Add(this.frame);
             this.left_panel.Location = new System.Drawing.Point(-2, 55);
             this.left_panel.Margin = new System.Windows.Forms.Padding(2);
             this.left_panel.Name = "left_panel";
-            this.left_panel.Size = new System.Drawing.Size(300, 814);
+            this.left_panel.Size = new System.Drawing.Size(300, 817);
             this.left_panel.TabIndex = 1;
             // 
             // archive_task_btn
             // 
+            this.archive_task_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.archive_task_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("archive_task_btn.BackgroundImage")));
-            this.archive_task_btn.Location = new System.Drawing.Point(8, 696);
+            this.archive_task_btn.Location = new System.Drawing.Point(8, 650);
             this.archive_task_btn.Name = "archive_task_btn";
             this.archive_task_btn.Size = new System.Drawing.Size(240, 57);
             this.archive_task_btn.TabIndex = 64;
@@ -194,7 +188,7 @@
             // Open_calendar_btn
             // 
             this.Open_calendar_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Open_calendar_btn.BackgroundImage")));
-            this.Open_calendar_btn.Location = new System.Drawing.Point(8, 459);
+            this.Open_calendar_btn.Location = new System.Drawing.Point(11, 536);
             this.Open_calendar_btn.Name = "Open_calendar_btn";
             this.Open_calendar_btn.Size = new System.Drawing.Size(241, 52);
             this.Open_calendar_btn.TabIndex = 63;
@@ -205,7 +199,7 @@
             // 
             this.common_afairs_btn.BackColor = System.Drawing.Color.White;
             this.common_afairs_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.common_afairs_btn.Location = new System.Drawing.Point(13, 186);
+            this.common_afairs_btn.Location = new System.Drawing.Point(12, 202);
             this.common_afairs_btn.Margin = new System.Windows.Forms.Padding(2);
             this.common_afairs_btn.Name = "common_afairs_btn";
             this.common_afairs_btn.Size = new System.Drawing.Size(258, 36);
@@ -217,7 +211,7 @@
             // 
             // show_group_button
             // 
-            this.show_group_button.Location = new System.Drawing.Point(11, 227);
+            this.show_group_button.Location = new System.Drawing.Point(12, 277);
             this.show_group_button.Name = "show_group_button";
             this.show_group_button.Size = new System.Drawing.Size(112, 34);
             this.show_group_button.TabIndex = 60;
@@ -229,7 +223,7 @@
             // 
             this.AppointTask_lbl.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AppointTask_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.AppointTask_lbl.Location = new System.Drawing.Point(152, 361);
+            this.AppointTask_lbl.Location = new System.Drawing.Point(153, 422);
             this.AppointTask_lbl.Margin = new System.Windows.Forms.Padding(2);
             this.AppointTask_lbl.Name = "AppointTask_lbl";
             this.AppointTask_lbl.Size = new System.Drawing.Size(118, 62);
@@ -243,7 +237,7 @@
             // 
             this.MyGroups_btn.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MyGroups_btn.ForeColor = System.Drawing.Color.Gray;
-            this.MyGroups_btn.Location = new System.Drawing.Point(8, 361);
+            this.MyGroups_btn.Location = new System.Drawing.Point(8, 422);
             this.MyGroups_btn.Margin = new System.Windows.Forms.Padding(2);
             this.MyGroups_btn.Name = "MyGroups_btn";
             this.MyGroups_btn.Size = new System.Drawing.Size(138, 62);
@@ -258,24 +252,12 @@
             this.PersonGroups_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PersonGroups_list.FormattingEnabled = true;
             this.PersonGroups_list.ItemHeight = 26;
-            this.PersonGroups_list.Location = new System.Drawing.Point(11, 268);
+            this.PersonGroups_list.Location = new System.Drawing.Point(11, 316);
             this.PersonGroups_list.Margin = new System.Windows.Forms.Padding(2);
             this.PersonGroups_list.Name = "PersonGroups_list";
             this.PersonGroups_list.Size = new System.Drawing.Size(259, 82);
             this.PersonGroups_list.TabIndex = 57;
             this.PersonGroups_list.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PersonGroups_list_MouseClick);
-            // 
-            // lbl_mygroups
-            // 
-            this.lbl_mygroups.AutoSize = true;
-            this.lbl_mygroups.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_mygroups.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_mygroups.Location = new System.Drawing.Point(12, 227);
-            this.lbl_mygroups.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_mygroups.Name = "lbl_mygroups";
-            this.lbl_mygroups.Size = new System.Drawing.Size(68, 23);
-            this.lbl_mygroups.TabIndex = 56;
-            this.lbl_mygroups.Text = "Группы";
             // 
             // personal_affairs_btn
             // 
@@ -315,6 +297,8 @@
             // 
             // TypeOfTask_lbl
             // 
+            this.TypeOfTask_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.TypeOfTask_lbl.AutoSize = true;
             this.TypeOfTask_lbl.Font = new System.Drawing.Font("Sitka Banner", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TypeOfTask_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
@@ -328,6 +312,9 @@
             // InfoTabel
             // 
             this.InfoTabel.AllowUserToDeleteRows = false;
+            this.InfoTabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.InfoTabel.BackgroundColor = System.Drawing.Color.White;
             this.InfoTabel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.InfoTabel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -348,8 +335,9 @@
             this.InfoTabel.Name = "InfoTabel";
             this.InfoTabel.RowHeadersWidth = 82;
             this.InfoTabel.RowTemplate.Height = 41;
-            this.InfoTabel.Size = new System.Drawing.Size(529, 598);
+            this.InfoTabel.Size = new System.Drawing.Size(529, 587);
             this.InfoTabel.TabIndex = 44;
+            this.InfoTabel.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InfoTabel_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -391,6 +379,7 @@
             // 
             // right_panel
             // 
+            this.right_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.right_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
             this.right_panel.Location = new System.Drawing.Point(852, 55);
             this.right_panel.Margin = new System.Windows.Forms.Padding(2);
@@ -400,9 +389,10 @@
             // 
             // TaskAdd_btn
             // 
+            this.TaskAdd_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TaskAdd_btn.Font = new System.Drawing.Font("Sylfaen", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TaskAdd_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.TaskAdd_btn.Location = new System.Drawing.Point(705, 789);
+            this.TaskAdd_btn.Location = new System.Drawing.Point(705, 755);
             this.TaskAdd_btn.Margin = new System.Windows.Forms.Padding(2);
             this.TaskAdd_btn.Name = "TaskAdd_btn";
             this.TaskAdd_btn.Size = new System.Drawing.Size(133, 67);
@@ -413,9 +403,10 @@
             // 
             // TaskDelete_btn
             // 
+            this.TaskDelete_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TaskDelete_btn.Font = new System.Drawing.Font("Sylfaen", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TaskDelete_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.TaskDelete_btn.Location = new System.Drawing.Point(560, 789);
+            this.TaskDelete_btn.Location = new System.Drawing.Point(555, 755);
             this.TaskDelete_btn.Margin = new System.Windows.Forms.Padding(2);
             this.TaskDelete_btn.Name = "TaskDelete_btn";
             this.TaskDelete_btn.Size = new System.Drawing.Size(133, 67);
@@ -426,9 +417,10 @@
             // 
             // TaskDone_btn
             // 
+            this.TaskDone_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TaskDone_btn.Font = new System.Drawing.Font("Sylfaen", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TaskDone_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.TaskDone_btn.Location = new System.Drawing.Point(411, 789);
+            this.TaskDone_btn.Location = new System.Drawing.Point(408, 755);
             this.TaskDone_btn.Margin = new System.Windows.Forms.Padding(2);
             this.TaskDone_btn.Name = "TaskDone_btn";
             this.TaskDone_btn.Size = new System.Drawing.Size(133, 67);
@@ -439,6 +431,7 @@
             // 
             // lbl_date
             // 
+            this.lbl_date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_date.AutoSize = true;
             this.lbl_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -451,6 +444,7 @@
             // 
             // lbl_group
             // 
+            this.lbl_group.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_group.AutoSize = true;
             this.lbl_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_group.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -463,6 +457,7 @@
             // 
             // lbl_discription
             // 
+            this.lbl_discription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_discription.AutoSize = true;
             this.lbl_discription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_discription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -473,44 +468,9 @@
             this.lbl_discription.TabIndex = 52;
             this.lbl_discription.Text = "Группа";
             // 
-            // textbox_group
-            // 
-            this.textbox_group.Location = new System.Drawing.Point(1058, 214);
-            this.textbox_group.Multiline = true;
-            this.textbox_group.Name = "textbox_group";
-            this.textbox_group.Size = new System.Drawing.Size(194, 65);
-            this.textbox_group.TabIndex = 61;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(882, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(298, 54);
-            this.button1.TabIndex = 62;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox_date
-            // 
-            this.textBox_date.Location = new System.Drawing.Point(1061, 382);
-            this.textBox_date.Multiline = true;
-            this.textBox_date.Name = "textBox_date";
-            this.textBox_date.Size = new System.Drawing.Size(191, 65);
-            this.textBox_date.TabIndex = 63;
-            // 
-            // textbox_description
-            // 
-            this.textbox_description.Location = new System.Drawing.Point(1061, 555);
-            this.textbox_description.Multiline = true;
-            this.textbox_description.Name = "textbox_description";
-            this.textbox_description.Size = new System.Drawing.Size(191, 65);
-            this.textbox_description.TabIndex = 64;
-            // 
             // parametr_lable
             // 
+            this.parametr_lable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.parametr_lable.AutoSize = true;
             this.parametr_lable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.parametr_lable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -521,28 +481,65 @@
             this.parametr_lable.TabIndex = 66;
             this.parametr_lable.Text = "Параметр";
             // 
-            // textbox_parametr
+            // label1
             // 
-            this.textbox_parametr.Location = new System.Drawing.Point(1061, 723);
-            this.textbox_parametr.Multiline = true;
-            this.textbox_parametr.Name = "textbox_parametr";
-            this.textbox_parametr.Size = new System.Drawing.Size(191, 65);
-            this.textbox_parametr.TabIndex = 67;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(882, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(297, 46);
+            this.label1.TabIndex = 68;
+            // 
+            // label_group
+            // 
+            this.label_group.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_group.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_group.Location = new System.Drawing.Point(1061, 213);
+            this.label_group.Name = "label_group";
+            this.label_group.Size = new System.Drawing.Size(191, 64);
+            this.label_group.TabIndex = 69;
+            // 
+            // label_date
+            // 
+            this.label_date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_date.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_date.Location = new System.Drawing.Point(1061, 389);
+            this.label_date.Name = "label_date";
+            this.label_date.Size = new System.Drawing.Size(191, 64);
+            this.label_date.TabIndex = 70;
+            this.label_date.Click += new System.EventHandler(this.label_date_Click);
+            // 
+            // label_description
+            // 
+            this.label_description.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_description.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_description.Location = new System.Drawing.Point(1061, 563);
+            this.label_description.Name = "label_description";
+            this.label_description.Size = new System.Drawing.Size(191, 64);
+            this.label_description.TabIndex = 71;
+            // 
+            // label_parametr
+            // 
+            this.label_parametr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_parametr.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_parametr.Location = new System.Drawing.Point(1061, 721);
+            this.label_parametr.Name = "label_parametr";
+            this.label_parametr.Size = new System.Drawing.Size(191, 64);
+            this.label_parametr.TabIndex = 72;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(1290, 820);
-            this.Controls.Add(this.textbox_parametr);
+            this.ClientSize = new System.Drawing.Size(1290, 823);
+            this.Controls.Add(this.label_parametr);
+            this.Controls.Add(this.label_description);
+            this.Controls.Add(this.label_date);
+            this.Controls.Add(this.label_group);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.parametr_lable);
-            this.Controls.Add(this.textbox_description);
-            this.Controls.Add(this.textBox_date);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textbox_group);
             this.Controls.Add(this.TypeOfTask_lbl);
-            this.Controls.Add(this.ArchiveShow_btn);
             this.Controls.Add(this.lbl_date);
             this.Controls.Add(this.lbl_group);
             this.Controls.Add(this.lbl_discription);
@@ -557,11 +554,11 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Список дел";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.upper_panel.ResumeLayout(false);
             this.upper_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainPicture)).EndInit();
             this.left_panel.ResumeLayout(false);
-            this.left_panel.PerformLayout();
             this.frame.ResumeLayout(false);
             this.frame.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InfoTabel)).EndInit();
@@ -586,9 +583,7 @@
         private Button TaskAdd_btn;
         private Button TaskDelete_btn;
         private Button TaskDone_btn;
-        private Label lbl_mygroups;
         public ListBox PersonGroups_list;
-        private Button ArchiveShow_btn;
         private Label lbl_date;
         private Label lbl_group;
         private Label lbl_discription;
@@ -600,15 +595,15 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Group;
-        private TextBox textbox_group;
-        private Button button1;
-        private TextBox textBox_date;
-        private TextBox textbox_description;
         private Button common_afairs_btn;
         private DataGridViewTextBoxColumn Parametr;
         private Label parametr_lable;
-        private TextBox textbox_parametr;
         private Button Open_calendar_btn;
         private Button archive_task_btn;
+        private Label label1;
+        private Label label_group;
+        private Label label_date;
+        private Label label_description;
+        private Label label_parametr;
     }
 }
