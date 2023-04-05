@@ -263,6 +263,7 @@
             this.PersonGroups_list.Name = "PersonGroups_list";
             this.PersonGroups_list.Size = new System.Drawing.Size(259, 82);
             this.PersonGroups_list.TabIndex = 57;
+            this.PersonGroups_list.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PersonGroups_list_MouseClick);
             // 
             // lbl_mygroups
             // 

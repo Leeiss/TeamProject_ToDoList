@@ -40,11 +40,12 @@ namespace TeamProject1_ToDoList
 
             while (reader.Read())
             {
-                data.Add(new string[4]);
+                data.Add(new string[5]);
                 data[data.Count - 1][0] = reader[0].ToString();
                 data[data.Count - 1][1] = reader[1].ToString();
                 data[data.Count - 1][2] = reader[2].ToString();
                 data[data.Count - 1][3] = reader[3].ToString();
+                data[data.Count - 1][4] = reader[4].ToString();
 
 
             }
@@ -57,6 +58,9 @@ namespace TeamProject1_ToDoList
             {
                 InfoTabel.Rows.Add(s);
             }
+            TimeSpan time;
+
+            time = (DateTime.Now).Subtract(Convert.ToDateTime(data[InfoTabel.CurrentCell.RowIndex][2]));
 
             int i = InfoTabel.CurrentCell.RowIndex;
 
@@ -64,7 +68,8 @@ namespace TeamProject1_ToDoList
             textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
             textbox_date.Text = InfoTabel[2, i].Value.ToString();
             textbox_group.Text = InfoTabel[3, i].Value.ToString();
-
+            textbox_comment.Text = data[InfoTabel.CurrentCell.RowIndex][4];
+            textbox_time.Text = time.Days.ToString() + " дней";
             textbox_user.Text = login;
 
         }
@@ -78,14 +83,86 @@ namespace TeamProject1_ToDoList
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            
-           
+        {          
             DataBase db = new DataBase();
 
             MySqlCommand command1 = new MySqlCommand("SELECT * FROM archivetasks WHERE userlogin = @log AND parametr = 'Личная' ", db.GetConnection());
             command1.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
 
+
+            db.OpenConnection();
+            DbDataReader reader = command1.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+            
+
+            while (reader.Read())
+            {
+                data.Add(new string[5]);
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+                data[data.Count - 1][4] = reader[4].ToString();
+
+            }
+            reader.Close();
+
+            db.CloseConnection();
+
+            InfoTabel.Rows.Clear();
+
+            foreach (string[] s in data)
+            {
+                InfoTabel.Rows.Add(s);
+            }
+            TimeSpan time;
+            time = (DateTime.Now).Subtract(Convert.ToDateTime(data[InfoTabel.CurrentCell.RowIndex][2]));
+
+            int i = InfoTabel.CurrentCell.RowIndex;
+
+            textbox_description.Text = InfoTabel[0, i].Value.ToString();
+            textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
+            textbox_date.Text = InfoTabel[2, i].Value.ToString();
+            textbox_group.Text = InfoTabel[3, i].Value.ToString();
+            textbox_comment.Text = data[InfoTabel.CurrentCell.RowIndex][4];
+            textbox_user.Text = login;
+            textbox_time.Text = time.Days.ToString() + " дней";
+
+        }
+
+        private void TaskArchive_Load(object sender, EventArgs e)
+        {
+            DataBase db = new DataBase();
+
+            MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  userlogin = @L", db.GetConnection());
+            command1.Parameters.Add("@L", MySqlDbType.VarChar).Value = login;
+
+
+            db.OpenConnection();
+            DbDataReader reader = command1.ExecuteReader();
+            string statement = "";
+
+            if (reader.Read())
+            {
+                statement = reader.GetString(0);
+            }
+
+
+            Groups_list.Items.Clear();
+            while (reader.Read())
+            {
+                Groups_list.Items.Add((string)reader[0]);
+
+            }
+        }
+
+        private void Groups_list_MouseClick(object sender, MouseEventArgs e)
+        {
+            DataBase db = new DataBase();
+
+            MySqlCommand command1 = new MySqlCommand("SELECT * FROM archivetasks WHERE userlogin = @log AND namegroup = @ng", db.GetConnection());
+            command1.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
+            command1.Parameters.Add("@ng", MySqlDbType.VarChar).Value = Groups_list.SelectedItem.ToString();
 
             db.OpenConnection();
             DbDataReader reader = command1.ExecuteReader();
@@ -100,9 +177,6 @@ namespace TeamProject1_ToDoList
                 data[data.Count - 1][3] = reader[3].ToString();
 
 
-
-
-
             }
             reader.Close();
             db.CloseConnection();
@@ -113,16 +187,6 @@ namespace TeamProject1_ToDoList
             {
                 InfoTabel.Rows.Add(s);
             }
-            int i = InfoTabel.CurrentCell.RowIndex;
-
-            textbox_description.Text = InfoTabel[0, i].Value.ToString();
-            textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
-            textbox_date.Text = InfoTabel[2, i].Value.ToString();
-            textbox_group.Text = InfoTabel[3, i].Value.ToString();
-            textbox_user.Text = login;
-
         }
-
-        
     }
 }

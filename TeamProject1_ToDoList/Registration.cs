@@ -27,8 +27,13 @@ namespace TeamProject1_ToDoList
 
         private void btn_registration_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btn_registration_Click_1(object sender, EventArgs e)
+        {
             DataBase db = new DataBase();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `password`) VALUES(@login, @password)", db.GetConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO users (`login`, `password`) VALUES(@login, @password)", db.GetConnection());
             command.Parameters.Add("@login", MySqlDbType.VarChar).Value = invented_login.Text;
             command.Parameters.Add("@password", MySqlDbType.VarChar).Value = invented_password.Text;
 
@@ -49,13 +54,7 @@ namespace TeamProject1_ToDoList
 
 
             db.CloseConnection();
-
-            MessageBox.Show("Вы успешно зарегестрированы! Можете войти в систему");
             Close();
-        }
-
-        private void btn_registration_Click_1(object sender, EventArgs e)
-        {
 
         }
 

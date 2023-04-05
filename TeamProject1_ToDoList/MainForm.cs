@@ -55,6 +55,7 @@ namespace TeamProject1_ToDoList
         private void MyGroups_btn_Click(object sender, EventArgs e)
         {
             NewGroupForm newGroupForm = new NewGroupForm();
+            newGroupForm.GetLogin = login;
             newGroupForm.Show();
         }
 
@@ -102,8 +103,9 @@ namespace TeamProject1_ToDoList
         {
             DataBase db = new DataBase();
 
-            MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  userlogin = @L ", db.GetConnection());
+            MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  userlogin = @L AND adminstatus = @admin", db.GetConnection());
             command1.Parameters.Add("@L", MySqlDbType.VarChar).Value = login;
+            command1.Parameters.Add("@admin", MySqlDbType.VarChar).Value = "0";
 
 
             db.OpenConnection();
@@ -329,6 +331,39 @@ namespace TeamProject1_ToDoList
         internal void TaskDelete_btn_Click_1()
         {
             throw new NotImplementedException();
+        }
+
+        private void PersonGroups_list_MouseClick(object sender, MouseEventArgs e)
+        {
+            DataBase db = new DataBase();
+
+            MySqlCommand command1 = new MySqlCommand("SELECT * FROM tasks WHERE userlogin = @log AND namegroup = @ng", db.GetConnection());
+            command1.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
+            command1.Parameters.Add("@ng", MySqlDbType.VarChar).Value = PersonGroups_list.SelectedItem.ToString();
+
+            db.OpenConnection();
+            DbDataReader reader = command1.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+
+
+            }
+            reader.Close();
+            db.CloseConnection();
+
+            InfoTabel.Rows.Clear();
+
+            foreach (string[] s in data)
+            {
+                InfoTabel.Rows.Add(s);
+            }
         }
     }
 }

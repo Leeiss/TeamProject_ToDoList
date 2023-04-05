@@ -42,6 +42,12 @@
             this.show_listGroup_button = new System.Windows.Forms.Button();
             this.show_listGroup_button2 = new System.Windows.Forms.Button();
             this.show_listMembers_button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.show_group_delete_btn = new System.Windows.Forms.Button();
+            this.show_members_delete_btn = new System.Windows.Forms.Button();
+            this.listBox_delete_group = new System.Windows.Forms.ListBox();
+            this.listBox_delete_members = new System.Windows.Forms.ListBox();
+            this.delete_member_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AppointTask_lbl
@@ -175,6 +181,8 @@
             // 
             // show_listGroup_button
             // 
+            this.show_listGroup_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.show_listGroup_button.Location = new System.Drawing.Point(12, 72);
             this.show_listGroup_button.Name = "show_listGroup_button";
             this.show_listGroup_button.Size = new System.Drawing.Size(112, 34);
@@ -203,12 +211,85 @@
             this.show_listMembers_button2.UseVisualStyleBackColor = true;
             this.show_listMembers_button2.Click += new System.EventHandler(this.show_listMembers_button2_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Sitka Banner", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
+            this.label2.Location = new System.Drawing.Point(9, 562);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(291, 48);
+            this.label2.TabIndex = 75;
+            this.label2.Text = "Удалить участника";
+            // 
+            // show_group_delete_btn
+            // 
+            this.show_group_delete_btn.Location = new System.Drawing.Point(9, 613);
+            this.show_group_delete_btn.Name = "show_group_delete_btn";
+            this.show_group_delete_btn.Size = new System.Drawing.Size(112, 34);
+            this.show_group_delete_btn.TabIndex = 76;
+            this.show_group_delete_btn.Text = "Группы";
+            this.show_group_delete_btn.UseVisualStyleBackColor = true;
+            this.show_group_delete_btn.Click += new System.EventHandler(this.show_group_delete_btn_Click);
+            // 
+            // show_members_delete_btn
+            // 
+            this.show_members_delete_btn.Location = new System.Drawing.Point(291, 613);
+            this.show_members_delete_btn.Name = "show_members_delete_btn";
+            this.show_members_delete_btn.Size = new System.Drawing.Size(112, 34);
+            this.show_members_delete_btn.TabIndex = 77;
+            this.show_members_delete_btn.Text = "Участники";
+            this.show_members_delete_btn.UseVisualStyleBackColor = true;
+            this.show_members_delete_btn.Click += new System.EventHandler(this.show_members_delete_btn_Click);
+            // 
+            // listBox_delete_group
+            // 
+            this.listBox_delete_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listBox_delete_group.FormattingEnabled = true;
+            this.listBox_delete_group.ItemHeight = 22;
+            this.listBox_delete_group.Location = new System.Drawing.Point(9, 652);
+            this.listBox_delete_group.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox_delete_group.Name = "listBox_delete_group";
+            this.listBox_delete_group.Size = new System.Drawing.Size(246, 114);
+            this.listBox_delete_group.TabIndex = 78;
+            // 
+            // listBox_delete_members
+            // 
+            this.listBox_delete_members.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listBox_delete_members.FormattingEnabled = true;
+            this.listBox_delete_members.ItemHeight = 22;
+            this.listBox_delete_members.Location = new System.Drawing.Point(291, 652);
+            this.listBox_delete_members.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox_delete_members.Name = "listBox_delete_members";
+            this.listBox_delete_members.Size = new System.Drawing.Size(246, 114);
+            this.listBox_delete_members.TabIndex = 79;
+            // 
+            // delete_member_btn
+            // 
+            this.delete_member_btn.Font = new System.Drawing.Font("Sylfaen", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.delete_member_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
+            this.delete_member_btn.Location = new System.Drawing.Point(635, 732);
+            this.delete_member_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.delete_member_btn.Name = "delete_member_btn";
+            this.delete_member_btn.Size = new System.Drawing.Size(133, 34);
+            this.delete_member_btn.TabIndex = 80;
+            this.delete_member_btn.Text = "Удалить";
+            this.delete_member_btn.UseVisualStyleBackColor = true;
+            this.delete_member_btn.Click += new System.EventHandler(this.delete_member_btn_Click);
+            // 
             // AppointForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(785, 575);
+            this.ClientSize = new System.Drawing.Size(785, 802);
+            this.Controls.Add(this.delete_member_btn);
+            this.Controls.Add(this.listBox_delete_members);
+            this.Controls.Add(this.listBox_delete_group);
+            this.Controls.Add(this.show_members_delete_btn);
+            this.Controls.Add(this.show_group_delete_btn);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.show_listMembers_button2);
             this.Controls.Add(this.show_listGroup_button2);
             this.Controls.Add(this.show_listGroup_button);
@@ -247,5 +328,11 @@
         private Button show_listGroup_button;
         private Button show_listGroup_button2;
         private Button show_listMembers_button2;
+        private Label label2;
+        private Button show_group_delete_btn;
+        private Button show_members_delete_btn;
+        private ListBox listBox_delete_group;
+        private ListBox listBox_delete_members;
+        private Button delete_member_btn;
     }
 }
