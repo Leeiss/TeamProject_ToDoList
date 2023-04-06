@@ -82,10 +82,10 @@
             this.left_panel.Controls.Add(this.lbl_group);
             this.left_panel.Controls.Add(this.lbl_parameter);
             this.left_panel.Controls.Add(this.lbl_discription);
-            this.left_panel.Location = new System.Drawing.Point(568, 193);
+            this.left_panel.Location = new System.Drawing.Point(568, 184);
             this.left_panel.Margin = new System.Windows.Forms.Padding(2);
             this.left_panel.Name = "left_panel";
-            this.left_panel.Size = new System.Drawing.Size(430, 601);
+            this.left_panel.Size = new System.Drawing.Size(430, 610);
             this.left_panel.TabIndex = 55;
             // 
             // textbox_user
@@ -230,6 +230,7 @@
             // 
             // InfoTabel
             // 
+            this.InfoTabel.AllowUserToAddRows = false;
             this.InfoTabel.AllowUserToDeleteRows = false;
             this.InfoTabel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
             this.InfoTabel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -249,6 +250,7 @@
             this.InfoTabel.Location = new System.Drawing.Point(14, 111);
             this.InfoTabel.Margin = new System.Windows.Forms.Padding(2);
             this.InfoTabel.Name = "InfoTabel";
+            this.InfoTabel.ReadOnly = true;
             this.InfoTabel.RowHeadersWidth = 82;
             this.InfoTabel.RowTemplate.Height = 41;
             this.InfoTabel.Size = new System.Drawing.Size(544, 683);
@@ -264,6 +266,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Описание ";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 133;
             // 
             // dataGridViewTextBoxColumn3
@@ -274,6 +277,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Параметр";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 130;
             // 
             // Date
@@ -284,6 +288,7 @@
             this.Date.HeaderText = "Дата ";
             this.Date.MinimumWidth = 10;
             this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             this.Date.Width = 90;
             // 
             // Group
@@ -294,6 +299,7 @@
             this.Group.HeaderText = "Группа";
             this.Group.MinimumWidth = 10;
             this.Group.Name = "Group";
+            this.Group.ReadOnly = true;
             this.Group.Width = 105;
             // 
             // AppointTask_lbl

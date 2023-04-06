@@ -67,10 +67,10 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="info_task_button.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="label1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASQAAAA8CAIAAABAaVD5AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAER9JREFUeF7tnPdbU0nbgL8/kRVEWXUVfC27QuiIIFJUVvFlF1REEUlIIAQkIYRe
+        wQAADsEBuJFr7QAAER9JREFUeF7tnPdbU0nbgL8/kRVEWXUVfC27QuiIIFJUVvFlF1REEUlIIAQkIYRe
         Qui9SajSewslhbSThHfOOTMnJyEJwYV8uNfc1/ySKYdIuHmeeWbw/44xGIxPwLJhMD4Cy4bB+AgsGwbj
         I7BsGIyPwLJhMD4Cy4bB+AgsGwbjI7BsGIyPwLJhMD4Cy4bB+AgsGwbjI7BsGIyPwLJhMD4Cy4bB+Ags
         GwbjIy6xbDarbWNlf7hzpC6ztYAjff1rbcsGHMJgfkIuqWxWk27uix831N54kVg2zM8Nks1mPaiPYP9w

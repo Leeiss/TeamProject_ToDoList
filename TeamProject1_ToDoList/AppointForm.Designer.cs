@@ -72,6 +72,7 @@
             this.MyGroups_list.Name = "MyGroups_list";
             this.MyGroups_list.Size = new System.Drawing.Size(246, 180);
             this.MyGroups_list.TabIndex = 5;
+            this.MyGroups_list.Click += new System.EventHandler(this.MyGroups_list_Click);
             this.MyGroups_list.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MyGroups_list_MouseClick);
             this.MyGroups_list.SelectedIndexChanged += new System.EventHandler(this.MyGroups_list_SelectedIndexChanged);
             // 
@@ -85,6 +86,7 @@
             this.Members_list.Name = "Members_list";
             this.Members_list.Size = new System.Drawing.Size(246, 180);
             this.Members_list.TabIndex = 58;
+            this.Members_list.Click += new System.EventHandler(this.Members_list_Click);
             // 
             // lbl_task
             // 

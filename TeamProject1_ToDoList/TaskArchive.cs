@@ -25,7 +25,7 @@ namespace TeamProject1_ToDoList
         {
 
         }
-
+       
         private void button2_Click(object sender, EventArgs e)
         {
             DataBase db = new DataBase();
@@ -60,13 +60,11 @@ namespace TeamProject1_ToDoList
             }
 
 
-            TimeSpan time;
 
-            time = DateTime.UtcNow.Subtract(Convert.ToDateTime(data[InfoTabel.CurrentCell.RowIndex][2]));
-            string comment =  data[InfoTabel.CurrentCell.RowIndex][4];
+           
 
-            ShowInformation(time, comment); 
-            
+           
+
 
         }
 
@@ -111,7 +109,21 @@ namespace TeamProject1_ToDoList
             {
                 InfoTabel.Rows.Add(s);
             }
-          
+
+
+            TimeSpan time = DateTime.UtcNow.Subtract(Convert.ToDateTime(data[InfoTabel.CurrentCell.RowIndex][2]));
+            string comment = data[InfoTabel.CurrentCell.RowIndex][4];
+
+            int i = InfoTabel.CurrentCell.RowIndex;
+
+            textbox_description.Text = InfoTabel[0, i].Value.ToString();
+            textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
+            textbox_date.Text = InfoTabel[2, i].Value.ToString();
+            textbox_group.Text = InfoTabel[3, i].Value.ToString();
+            textbox_comment.Text = comment;
+            textbox_time.Text = time.Days.ToString() + " дней";
+            textbox_user.Text = login;
+
         }
 
         private void TaskArchive_Load(object sender, EventArgs e)
@@ -173,23 +185,11 @@ namespace TeamProject1_ToDoList
             }
         }
 
-        private void ShowInformation(TimeSpan time, string comment)
-        {
-            int i = InfoTabel.CurrentCell.RowIndex;
-
-            textbox_description.Text = InfoTabel[0, i].Value.ToString();
-            textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
-            textbox_date.Text = InfoTabel[2, i].Value.ToString();
-            textbox_group.Text = InfoTabel[3, i].Value.ToString();
-            textbox_comment.Text =comment;
-            textbox_time.Text = time.Days.ToString() + " дней";
-            textbox_user.Text = login;
-        }
+        
 
         private void InfoTabel_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
-           
+          
         }
 
         private void search_btn_Click(object sender, EventArgs e)

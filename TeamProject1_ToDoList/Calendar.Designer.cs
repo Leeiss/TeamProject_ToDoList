@@ -30,11 +30,11 @@ namespace TeamProject1_ToDoList
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalendarForm));
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.Calendar_lbl = new System.Windows.Forms.Label();
@@ -64,9 +64,9 @@ namespace TeamProject1_ToDoList
             this.TaskDelete_btn = new System.Windows.Forms.Button();
             this.TaskAdd_btn = new System.Windows.Forms.Button();
             this.ArchiveShow_btn = new System.Windows.Forms.Button();
-            this.info_task_button = new System.Windows.Forms.Button();
             this.personal_affairs_btn = new System.Windows.Forms.Button();
             this.common_afairs_btn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture_calendar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InfoTabel)).BeginInit();
             this.left_panel.SuspendLayout();
@@ -138,6 +138,7 @@ namespace TeamProject1_ToDoList
             // 
             // InfoTabel
             // 
+            this.InfoTabel.AllowUserToAddRows = false;
             this.InfoTabel.AllowUserToDeleteRows = false;
             this.InfoTabel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
             this.InfoTabel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -146,17 +147,18 @@ namespace TeamProject1_ToDoList
             this.dataGridViewTextBoxColumn3,
             this.Date,
             this.Group});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Sitka Small", 9.124999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.InfoTabel.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sitka Small", 9.124999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.InfoTabel.DefaultCellStyle = dataGridViewCellStyle5;
             this.InfoTabel.Location = new System.Drawing.Point(299, 109);
             this.InfoTabel.Margin = new System.Windows.Forms.Padding(2);
             this.InfoTabel.Name = "InfoTabel";
+            this.InfoTabel.ReadOnly = true;
             this.InfoTabel.RowHeadersWidth = 82;
             this.InfoTabel.RowTemplate.Height = 41;
             this.InfoTabel.Size = new System.Drawing.Size(521, 606);
@@ -167,42 +169,46 @@ namespace TeamProject1_ToDoList
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Sitka Heading", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sitka Heading", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn2.HeaderText = "Группа";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 105;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn3.HeaderText = "Дата";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 85;
             // 
             // Date
             // 
             this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Date.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Date.DefaultCellStyle = dataGridViewCellStyle3;
             this.Date.HeaderText = "Описание";
             this.Date.MinimumWidth = 10;
             this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             this.Date.Width = 128;
             // 
             // Group
             // 
             this.Group.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Group.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Group.DefaultCellStyle = dataGridViewCellStyle4;
             this.Group.HeaderText = "Параметр";
             this.Group.MinimumWidth = 10;
             this.Group.Name = "Group";
+            this.Group.ReadOnly = true;
             this.Group.Width = 130;
             // 
             // left_panel
@@ -387,16 +393,7 @@ namespace TeamProject1_ToDoList
             this.ArchiveShow_btn.TabIndex = 54;
             this.ArchiveShow_btn.Text = "Архив выполненных задач";
             this.ArchiveShow_btn.UseVisualStyleBackColor = true;
-            // 
-            // info_task_button
-            // 
-            this.info_task_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("info_task_button.BackgroundImage")));
-            this.info_task_button.Location = new System.Drawing.Point(842, 50);
-            this.info_task_button.Name = "info_task_button";
-            this.info_task_button.Size = new System.Drawing.Size(292, 50);
-            this.info_task_button.TabIndex = 55;
-            this.info_task_button.UseVisualStyleBackColor = true;
-            this.info_task_button.Click += new System.EventHandler(this.info_task_button_Click);
+            this.ArchiveShow_btn.Click += new System.EventHandler(this.ArchiveShow_btn_Click_1);
             // 
             // personal_affairs_btn
             // 
@@ -426,15 +423,23 @@ namespace TeamProject1_ToDoList
             this.common_afairs_btn.UseVisualStyleBackColor = false;
             this.common_afairs_btn.Click += new System.EventHandler(this.common_afairs_btn_Click);
             // 
+            // label1
+            // 
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(842, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(289, 54);
+            this.label1.TabIndex = 64;
+            // 
             // CalendarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1232, 820);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.common_afairs_btn);
             this.Controls.Add(this.personal_affairs_btn);
-            this.Controls.Add(this.info_task_button);
             this.Controls.Add(this.ArchiveShow_btn);
             this.Controls.Add(this.TaskDone_btn);
             this.Controls.Add(this.TaskDelete_btn);
@@ -480,7 +485,6 @@ namespace TeamProject1_ToDoList
         private Button TaskDelete_btn;
         private Button TaskAdd_btn;
         private Button ArchiveShow_btn;
-        private Button info_task_button;
         private TextBox textbox_description;
         private TextBox textbox_date;
         private TextBox textbox_group;
@@ -493,5 +497,6 @@ namespace TeamProject1_ToDoList
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Group;
+        private Label label1;
     }
 }

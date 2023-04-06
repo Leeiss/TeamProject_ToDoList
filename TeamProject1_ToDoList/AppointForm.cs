@@ -41,92 +41,95 @@ namespace TeamProject1_ToDoList
 
         public void show_listGroup_button_Click(object sender, EventArgs e)
         {
-            DataBase db = new DataBase();
 
-            MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  userlogin = @L AND adminstatus = @admin ", db.GetConnection());
-            command1.Parameters.Add("@L", MySqlDbType.VarChar).Value = login;
-            command1.Parameters.Add("@admin", MySqlDbType.VarChar).Value = "1";
-
-
-
-            db.OpenConnection();
-            DbDataReader reader = command1.ExecuteReader();
-            string statement = "";
-
-            if (reader.Read())
             {
-                statement = reader.GetString(0);
-            }
+                DataBase db = new DataBase();
 
-            MyGroups_list.Items.Clear();
-            while (reader.Read())
-            {
-                MyGroups_list.Items.Add((string)reader[0]);
+                MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  userlogin = @L AND adminstatus = @admin ", db.GetConnection());
+                command1.Parameters.Add("@L", MySqlDbType.VarChar).Value = login;
+                command1.Parameters.Add("@admin", MySqlDbType.VarChar).Value = "1";
 
+
+
+                db.OpenConnection();
+                DbDataReader reader = command1.ExecuteReader();
+                string statement = "";
+
+                if (reader.Read())
+                {
+                    statement = reader.GetString(0);
+                }
+
+                MyGroups_list.Items.Clear();
+                while (reader.Read())
+                {
+                    MyGroups_list.Items.Add((string)reader[0]);
+
+                }
+                reader.Close();
             }
-            reader.Close();
 
         }
 
         private void Appoint_btn_Click(object sender, EventArgs e)
         {
-            String namegroup = MyGroups_list.SelectedItem.ToString();
-            String task = Entered_Text.Text;
-            string date = DateTime.UtcNow.ToString("dd.MM.yyyy");
-            DataBase db = new DataBase();
+            
 
-            if (Members_list.SelectedItems.Count == 0)
-            {
-                MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE namegroup = @group", db.GetConnection());
-                command1.Parameters.Add("@group", MySqlDbType.VarChar).Value = namegroup;
+                String namegroup = MyGroups_list.SelectedItem.ToString();
+                String task = Entered_Text.Text;
+                string date = DateTime.UtcNow.ToString("dd.MM.yyyy");
+                DataBase db = new DataBase();
 
-
-                db.OpenConnection();
-                DbDataReader reader1 = command1.ExecuteReader();
-                List<string> data = new List<string>();
-
-                while (reader1.Read())
+                if (Members_list.SelectedItems.Count == 0)
                 {
-                    data.Add(reader1[1].ToString());
+                    MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE namegroup = @group", db.GetConnection());
+                    command1.Parameters.Add("@group", MySqlDbType.VarChar).Value = namegroup;
 
+
+                    db.OpenConnection();
+                    DbDataReader reader1 = command1.ExecuteReader();
+                    List<string> data = new List<string>();
+
+                    while (reader1.Read())
+                    {
+                        data.Add(reader1[1].ToString());
+
+                    }
+                    reader1.Close();
+
+                    int i = 0;
+
+                    while (i < data.Count)
+                    {
+                        MySqlCommand command = new MySqlCommand("INSERT INTO tasks (`namegroup`,`date`,`task`,`userlogin`) VALUES(@name, @date, @tsk, @log)", db.GetConnection());
+                        command.Parameters.Add("@name", MySqlDbType.VarChar).Value = namegroup;
+                        command.Parameters.Add("@date", MySqlDbType.VarChar).Value = date;
+                        command.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = task;
+                        command.Parameters.Add("@log", MySqlDbType.VarChar).Value = data[i];
+                        db.OpenConnection();
+
+                        command.ExecuteNonQuery();
+
+                        i++;
+
+                    }
+
+                    MessageBox.Show("Задача успешно присвоена!");
                 }
-                reader1.Close();
 
-                int i = 0;
-
-                while (i < data.Count)
+                else
                 {
-                    MySqlCommand command = new MySqlCommand("INSERT INTO tasks (`namegroup`,`date`,`task`,`userlogin`) VALUES(@name, @date, @tsk, @log)", db.GetConnection());
+                    MySqlCommand command = new MySqlCommand("INSERT INTO persontask (`namegroup`,`date`,`task`,`userlogin`) VALUES(@name, @date, @tsk, @log)", db.GetConnection());
                     command.Parameters.Add("@name", MySqlDbType.VarChar).Value = namegroup;
                     command.Parameters.Add("@date", MySqlDbType.VarChar).Value = date;
                     command.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = task;
-                    command.Parameters.Add("@log", MySqlDbType.VarChar).Value = data[i];
+                    command.Parameters.Add("@log", MySqlDbType.VarChar).Value = Members_list.SelectedItem.ToString();
                     db.OpenConnection();
 
                     command.ExecuteNonQuery();
-
-                    i++;
+                    MessageBox.Show("Задача успешно присвоена!");
 
                 }
-
-                MessageBox.Show("Задача успешно присвоена!");
-            }
-
-            else
-            {
-                MySqlCommand command = new MySqlCommand("INSERT INTO persontask (`namegroup`,`date`,`task`,`userlogin`) VALUES(@name, @date, @tsk, @log)", db.GetConnection());
-                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = namegroup;
-                command.Parameters.Add("@date", MySqlDbType.VarChar).Value = date;
-                command.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = task;
-                command.Parameters.Add("@log", MySqlDbType.VarChar).Value = Members_list.SelectedItem.ToString();
-                db.OpenConnection();
-
-                command.ExecuteNonQuery();
-                MessageBox.Show("Задача успешно присвоена!");
-
-            }
-
-
 
         }
 
@@ -248,89 +251,123 @@ namespace TeamProject1_ToDoList
 
         private void MyGroups_list_MouseClick(object sender, MouseEventArgs e)
         {
-            DataBase db = new DataBase();
-
-            MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  namegroup = @G ", db.GetConnection());
-            command1.Parameters.Add("@G", MySqlDbType.VarChar).Value = MyGroups_list.SelectedItem.ToString();
-
-
-
-            db.OpenConnection();
-            DbDataReader reader = command1.ExecuteReader();
-            string statement = "";
-
-            if (reader.Read())
+            if (this.MyGroups_list.SelectedItems.Count == 0)
             {
-                statement = reader.GetString(0);
+                MessageBox.Show("ошибка");
             }
-
-            Members_list.Items.Clear();
-
-            while (reader.Read())
+            else
             {
 
-                Members_list.Items.Add((string)reader[1]);
+                DataBase db = new DataBase();
 
+                MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  namegroup = @G ", db.GetConnection());
+                command1.Parameters.Add("@G", MySqlDbType.VarChar).Value = MyGroups_list.SelectedItem.ToString();
+
+
+
+                db.OpenConnection();
+                DbDataReader reader = command1.ExecuteReader();
+                string statement = "";
+
+                if (reader.Read())
+                {
+                    statement = reader.GetString(0);
+                }
+
+                Members_list.Items.Clear();
+
+                while (reader.Read())
+                {
+
+                    Members_list.Items.Add((string)reader[1]);
+
+                }
+                reader.Close();
+
+                db.CloseConnection();
             }
-            reader.Close();
-
-            db.CloseConnection();
         }
 
         private void MyGroups_list2_MouseClick(object sender, MouseEventArgs e)
         {
-            DataBase db = new DataBase();
-
-            MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  namegroup = @G ", db.GetConnection());
-            command1.Parameters.Add("@G", MySqlDbType.VarChar).Value = MyGroups_list2.SelectedItem.ToString();
-
-
-
-            db.OpenConnection();
-            DbDataReader reader = command1.ExecuteReader();
-            string statement = "";
-
-            if (reader.Read())
+            if (this.MyGroups_list2.SelectedItems.Count == 0)
             {
-                statement = reader.GetString(0);
+                MessageBox.Show("ошибка");
             }
-
-            Members_list2.Items.Clear();
-            while (reader.Read())
+            else
             {
-                Members_list2.Items.Add((string)reader[1]);
 
+                DataBase db = new DataBase();
+
+                MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  namegroup = @G ", db.GetConnection());
+                command1.Parameters.Add("@G", MySqlDbType.VarChar).Value = MyGroups_list2.SelectedItem.ToString();
+
+
+
+                db.OpenConnection();
+                DbDataReader reader = command1.ExecuteReader();
+                string statement = "";
+
+                if (reader.Read())
+                {
+                    statement = reader.GetString(0);
+                }
+
+                Members_list2.Items.Clear();
+                while (reader.Read())
+                {
+                    Members_list2.Items.Add((string)reader[1]);
+
+                }
+                reader.Close();
             }
-            reader.Close();
         }
 
         private void listBox_delete_group_MouseClick(object sender, MouseEventArgs e)
         {
-            DataBase db = new DataBase();
 
-            MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  namegroup = @G ", db.GetConnection());
-            command1.Parameters.Add("@G", MySqlDbType.VarChar).Value = listBox_delete_group.SelectedItem.ToString();
-
-
-
-            db.OpenConnection();
-            DbDataReader reader = command1.ExecuteReader();
-            string statement = "";
-
-            if (reader.Read())
+            if (this.listBox_delete_group.SelectedItems.Count == 0)
             {
-                statement = reader.GetString(0);
+                MessageBox.Show("ошибка");
             }
-
-            Members_list.Items.Clear();
-            while (reader.Read())
+            else
             {
-                listBox_delete_members.Items.Add((string)reader[1]);
+                DataBase db = new DataBase();
 
+                MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  namegroup = @G ", db.GetConnection());
+                command1.Parameters.Add("@G", MySqlDbType.VarChar).Value = listBox_delete_group.SelectedItem.ToString();
+
+
+
+                db.OpenConnection();
+                DbDataReader reader = command1.ExecuteReader();
+                string statement = "";
+
+                if (reader.Read())
+                {
+                    statement = reader.GetString(0);
+                }
+
+                listBox_delete_members.Items.Clear();
+                while (reader.Read())
+                {
+                    listBox_delete_members.Items.Add((string)reader[1]);
+
+                }
+                reader.Close();
+
+                db.CloseConnection();
             }
-            reader.Close();
+        }
 
-            db.CloseConnection();
+        private void MyGroups_list_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Members_list_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

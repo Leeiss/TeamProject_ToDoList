@@ -300,6 +300,7 @@
             // 
             // InfoTabel
             // 
+            this.InfoTabel.AllowUserToAddRows = false;
             this.InfoTabel.AllowUserToDeleteRows = false;
             this.InfoTabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -322,6 +323,7 @@
             this.InfoTabel.Location = new System.Drawing.Point(309, 151);
             this.InfoTabel.Margin = new System.Windows.Forms.Padding(2);
             this.InfoTabel.Name = "InfoTabel";
+            this.InfoTabel.ReadOnly = true;
             this.InfoTabel.RowHeadersWidth = 82;
             this.InfoTabel.RowTemplate.Height = 41;
             this.InfoTabel.Size = new System.Drawing.Size(529, 587);
@@ -340,6 +342,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Группа ";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // Date
             // 
@@ -349,6 +352,7 @@
             this.Date.HeaderText = "Дата ";
             this.Date.MinimumWidth = 10;
             this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             this.Date.Width = 90;
             // 
             // Group
@@ -359,6 +363,7 @@
             this.Group.HeaderText = "Описание";
             this.Group.MinimumWidth = 10;
             this.Group.Name = "Group";
+            this.Group.ReadOnly = true;
             this.Group.Width = 128;
             // 
             // Parametr
@@ -366,6 +371,7 @@
             this.Parametr.HeaderText = "Параметр";
             this.Parametr.MinimumWidth = 8;
             this.Parametr.Name = "Parametr";
+            this.Parametr.ReadOnly = true;
             this.Parametr.Width = 150;
             // 
             // right_panel

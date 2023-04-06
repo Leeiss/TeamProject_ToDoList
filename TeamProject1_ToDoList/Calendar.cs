@@ -307,5 +307,11 @@ namespace TeamProject1_ToDoList
             TaskDone taskDone = new TaskDone();
             taskDone.ShowDialog();
         }
+
+        private void ArchiveShow_btn_Click_1(object sender, EventArgs e)
+        {
+            TaskArchive taskArchive = new TaskArchive();
+            taskArchive.ShowDialog();
+        }
     }
 }
