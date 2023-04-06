@@ -66,13 +66,13 @@ namespace TeamProject1_ToDoList
 
         private void info_task_button_Click(object sender, EventArgs e)
         {
-            int i = InfoTabel.CurrentCell.RowIndex;
+            //int i = InfoTabel.CurrentCell.RowIndex;
 
 
-            textbox_group.Text = InfoTabel[0, i].Value.ToString();
-            textbox_date.Text = InfoTabel[1, i].Value.ToString();
-            textbox_description.Text = InfoTabel[2, i].Value.ToString();
-            textbox_parametr.Text = InfoTabel[3, i].Value.ToString();
+            //textbox_group.Text = InfoTabel[0, i].Value.ToString();
+            //textbox_date.Text = InfoTabel[1, i].Value.ToString();
+            //textbox_description.Text = InfoTabel[2, i].Value.ToString();
+            //textbox_parametr.Text = InfoTabel[3, i].Value.ToString();
         }
 
         private void TaskAdd_btn_Click_1(object sender, EventArgs e)
@@ -298,6 +298,14 @@ namespace TeamProject1_ToDoList
 
         private void InfoTabel_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            int i = InfoTabel.CurrentCell.RowIndex;
+
+
+            textbox_group.Text = InfoTabel[0, i].Value.ToString();
+            textbox_date.Text = InfoTabel[1, i].Value.ToString();
+            textbox_description.Text = InfoTabel[2, i].Value.ToString();
+            textbox_parametr.Text = InfoTabel[3, i].Value.ToString();
+
             TaskDelete_btn.Visible = true;
             TaskDone_btn.Visible = true;
         }

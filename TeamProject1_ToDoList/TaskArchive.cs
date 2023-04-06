@@ -10,7 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using TeamProject1_ToDoList.Classes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace TeamProject1_ToDoList
 {
@@ -112,18 +114,10 @@ namespace TeamProject1_ToDoList
             }
 
 
-            TimeSpan time = DateTime.UtcNow.Subtract(Convert.ToDateTime(data[InfoTabel.CurrentCell.RowIndex][2]));
-            string comment = data[InfoTabel.CurrentCell.RowIndex][4];
+            //TimeSpan time = DateTime.UtcNow.Subtract(Convert.ToDateTime(InfoTabel.CurrentCell.RowIndex[2]);
+            ////string comment = data[InfoTabel.CurrentCell.RowIndex][4];
 
-            int i = InfoTabel.CurrentCell.RowIndex;
-
-            textbox_description.Text = InfoTabel[0, i].Value.ToString();
-            textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
-            textbox_date.Text = InfoTabel[2, i].Value.ToString();
-            textbox_group.Text = InfoTabel[3, i].Value.ToString();
-            textbox_comment.Text = comment;
-            textbox_time.Text = time.Days.ToString() + " дней";
-            textbox_user.Text = login;
+            
 
         }
 
@@ -190,7 +184,15 @@ namespace TeamProject1_ToDoList
 
         private void InfoTabel_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-          
+            int i = InfoTabel.CurrentCell.RowIndex;
+
+            textbox_description.Text = InfoTabel[0, i].Value.ToString();
+            textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
+            textbox_date.Text = InfoTabel[2, i].Value.ToString();
+            textbox_group.Text = InfoTabel[3, i].Value.ToString();
+            textbox_comment.Text = InfoTabel[4, i].Value.ToString(); ;
+            //textbox_time.Text = time.Days.ToString() + " дней";
+            textbox_user.Text = login;
         }
 
         private void search_btn_Click(object sender, EventArgs e)
