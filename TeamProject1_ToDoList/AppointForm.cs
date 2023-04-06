@@ -73,10 +73,16 @@ namespace TeamProject1_ToDoList
 
         private void Appoint_btn_Click(object sender, EventArgs e)
         {
-            
-
+         
                 String namegroup = MyGroups_list.SelectedItem.ToString();
-                String task = Entered_Text.Text;
+                while (Entered_Text != null)
+                {
+                    MessageBox.Show("Задача не может быть пустой");
+                    break;
+                }
+
+                string task = Entered_Text.Text;
+
                 string date = DateTime.UtcNow.ToString("dd.MM.yyyy");
                 DataBase db = new DataBase();
 
@@ -114,7 +120,7 @@ namespace TeamProject1_ToDoList
 
                     }
 
-                    MessageBox.Show("Задача успешно присвоена!");
+                    
                 }
 
                 else
@@ -131,9 +137,10 @@ namespace TeamProject1_ToDoList
 
                 }
 
-        }
 
-        private void show_listGroup_button2_Click(object sender, EventArgs e)
+            }
+
+            private void show_listGroup_button2_Click(object sender, EventArgs e)
         {
 
             DataBase db = new DataBase();
@@ -166,56 +173,73 @@ namespace TeamProject1_ToDoList
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-            String namegroup = MyGroups_list2.SelectedItem.ToString();
-            String login = Members_list2.SelectedItem.ToString();
-
-
-            DataBase db = new DataBase();
-            MySqlCommand command = new MySqlCommand("DELETE FROM `tasks`  WHERE `namegroup` = @name AND `userlogin` = @log", db.GetConnection());
-            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = namegroup;
-            command.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
-
-            db.OpenConnection();
-            if (command.ExecuteNonQuery() == 1)
+            if (this.MyGroups_list.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Задача удалена успешно!");
-
-
-
-
-
+                MessageBox.Show("ошибка");
             }
             else
             {
-                MessageBox.Show("Ошибка!Попробуйте еще раз!");
+
+                String namegroup = MyGroups_list2.SelectedItem.ToString();
+                String login = Members_list2.SelectedItem.ToString();
+
+
+                DataBase db = new DataBase();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `tasks`  WHERE `namegroup` = @name AND `userlogin` = @log", db.GetConnection());
+                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = namegroup;
+                command.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
+
+                db.OpenConnection();
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Задача удалена успешно!");
+
+
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка!Попробуйте еще раз!");
+                }
             }
 
         }
 
         private void delete_member_btn_Click(object sender, EventArgs e)
         {
-            String namegroup = listBox_delete_group.SelectedItem.ToString();
-            String login = listBox_delete_members.SelectedItem.ToString();
-
-
-            DataBase db = new DataBase();
-            MySqlCommand command = new MySqlCommand("DELETE FROM `groups`  WHERE `namegroup` = @name AND `userlogin` = @log", db.GetConnection());
-            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = namegroup;
-            command.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
-
-            db.OpenConnection();
-            if (command.ExecuteNonQuery() == 1)
+            if (this.MyGroups_list.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Пользователь удален успешно!");
-
-
-
-
-
+                MessageBox.Show("ошибка");
             }
             else
             {
-                MessageBox.Show("Ошибка!Попробуйте еще раз!");
+
+
+                String namegroup = listBox_delete_group.SelectedItem.ToString();
+                String login = listBox_delete_members.SelectedItem.ToString();
+
+
+                DataBase db = new DataBase();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `groups`  WHERE `namegroup` = @name AND `userlogin` = @log", db.GetConnection());
+                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = namegroup;
+                command.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
+
+                db.OpenConnection();
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Пользователь удален успешно!");
+
+
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка!Попробуйте еще раз!");
+                }
             }
 
         }

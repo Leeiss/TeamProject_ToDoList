@@ -115,9 +115,9 @@ namespace TeamProject1_ToDoList
 
 
             //TimeSpan time = DateTime.UtcNow.Subtract(Convert.ToDateTime(InfoTabel.CurrentCell.RowIndex[2]);
-            ////string comment = data[InfoTabel.CurrentCell.RowIndex][4];
+            //string comment = data[InfoTabel.CurrentCell.RowIndex][4];
 
-            
+
 
         }
 
@@ -184,14 +184,16 @@ namespace TeamProject1_ToDoList
 
         private void InfoTabel_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            string date = DateTime.UtcNow.ToString("dd.MM.yyyy");
             int i = InfoTabel.CurrentCell.RowIndex;
+            TimeSpan time = Convert.ToDateTime(date).Subtract(Convert.ToDateTime(Convert.ToDateTime(InfoTabel[2, i].Value)));
 
             textbox_description.Text = InfoTabel[0, i].Value.ToString();
             textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
             textbox_date.Text = InfoTabel[2, i].Value.ToString();
             textbox_group.Text = InfoTabel[3, i].Value.ToString();
             textbox_comment.Text = InfoTabel[4, i].Value.ToString(); ;
-            //textbox_time.Text = time.Days.ToString() + " дней";
+            textbox_time.Text = time.Days.ToString() + " дней";
             textbox_user.Text = login;
         }
 
