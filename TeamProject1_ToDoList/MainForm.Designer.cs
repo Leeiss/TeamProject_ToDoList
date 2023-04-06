@@ -43,7 +43,6 @@
             this.archive_task_btn = new System.Windows.Forms.Button();
             this.Open_calendar_btn = new System.Windows.Forms.Button();
             this.common_afairs_btn = new System.Windows.Forms.Button();
-            this.show_group_button = new System.Windows.Forms.Button();
             this.AppointTask_lbl = new System.Windows.Forms.Button();
             this.MyGroups_btn = new System.Windows.Forms.Button();
             this.PersonGroups_list = new System.Windows.Forms.ListBox();
@@ -162,7 +161,6 @@
             this.left_panel.Controls.Add(this.archive_task_btn);
             this.left_panel.Controls.Add(this.Open_calendar_btn);
             this.left_panel.Controls.Add(this.common_afairs_btn);
-            this.left_panel.Controls.Add(this.show_group_button);
             this.left_panel.Controls.Add(this.AppointTask_lbl);
             this.left_panel.Controls.Add(this.MyGroups_btn);
             this.left_panel.Controls.Add(this.PersonGroups_list);
@@ -208,16 +206,6 @@
             this.common_afairs_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.common_afairs_btn.UseVisualStyleBackColor = false;
             this.common_afairs_btn.Click += new System.EventHandler(this.common_afairs_btn_Click);
-            // 
-            // show_group_button
-            // 
-            this.show_group_button.Location = new System.Drawing.Point(12, 277);
-            this.show_group_button.Name = "show_group_button";
-            this.show_group_button.Size = new System.Drawing.Size(112, 34);
-            this.show_group_button.TabIndex = 60;
-            this.show_group_button.Text = "Группы";
-            this.show_group_button.UseVisualStyleBackColor = true;
-            this.show_group_button.Click += new System.EventHandler(this.show_group_button_Click);
             // 
             // AppointTask_lbl
             // 
@@ -591,7 +579,6 @@
         private TextBox Entered_Text;
         private Button MyGroups_btn;
         private Button AppointTask_lbl;
-        private Button show_group_button;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Group;

@@ -24,6 +24,32 @@ namespace TeamProject1_ToDoList
         private void MainForm_Load(object sender, EventArgs e)
         {
             lbl_name.Text = login;
+
+            DataBase db = new DataBase();
+
+            MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  userlogin = @L AND adminstatus = @admin", db.GetConnection());
+            command1.Parameters.Add("@L", MySqlDbType.VarChar).Value = login;
+            command1.Parameters.Add("@admin", MySqlDbType.VarChar).Value = "0";
+
+
+            db.OpenConnection();
+            DbDataReader reader = command1.ExecuteReader();
+            string statement = "";
+
+            if (reader.Read())
+            {
+                statement = reader.GetString(0);
+            }
+
+
+            PersonGroups_list.Items.Clear();
+            while (reader.Read())
+            {
+                PersonGroups_list.Items.Add((string)reader[0]);
+
+            }
+
+
         }
 
         private void CalendarMove(object sender, MouseEventArgs e)
@@ -104,44 +130,6 @@ namespace TeamProject1_ToDoList
             }
         }
 
-        private void show_group_button_Click(object sender, EventArgs e)
-        {
-            DataBase db = new DataBase();
-
-            MySqlCommand command1 = new MySqlCommand("SELECT * FROM groups WHERE  userlogin = @L AND adminstatus = @admin", db.GetConnection());
-            command1.Parameters.Add("@L", MySqlDbType.VarChar).Value = login;
-            command1.Parameters.Add("@admin", MySqlDbType.VarChar).Value = "0";
-
-
-            db.OpenConnection();
-            DbDataReader reader = command1.ExecuteReader();
-            string statement = "";
-
-            if (reader.Read())
-            {
-                statement = reader.GetString(0);
-            }
-
-
-            PersonGroups_list.Items.Clear();
-            while (reader.Read())
-            {
-                PersonGroups_list.Items.Add((string)reader[0]);
-
-            }
-
-
-
-        }
-
-
-        private void ShowTask_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-
 
         public void TaskDelete_btn_Click_1(object sender, EventArgs e)
         {
@@ -150,74 +138,81 @@ namespace TeamProject1_ToDoList
             DataBase db = new DataBase();
             db.OpenConnection();
 
-
-            if (InfoTabel[3, i].Value.ToString() == "Общая")
+            try
             {
-
-
-                MySqlCommand command2 = new MySqlCommand("DELETE  FROM tasks WHERE userlogin = @del AND task = @tsk ", db.GetConnection());
-                command2.Parameters.Add("@del", MySqlDbType.VarChar).Value = login;
-                command2.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = InfoTabel[2, i].Value.ToString();
-
-
-                DbDataReader reader = command2.ExecuteReader();
-                List<string[]> data = new List<string[]>();
-
-                while (reader.Read())
+                if (InfoTabel[3, i].Value.ToString() == "Общая")
                 {
-                    data.Add(new string[3]);
-                    data[data.Count - 1][0] = reader[0].ToString();
-                    data[data.Count - 1][1] = reader[1].ToString();
-                    data[data.Count - 1][2] = reader[2].ToString();
+
+
+                    MySqlCommand command2 = new MySqlCommand("DELETE  FROM tasks WHERE userlogin = @del AND task = @tsk ", db.GetConnection());
+                    command2.Parameters.Add("@del", MySqlDbType.VarChar).Value = login;
+                    command2.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = InfoTabel[2, i].Value.ToString();
+
+
+                    DbDataReader reader = command2.ExecuteReader();
+                    List<string[]> data = new List<string[]>();
+
+                    while (reader.Read())
+                    {
+                        data.Add(new string[3]);
+                        data[data.Count - 1][0] = reader[0].ToString();
+                        data[data.Count - 1][1] = reader[1].ToString();
+                        data[data.Count - 1][2] = reader[2].ToString();
+
+                    }
+                    reader.Close();
+                    db.CloseConnection();
+
+                    InfoTabel.Rows.Clear();
+
+                    foreach (string[] s in data)
+                    {
+                        InfoTabel.Rows.Add(s);
+                    }
 
                 }
-                reader.Close();
+
+                else
+                {
+
+                    MySqlCommand command2 = new MySqlCommand("DELETE  FROM persontask WHERE userlogin = @del AND task = @tsk ", db.GetConnection());
+                    command2.Parameters.Add("@del", MySqlDbType.VarChar).Value = login;
+                    command2.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = InfoTabel[2, i].Value.ToString();
+
+
+                    command2.ExecuteNonQuery();
+
+
+                    DbDataReader reader = command2.ExecuteReader();
+                    List<string[]> data = new List<string[]>();
+
+                    while (reader.Read())
+                    {
+                        data.Add(new string[3]);
+                        data[data.Count - 1][0] = reader[0].ToString();
+                        data[data.Count - 1][1] = reader[1].ToString();
+                        data[data.Count - 1][2] = reader[2].ToString();
+
+                    }
+                    reader.Close();
+                    db.CloseConnection();
+
+                    InfoTabel.Rows.Clear();
+
+                    foreach (string[] s in data)
+                    {
+                        InfoTabel.Rows.Add(s);
+                    }
+
+
+                }
                 db.CloseConnection();
-
-                InfoTabel.Rows.Clear();
-
-                foreach (string[] s in data)
-                {
-                    InfoTabel.Rows.Add(s);
-                }
-
             }
 
-            else
+            catch
             {
-
-                MySqlCommand command2 = new MySqlCommand("DELETE  FROM persontask WHERE userlogin = @del AND task = @tsk ", db.GetConnection());
-                command2.Parameters.Add("@del", MySqlDbType.VarChar).Value = login;
-                command2.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = InfoTabel[2, i].Value.ToString();
-
-
-                command2.ExecuteNonQuery();
-
-
-                DbDataReader reader = command2.ExecuteReader();
-                List<string[]> data = new List<string[]>();
-
-                while (reader.Read())
-                {
-                    data.Add(new string[3]);
-                    data[data.Count - 1][0] = reader[0].ToString();
-                    data[data.Count - 1][1] = reader[1].ToString();
-                    data[data.Count - 1][2] = reader[2].ToString();
-
-                }
-                reader.Close();
-                db.CloseConnection();
-
-                InfoTabel.Rows.Clear();
-
-                foreach (string[] s in data)
-                {
-                    InfoTabel.Rows.Add(s);
-                }
-
-
+                MessageBox.Show("Выберите задачу!");
             }
-            db.CloseConnection();
 
 
         }

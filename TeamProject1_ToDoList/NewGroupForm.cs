@@ -100,65 +100,73 @@ namespace TeamProject1_ToDoList
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            DataBase db = new DataBase();
-            db.OpenConnection();
 
-            String groupname = entered_name.Text;
-            String userlog = Members_list.SelectedItem.ToString();
-
-
-            MySqlCommand command = new MySqlCommand("SELECT * FROM groups WHERE adminstatus = @Admstat AND namegroup = @ng ", db.GetConnection()); // создаем объект и передаем команду для вытягивания из бд логина и пароля из бд
-            command.Parameters.Add("@Admstat", MySqlDbType.VarChar).Value = 1;
-            command.Parameters.Add("@ng", MySqlDbType.VarChar).Value = groupname;
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-            adapter.SelectCommand = command; // выполняем команду
-
-
-            DataTable table = new DataTable();
-
-            adapter.Fill(table);// записываем данные в объект класса DataTable
-
-
-
-            if (table.Rows.Count == 0)
+            if (entered_name.Text != "")
             {
+                DataBase db = new DataBase();
+                db.OpenConnection();
 
-                MySqlCommand command1 = new MySqlCommand("INSERT INTO `groups` (`namegroup`, `userlogin`,`adminstatus`) VALUES (@gn, @ulog, 1)", db.GetConnection());
-
-                command1.Parameters.Add("@gn", MySqlDbType.VarChar).Value = groupname;
-                command1.Parameters.Add("@ulog", MySqlDbType.VarChar).Value = login;
-
-                command1.ExecuteNonQuery();
-
-            }
+                String groupname = entered_name.Text;
+                String userlog = Members_list.SelectedItem.ToString();
 
 
-            MySqlCommand command2 = new MySqlCommand("INSERT INTO `groups` (`namegroup`, `userlogin`) VALUES (@gn, @ulog)", db.GetConnection());
+                MySqlCommand command = new MySqlCommand("SELECT * FROM groups WHERE adminstatus = @Admstat AND namegroup = @ng ", db.GetConnection()); // создаем объект и передаем команду для вытягивания из бд логина и пароля из бд
+                command.Parameters.Add("@Admstat", MySqlDbType.VarChar).Value = 1;
+                command.Parameters.Add("@ng", MySqlDbType.VarChar).Value = groupname;
 
-            command2.Parameters.Add("@gn", MySqlDbType.VarChar).Value = groupname;
-            command2.Parameters.Add("@ulog", MySqlDbType.VarChar).Value = userlog;
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            if (command2.ExecuteNonQuery() == 1)
-            {
-
-                MessageBox.Show("Пользователь добавлен");
+                adapter.SelectCommand = command; // выполняем команду
 
 
+                DataTable table = new DataTable();
+
+                adapter.Fill(table);// записываем данные в объект класса DataTable
+
+
+
+                if (table.Rows.Count == 0)
+                {
+
+                    MySqlCommand command1 = new MySqlCommand("INSERT INTO `groups` (`namegroup`, `userlogin`,`adminstatus`) VALUES (@gn, @ulog, 1)", db.GetConnection());
+
+                    command1.Parameters.Add("@gn", MySqlDbType.VarChar).Value = groupname;
+                    command1.Parameters.Add("@ulog", MySqlDbType.VarChar).Value = login;
+
+                    command1.ExecuteNonQuery();
+
+                }
+
+
+                MySqlCommand command2 = new MySqlCommand("INSERT INTO `groups` (`namegroup`, `userlogin`) VALUES (@gn, @ulog)", db.GetConnection());
+
+                command2.Parameters.Add("@gn", MySqlDbType.VarChar).Value = groupname;
+                command2.Parameters.Add("@ulog", MySqlDbType.VarChar).Value = userlog;
+
+                if (command2.ExecuteNonQuery() == 1)
+                {
+
+                    MessageBox.Show("Пользователь добавлен");
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка!Попробуйте позже!");
+                }
+                db.CloseConnection();
             }
             else
             {
-                MessageBox.Show("Ошибка!Попробуйте позже!");
+                MessageBox.Show("Введите название группы!");
             }
-
 
            
 
 
 
 
-            db.CloseConnection();
+            
 
         }
     }

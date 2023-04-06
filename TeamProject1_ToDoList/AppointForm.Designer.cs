@@ -38,16 +38,16 @@
             this.MyGroups_list2 = new System.Windows.Forms.ListBox();
             this.Members_list2 = new System.Windows.Forms.ListBox();
             this.delete_btn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.show_listGroup_button = new System.Windows.Forms.Button();
             this.show_listGroup_button2 = new System.Windows.Forms.Button();
-            this.show_listMembers_button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.show_group_delete_btn = new System.Windows.Forms.Button();
-            this.show_members_delete_btn = new System.Windows.Forms.Button();
             this.listBox_delete_group = new System.Windows.Forms.ListBox();
             this.listBox_delete_members = new System.Windows.Forms.ListBox();
             this.delete_member_btn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // AppointTask_lbl
@@ -72,6 +72,7 @@
             this.MyGroups_list.Name = "MyGroups_list";
             this.MyGroups_list.Size = new System.Drawing.Size(246, 180);
             this.MyGroups_list.TabIndex = 5;
+            this.MyGroups_list.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MyGroups_list_MouseClick);
             this.MyGroups_list.SelectedIndexChanged += new System.EventHandler(this.MyGroups_list_SelectedIndexChanged);
             // 
             // Members_list
@@ -90,7 +91,7 @@
             this.lbl_task.AutoSize = true;
             this.lbl_task.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_task.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_task.Location = new System.Drawing.Point(562, 83);
+            this.lbl_task.Location = new System.Drawing.Point(574, 79);
             this.lbl_task.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_task.Name = "lbl_task";
             this.lbl_task.Size = new System.Drawing.Size(63, 23);
@@ -102,7 +103,7 @@
             this.Entered_Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Entered_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Entered_Text.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Entered_Text.Location = new System.Drawing.Point(562, 118);
+            this.Entered_Text.Location = new System.Drawing.Point(574, 118);
             this.Entered_Text.Margin = new System.Windows.Forms.Padding(2);
             this.Entered_Text.Name = "Entered_Text";
             this.Entered_Text.Size = new System.Drawing.Size(194, 28);
@@ -144,13 +145,14 @@
             this.MyGroups_list2.Name = "MyGroups_list2";
             this.MyGroups_list2.Size = new System.Drawing.Size(246, 114);
             this.MyGroups_list2.TabIndex = 65;
+            this.MyGroups_list2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MyGroups_list2_MouseClick);
             // 
             // Members_list2
             // 
             this.Members_list2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Members_list2.FormattingEnabled = true;
             this.Members_list2.ItemHeight = 22;
-            this.Members_list2.Location = new System.Drawing.Point(291, 416);
+            this.Members_list2.Location = new System.Drawing.Point(277, 416);
             this.Members_list2.Margin = new System.Windows.Forms.Padding(2);
             this.Members_list2.Name = "Members_list2";
             this.Members_list2.Size = new System.Drawing.Size(246, 114);
@@ -168,16 +170,6 @@
             this.delete_btn.Text = "Удалить";
             this.delete_btn.UseVisualStyleBackColor = true;
             this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(277, 72);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 34);
-            this.button2.TabIndex = 71;
-            this.button2.Text = "Участники";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // show_listGroup_button
             // 
@@ -201,16 +193,6 @@
             this.show_listGroup_button2.UseVisualStyleBackColor = true;
             this.show_listGroup_button2.Click += new System.EventHandler(this.show_listGroup_button2_Click);
             // 
-            // show_listMembers_button2
-            // 
-            this.show_listMembers_button2.Location = new System.Drawing.Point(291, 375);
-            this.show_listMembers_button2.Name = "show_listMembers_button2";
-            this.show_listMembers_button2.Size = new System.Drawing.Size(112, 34);
-            this.show_listMembers_button2.TabIndex = 74;
-            this.show_listMembers_button2.Text = "Участники";
-            this.show_listMembers_button2.UseVisualStyleBackColor = true;
-            this.show_listMembers_button2.Click += new System.EventHandler(this.show_listMembers_button2_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -233,16 +215,6 @@
             this.show_group_delete_btn.UseVisualStyleBackColor = true;
             this.show_group_delete_btn.Click += new System.EventHandler(this.show_group_delete_btn_Click);
             // 
-            // show_members_delete_btn
-            // 
-            this.show_members_delete_btn.Location = new System.Drawing.Point(291, 613);
-            this.show_members_delete_btn.Name = "show_members_delete_btn";
-            this.show_members_delete_btn.Size = new System.Drawing.Size(112, 34);
-            this.show_members_delete_btn.TabIndex = 77;
-            this.show_members_delete_btn.Text = "Участники";
-            this.show_members_delete_btn.UseVisualStyleBackColor = true;
-            this.show_members_delete_btn.Click += new System.EventHandler(this.show_members_delete_btn_Click);
-            // 
             // listBox_delete_group
             // 
             this.listBox_delete_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -253,13 +225,14 @@
             this.listBox_delete_group.Name = "listBox_delete_group";
             this.listBox_delete_group.Size = new System.Drawing.Size(246, 114);
             this.listBox_delete_group.TabIndex = 78;
+            this.listBox_delete_group.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox_delete_group_MouseClick);
             // 
             // listBox_delete_members
             // 
             this.listBox_delete_members.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox_delete_members.FormattingEnabled = true;
             this.listBox_delete_members.ItemHeight = 22;
-            this.listBox_delete_members.Location = new System.Drawing.Point(291, 652);
+            this.listBox_delete_members.Location = new System.Drawing.Point(277, 652);
             this.listBox_delete_members.Margin = new System.Windows.Forms.Padding(2);
             this.listBox_delete_members.Name = "listBox_delete_members";
             this.listBox_delete_members.Size = new System.Drawing.Size(246, 114);
@@ -278,22 +251,49 @@
             this.delete_member_btn.UseVisualStyleBackColor = true;
             this.delete_member_btn.Click += new System.EventHandler(this.delete_member_btn_Click);
             // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.Location = new System.Drawing.Point(277, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 34);
+            this.label3.TabIndex = 81;
+            this.label3.Text = " Участники";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.Location = new System.Drawing.Point(277, 375);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 34);
+            this.label4.TabIndex = 82;
+            this.label4.Text = " Участники";
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.Location = new System.Drawing.Point(277, 613);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 34);
+            this.label5.TabIndex = 83;
+            this.label5.Text = " Участники";
+            // 
             // AppointForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(785, 802);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.delete_member_btn);
             this.Controls.Add(this.listBox_delete_members);
             this.Controls.Add(this.listBox_delete_group);
-            this.Controls.Add(this.show_members_delete_btn);
             this.Controls.Add(this.show_group_delete_btn);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.show_listMembers_button2);
             this.Controls.Add(this.show_listGroup_button2);
             this.Controls.Add(this.show_listGroup_button);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.Members_list2);
             this.Controls.Add(this.MyGroups_list2);
@@ -324,15 +324,15 @@
         private ListBox MyGroups_list2;
         private ListBox Members_list2;
         private Button delete_btn;
-        private Button button2;
         private Button show_listGroup_button;
         private Button show_listGroup_button2;
-        private Button show_listMembers_button2;
         private Label label2;
         private Button show_group_delete_btn;
-        private Button show_members_delete_btn;
         private ListBox listBox_delete_group;
         private ListBox listBox_delete_members;
         private Button delete_member_btn;
+        private Label label3;
+        private Label label4;
+        private Label label5;
     }
 }
