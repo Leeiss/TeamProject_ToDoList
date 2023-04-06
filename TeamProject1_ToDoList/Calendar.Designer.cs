@@ -30,11 +30,11 @@ namespace TeamProject1_ToDoList
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalendarForm));
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.Calendar_lbl = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@ namespace TeamProject1_ToDoList
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Parameter = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TaskDone_btn = new System.Windows.Forms.Button();
-            this.TastDelete_btn = new System.Windows.Forms.Button();
+            this.TaskDelete_btn = new System.Windows.Forms.Button();
             this.TaskAdd_btn = new System.Windows.Forms.Button();
             this.ArchiveShow_btn = new System.Windows.Forms.Button();
             this.info_task_button = new System.Windows.Forms.Button();
@@ -146,14 +146,14 @@ namespace TeamProject1_ToDoList
             this.dataGridViewTextBoxColumn3,
             this.Date,
             this.Group});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sitka Small", 9.124999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.InfoTabel.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Sitka Small", 9.124999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.InfoTabel.DefaultCellStyle = dataGridViewCellStyle15;
             this.InfoTabel.Location = new System.Drawing.Point(299, 109);
             this.InfoTabel.Margin = new System.Windows.Forms.Padding(2);
             this.InfoTabel.Name = "InfoTabel";
@@ -161,13 +161,15 @@ namespace TeamProject1_ToDoList
             this.InfoTabel.RowTemplate.Height = 41;
             this.InfoTabel.Size = new System.Drawing.Size(521, 606);
             this.InfoTabel.TabIndex = 40;
+            this.InfoTabel.Visible = false;
+            this.InfoTabel.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InfoTabel_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sitka Heading", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Sitka Heading", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn2.HeaderText = "Группа";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -176,8 +178,8 @@ namespace TeamProject1_ToDoList
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn3.HeaderText = "Дата";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -186,8 +188,8 @@ namespace TeamProject1_ToDoList
             // Date
             // 
             this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Date.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Date.DefaultCellStyle = dataGridViewCellStyle13;
             this.Date.HeaderText = "Описание";
             this.Date.MinimumWidth = 10;
             this.Date.Name = "Date";
@@ -196,8 +198,8 @@ namespace TeamProject1_ToDoList
             // Group
             // 
             this.Group.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Group.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Sitka Heading", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Group.DefaultCellStyle = dataGridViewCellStyle14;
             this.Group.HeaderText = "Параметр";
             this.Group.MinimumWidth = 10;
             this.Group.Name = "Group";
@@ -344,19 +346,22 @@ namespace TeamProject1_ToDoList
             this.TaskDone_btn.TabIndex = 53;
             this.TaskDone_btn.Text = "Выполнить\r\nзадачу";
             this.TaskDone_btn.UseVisualStyleBackColor = true;
+            this.TaskDone_btn.Visible = false;
+            this.TaskDone_btn.Click += new System.EventHandler(this.TaskDone_btn_Click_1);
             // 
-            // TastDelete_btn
+            // TaskDelete_btn
             // 
-            this.TastDelete_btn.Font = new System.Drawing.Font("Sylfaen", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TastDelete_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.TastDelete_btn.Location = new System.Drawing.Point(539, 733);
-            this.TastDelete_btn.Margin = new System.Windows.Forms.Padding(2);
-            this.TastDelete_btn.Name = "TastDelete_btn";
-            this.TastDelete_btn.Size = new System.Drawing.Size(133, 67);
-            this.TastDelete_btn.TabIndex = 52;
-            this.TastDelete_btn.Text = "Удалить\r\nзадачу";
-            this.TastDelete_btn.UseVisualStyleBackColor = true;
-            this.TastDelete_btn.Click += new System.EventHandler(this.TastDelete_btn_Click_1);
+            this.TaskDelete_btn.Font = new System.Drawing.Font("Sylfaen", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TaskDelete_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
+            this.TaskDelete_btn.Location = new System.Drawing.Point(539, 733);
+            this.TaskDelete_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.TaskDelete_btn.Name = "TaskDelete_btn";
+            this.TaskDelete_btn.Size = new System.Drawing.Size(133, 67);
+            this.TaskDelete_btn.TabIndex = 52;
+            this.TaskDelete_btn.Text = "Удалить\r\nзадачу";
+            this.TaskDelete_btn.UseVisualStyleBackColor = true;
+            this.TaskDelete_btn.Visible = false;
+            this.TaskDelete_btn.Click += new System.EventHandler(this.TastDelete_btn_Click_1);
             // 
             // TaskAdd_btn
             // 
@@ -432,7 +437,7 @@ namespace TeamProject1_ToDoList
             this.Controls.Add(this.info_task_button);
             this.Controls.Add(this.ArchiveShow_btn);
             this.Controls.Add(this.TaskDone_btn);
-            this.Controls.Add(this.TastDelete_btn);
+            this.Controls.Add(this.TaskDelete_btn);
             this.Controls.Add(this.TaskAdd_btn);
             this.Controls.Add(this.left_panel);
             this.Controls.Add(this.InfoTabel);
@@ -472,7 +477,7 @@ namespace TeamProject1_ToDoList
         private Label label_date;
         private Label lbl_group;
         private Button TaskDone_btn;
-        private Button TastDelete_btn;
+        private Button TaskDelete_btn;
         private Button TaskAdd_btn;
         private Button ArchiveShow_btn;
         private Button info_task_button;

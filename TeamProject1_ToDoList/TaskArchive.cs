@@ -58,19 +58,15 @@ namespace TeamProject1_ToDoList
             {
                 InfoTabel.Rows.Add(s);
             }
+
+
             TimeSpan time;
 
             time = (DateTime.Now).Subtract(Convert.ToDateTime(data[InfoTabel.CurrentCell.RowIndex][2]));
+            string comment =  data[InfoTabel.CurrentCell.RowIndex][4];
 
-            int i = InfoTabel.CurrentCell.RowIndex;
-
-            textbox_description.Text = InfoTabel[0, i].Value.ToString();
-            textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
-            textbox_date.Text = InfoTabel[2, i].Value.ToString();
-            textbox_group.Text = InfoTabel[3, i].Value.ToString();
-            textbox_comment.Text = data[InfoTabel.CurrentCell.RowIndex][4];
-            textbox_time.Text = time.Days.ToString() + " дней";
-            textbox_user.Text = login;
+            ShowInformation(time, comment); 
+            
 
         }
 
@@ -115,19 +111,7 @@ namespace TeamProject1_ToDoList
             {
                 InfoTabel.Rows.Add(s);
             }
-            TimeSpan time;
-            time = (DateTime.Now).Subtract(Convert.ToDateTime(data[InfoTabel.CurrentCell.RowIndex][2]));
-
-            int i = InfoTabel.CurrentCell.RowIndex;
-
-            textbox_description.Text = InfoTabel[0, i].Value.ToString();
-            textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
-            textbox_date.Text = InfoTabel[2, i].Value.ToString();
-            textbox_group.Text = InfoTabel[3, i].Value.ToString();
-            textbox_comment.Text = data[InfoTabel.CurrentCell.RowIndex][4];
-            textbox_user.Text = login;
-            textbox_time.Text = time.Days.ToString() + " дней";
-
+          
         }
 
         private void TaskArchive_Load(object sender, EventArgs e)
@@ -187,6 +171,49 @@ namespace TeamProject1_ToDoList
             {
                 InfoTabel.Rows.Add(s);
             }
+        }
+
+        private void ShowInformation(TimeSpan time, string comment)
+        {
+            int i = InfoTabel.CurrentCell.RowIndex;
+
+            textbox_description.Text = InfoTabel[0, i].Value.ToString();
+            textbox_parametr.Text = InfoTabel[1, i].Value.ToString();
+            textbox_date.Text = InfoTabel[2, i].Value.ToString();
+            textbox_group.Text = InfoTabel[3, i].Value.ToString();
+            textbox_comment.Text =comment;
+            textbox_time.Text = time.Days.ToString() + " дней";
+            textbox_user.Text = login;
+        }
+
+        private void InfoTabel_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+           
+        }
+
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+            {
+                for (int i = 0; i < InfoTabel.RowCount; i++)
+                {
+                    InfoTabel.Rows[i].Selected = false;
+                    for (int j = 0; j < InfoTabel.ColumnCount; j++)
+                        if (InfoTabel.Rows[i].Cells[j].Value != null)
+                            if (InfoTabel.Rows[i].Cells[j].Value.ToString().Contains(Entered_Text.Text))
+
+                            {
+                                InfoTabel.Rows[i].Selected = true;
+
+                                break;
+                            }
+                }
+            }
+        }
+
+        private void Entered_Text_Click(object sender, EventArgs e)
+        {
+            Entered_Text.Clear();
         }
     }
 }

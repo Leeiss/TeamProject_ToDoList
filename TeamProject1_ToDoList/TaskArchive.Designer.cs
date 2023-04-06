@@ -253,6 +253,7 @@
             this.InfoTabel.RowTemplate.Height = 41;
             this.InfoTabel.Size = new System.Drawing.Size(544, 683);
             this.InfoTabel.TabIndex = 54;
+            this.InfoTabel.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InfoTabel_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -316,6 +317,7 @@
             this.search_btn.Size = new System.Drawing.Size(29, 27);
             this.search_btn.TabIndex = 64;
             this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // Entered_Text
             // 
@@ -329,6 +331,7 @@
             this.Entered_Text.TabIndex = 63;
             this.Entered_Text.TabStop = false;
             this.Entered_Text.Text = "Поиск по таблице..";
+            this.Entered_Text.Click += new System.EventHandler(this.Entered_Text_Click);
             // 
             // Groups_list
             // 

@@ -256,6 +256,7 @@ namespace TeamProject1_ToDoList
                 InfoTabel.Rows.Add(s);
             }
 
+            InfoTabel.Visible = true;
 
         }
 
@@ -291,6 +292,8 @@ namespace TeamProject1_ToDoList
             {
                 InfoTabel.Rows.Add(s);
             }
+
+            InfoTabel.Visible = true;
 
         }
 
@@ -383,6 +386,9 @@ namespace TeamProject1_ToDoList
             label_date.Text = InfoTabel[1, i].Value.ToString();
             label_description.Text = InfoTabel[2, i].Value.ToString();
             label_parametr.Text = InfoTabel[3, i].Value.ToString();
+
+            TaskDelete_btn.Visible = true;
+            TaskDone_btn.Visible = true;
         }
 
         private void label_date_Click(object sender, EventArgs e)
@@ -393,6 +399,11 @@ namespace TeamProject1_ToDoList
         private void Entered_Text_MouseClick(object sender, MouseEventArgs e)
         {
             Entered_Text.Clear();
+        }
+
+        private void InfoTabel_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

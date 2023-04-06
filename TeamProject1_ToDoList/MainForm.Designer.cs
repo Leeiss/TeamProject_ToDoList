@@ -89,7 +89,7 @@
             this.upper_panel.Location = new System.Drawing.Point(-10, 0);
             this.upper_panel.Margin = new System.Windows.Forms.Padding(2);
             this.upper_panel.Name = "upper_panel";
-            this.upper_panel.Size = new System.Drawing.Size(1301, 64);
+            this.upper_panel.Size = new System.Drawing.Size(1301, 79);
             this.upper_panel.TabIndex = 0;
             // 
             // search_btn
@@ -110,7 +110,7 @@
             this.MainPicture.Location = new System.Drawing.Point(18, 4);
             this.MainPicture.Margin = new System.Windows.Forms.Padding(2);
             this.MainPicture.Name = "MainPicture";
-            this.MainPicture.Size = new System.Drawing.Size(55, 56);
+            this.MainPicture.Size = new System.Drawing.Size(77, 71);
             this.MainPicture.TabIndex = 16;
             this.MainPicture.TabStop = false;
             // 
@@ -135,7 +135,7 @@
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(108)))), ((int)(((byte)(80)))));
-            this.lbl_name.Location = new System.Drawing.Point(86, 6);
+            this.lbl_name.Location = new System.Drawing.Point(99, 4);
             this.lbl_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(95, 30);
@@ -147,7 +147,7 @@
             this.lbl_account.AutoSize = true;
             this.lbl_account.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_account.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_account.Location = new System.Drawing.Point(89, 34);
+            this.lbl_account.Location = new System.Drawing.Point(99, 34);
             this.lbl_account.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_account.Name = "lbl_account";
             this.lbl_account.Size = new System.Drawing.Size(129, 23);
@@ -326,6 +326,8 @@
             this.InfoTabel.RowTemplate.Height = 41;
             this.InfoTabel.Size = new System.Drawing.Size(529, 587);
             this.InfoTabel.TabIndex = 44;
+            this.InfoTabel.Visible = false;
+            this.InfoTabel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InfoTabel_CellClick);
             this.InfoTabel.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InfoTabel_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn2
@@ -402,6 +404,7 @@
             this.TaskDelete_btn.TabIndex = 49;
             this.TaskDelete_btn.Text = "Удалить\r\nзадачу";
             this.TaskDelete_btn.UseVisualStyleBackColor = true;
+            this.TaskDelete_btn.Visible = false;
             this.TaskDelete_btn.Click += new System.EventHandler(this.TaskDelete_btn_Click_1);
             // 
             // TaskDone_btn
@@ -416,6 +419,7 @@
             this.TaskDone_btn.TabIndex = 50;
             this.TaskDone_btn.Text = "Выполнить\r\nзадачу";
             this.TaskDone_btn.UseVisualStyleBackColor = true;
+            this.TaskDone_btn.Visible = false;
             this.TaskDone_btn.Click += new System.EventHandler(this.TaskDone_btn_Click_1);
             // 
             // lbl_date

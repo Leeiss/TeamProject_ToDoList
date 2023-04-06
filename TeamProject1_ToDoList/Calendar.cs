@@ -115,6 +115,8 @@ namespace TeamProject1_ToDoList
                 InfoTabel.Rows.Add(s);
             }
 
+            InfoTabel.Visible = true;
+
         }
 
         private void common_afairs_btn_Click(object sender, EventArgs e)
@@ -150,6 +152,7 @@ namespace TeamProject1_ToDoList
             {
                 InfoTabel.Rows.Add(s);
             }
+            InfoTabel.Visible = true;
 
         }
 
@@ -288,7 +291,21 @@ namespace TeamProject1_ToDoList
                 InfoTabel.Rows.Add(s);
             }
 
+            InfoTabel.Visible = true;
 
+
+        }
+
+        private void InfoTabel_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TaskDelete_btn.Visible = true;
+            TaskDone_btn.Visible = true;
+        }
+
+        private void TaskDone_btn_Click_1(object sender, EventArgs e)
+        {
+            TaskDone taskDone = new TaskDone();
+            taskDone.ShowDialog();
         }
     }
 }
