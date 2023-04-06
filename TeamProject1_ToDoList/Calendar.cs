@@ -256,25 +256,30 @@ namespace TeamProject1_ToDoList
 
             }
 
-
-
-            //MySqlCommand command2 = new MySqlCommand("SELECT * FROM tasks WHERE userlogin = @log AND date = @D ", db.GetConnection());
-            //command2.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
-            //command2.Parameters.Add("@D", MySqlDbType.VarChar).Value = monthCalendar.SelectionRange.Start.ToShortDateString();
-
-            //while (reader.Read())
-            //{
-            //    data.Add(new string[4]);
-            //    data[data.Count - 1][0] = reader[0].ToString();
-            //    data[data.Count - 1][1] = reader[1].ToString();
-            //    data[data.Count - 1][2] = reader[2].ToString();
-            //    data[data.Count - 1][3] = reader[3].ToString();
-
-
-            //}
             reader.Close();
             db.CloseConnection();
 
+
+            MySqlCommand command2 = new MySqlCommand("SELECT * FROM tasks WHERE userlogin = @log AND date = @D ", db.GetConnection());
+            command2.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
+            command2.Parameters.Add("@D", MySqlDbType.VarChar).Value = monthCalendar.SelectionRange.Start.ToShortDateString();
+
+
+            db.OpenConnection();
+            DbDataReader reader1 = command2.ExecuteReader();
+
+            while (reader1.Read())
+            {
+                data.Add(new string[4]);
+                data[data.Count - 1][0] = reader1[0].ToString();
+                data[data.Count - 1][1] = reader1[1].ToString();
+                data[data.Count - 1][2] = reader1[2].ToString();
+                data[data.Count - 1][3] = reader1[3].ToString();
+
+
+            }
+
+            reader1.Close();
 
             InfoTabel.Rows.Clear();
 
