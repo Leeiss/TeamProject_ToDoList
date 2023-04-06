@@ -138,16 +138,21 @@ namespace TeamProject1_ToDoList
             DataBase db = new DataBase();
             db.OpenConnection();
 
-            try
-            {
                 if (InfoTabel[3, i].Value.ToString() == "Общая")
                 {
 
 
                     MySqlCommand command2 = new MySqlCommand("DELETE  FROM tasks WHERE userlogin = @del AND task = @tsk ", db.GetConnection());
                     command2.Parameters.Add("@del", MySqlDbType.VarChar).Value = login;
+                try
+                {
                     command2.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = InfoTabel[2, i].Value.ToString();
+                }
 
+                catch
+                {
+                    MessageBox.Show("Выберите задачу!");
+                }
 
                     DbDataReader reader = command2.ExecuteReader();
                     List<string[]> data = new List<string[]>();
@@ -179,7 +184,6 @@ namespace TeamProject1_ToDoList
                     command2.Parameters.Add("@del", MySqlDbType.VarChar).Value = login;
                     command2.Parameters.Add("@tsk", MySqlDbType.VarChar).Value = InfoTabel[2, i].Value.ToString();
 
-
                     command2.ExecuteNonQuery();
 
 
@@ -207,12 +211,7 @@ namespace TeamProject1_ToDoList
 
                 }
                 db.CloseConnection();
-            }
-
-            catch
-            {
-                MessageBox.Show("Выберите задачу!");
-            }
+            
 
 
         }
@@ -389,6 +388,11 @@ namespace TeamProject1_ToDoList
         private void label_date_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Entered_Text_MouseClick(object sender, MouseEventArgs e)
+        {
+            Entered_Text.Clear();
         }
     }
 }

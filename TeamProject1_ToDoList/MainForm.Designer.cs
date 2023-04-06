@@ -128,6 +128,7 @@
             this.Entered_Text.TabIndex = 61;
             this.Entered_Text.TabStop = false;
             this.Entered_Text.Text = "Поиск по таблице..";
+            this.Entered_Text.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Entered_Text_MouseClick);
             // 
             // lbl_name
             // 

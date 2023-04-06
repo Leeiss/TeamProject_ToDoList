@@ -80,6 +80,7 @@ namespace TeamProject1_ToDoList
             this.monthCalendar.Margin = new System.Windows.Forms.Padding(7);
             this.monthCalendar.Name = "monthCalendar";
             this.monthCalendar.TabIndex = 24;
+            this.monthCalendar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.monthCalendar_MouseDown);
             // 
             // Calendar_lbl
             // 

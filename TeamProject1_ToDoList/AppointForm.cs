@@ -72,7 +72,7 @@ namespace TeamProject1_ToDoList
         {
             String namegroup = MyGroups_list.SelectedItem.ToString();
             String task = Entered_Text.Text;
-            string date = DateTime.UtcNow.ToString("MM-dd-yyyy");
+            string date = DateTime.UtcNow.ToString("MM.dd.yyyy");
             DataBase db = new DataBase();
 
             if (Members_list.SelectedItems.Count == 0)

@@ -231,5 +231,59 @@ namespace TeamProject1_ToDoList
             }
             db.CloseConnection();
         }
+
+        private void monthCalendar_MouseDown(object sender, MouseEventArgs e)
+        {
+            DataBase db = new DataBase();
+
+            MySqlCommand command1 = new MySqlCommand("SELECT * FROM persontask WHERE userlogin = @log AND date = @D ", db.GetConnection());
+            command1.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
+            command1.Parameters.Add("@D", MySqlDbType.VarChar).Value = monthCalendar.SelectionRange.Start.ToShortDateString();
+
+
+            db.OpenConnection();
+            DbDataReader reader = command1.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+
+
+            }
+
+
+
+            //MySqlCommand command2 = new MySqlCommand("SELECT * FROM tasks WHERE userlogin = @log AND date = @D ", db.GetConnection());
+            //command2.Parameters.Add("@log", MySqlDbType.VarChar).Value = login;
+            //command2.Parameters.Add("@D", MySqlDbType.VarChar).Value = monthCalendar.SelectionRange.Start.ToShortDateString();
+
+            //while (reader.Read())
+            //{
+            //    data.Add(new string[4]);
+            //    data[data.Count - 1][0] = reader[0].ToString();
+            //    data[data.Count - 1][1] = reader[1].ToString();
+            //    data[data.Count - 1][2] = reader[2].ToString();
+            //    data[data.Count - 1][3] = reader[3].ToString();
+
+
+            //}
+            reader.Close();
+            db.CloseConnection();
+
+
+            InfoTabel.Rows.Clear();
+
+            foreach (string[] s in data)
+            {
+                InfoTabel.Rows.Add(s);
+            }
+
+
+        }
     }
 }
