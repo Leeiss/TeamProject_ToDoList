@@ -129,6 +129,7 @@
             this.Members_list.Size = new System.Drawing.Size(209, 224);
             this.Members_list.TabIndex = 60;
             this.Members_list.SelectedIndexChanged += new System.EventHandler(this.Members_list_SelectedIndexChanged);
+            this.Members_list.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Members_list_MouseDoubleClick);
             // 
             // add_button
             // 
@@ -141,6 +142,7 @@
             this.add_button.TabIndex = 61;
             this.add_button.Text = "Добавить";
             this.add_button.UseVisualStyleBackColor = true;
+            this.add_button.Visible = false;
             this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
             // NewGroupForm

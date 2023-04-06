@@ -62,7 +62,7 @@ namespace TeamProject1_ToDoList
 
             TimeSpan time;
 
-            time = (DateTime.Now).Subtract(Convert.ToDateTime(data[InfoTabel.CurrentCell.RowIndex][2]));
+            time = DateTime.UtcNow.Subtract(Convert.ToDateTime(data[InfoTabel.CurrentCell.RowIndex][2]));
             string comment =  data[InfoTabel.CurrentCell.RowIndex][4];
 
             ShowInformation(time, comment); 

@@ -57,7 +57,7 @@ namespace TeamProject1_ToDoList
                 statement = reader.GetString(0);
             }
 
-
+            Members_list.Items.Clear();
             while (reader.Read())
             {
                 Members_list.Items.Add((string)reader[1]);
@@ -168,6 +168,11 @@ namespace TeamProject1_ToDoList
 
             
 
+        }
+
+        private void Members_list_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            add_button.Visible = true;
         }
     }
 }
