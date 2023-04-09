@@ -1,5 +1,5 @@
-# Групповой проект
-## Приложение "Список дел"
+
+# Приложение "Список дел"
 :ballot_box_with_check: [Техническое задание](https://github.com/Leeiss/TeamProject_ToDoList/blob/project/%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5.docx) :ballot_box_with_check:[Презентация](https://github.com/Leeiss/TeamProject_ToDoList/blob/project/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83.pptx) :ballot_box_with_check:[Баг-репорт(1)](https://github.com/Leeiss/TeamProject_ToDoList/blob/project/%D0%91%D0%B0%D0%B3%20%D0%A0%D0%B5%D0%BF%D0%BE%D1%80%D1%82%2030.03.2023.docx) :ballot_box_with_check:[Баг-репорт(2)](https://github.com/Leeiss/TeamProject_ToDoList/blob/project/%D0%91%D0%B0%D0%B3%20%D0%A0%D0%B5%D0%BF%D0%BE%D1%80%D1%82%2006.04.2023.docx)  
   
 Финальная версия проекта [здесь](https://github.com/Leeiss/TeamProject_ToDoList/tree/project)
