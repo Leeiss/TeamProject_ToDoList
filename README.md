@@ -52,7 +52,7 @@ ______
 <img src="https://github.com/Leeiss/TeamProject_ToDoList/blob/project/TeamProject1_ToDoList/Resources/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8.png" alt="Основное окно" width="400"/>  "   
 _______
   
-Итоги:
+#### Итоги:  
 Оценка за групповую деятельность: :five:/:five:  
 Оценка за индивидуальную деятельность аналитика: :five:/:five:  
 Оценка за индивидуальную деятельность разработчика: :five:/:five:  
