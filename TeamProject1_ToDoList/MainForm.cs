@@ -396,12 +396,7 @@ namespace TeamProject1_ToDoList
 
         }
 
-        private void Entered_Text_MouseClick(object sender, MouseEventArgs e)
-        {
-            Entered_Text.Clear();
-        }
-
-        private void InfoTabel_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void Entered_Text_TextChanged(object sender, EventArgs e)
         {
 
         }
